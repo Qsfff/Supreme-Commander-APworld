@@ -1,6 +1,6 @@
 # Supreme-Commander-APworld
 Setup instructions:
-1. Install FAF and launch a game with all UI mods you want to be on. Also make sure to set up all settings and hotkeys for your liking
+1. Install FAF from https://www.faforever.com/ and launch a game with all UI mods you want to be on. Also make sure to set up all settings and hotkeys for your liking
 2. Install apworld, launch "Supreme Client" from launcher and go to settings
    
 There fill 2 folders with what you have in FAF settings.
