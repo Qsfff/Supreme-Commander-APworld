@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="aeon.png" />
+    <None Remove="cybran.png" />
+    <None Remove="seraphim.png" />
+    <None Remove="uef.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Archipelago.MultiClient.Net" Version="6.7.1" />
+    <PackageReference Include="EPPlus" Version="8.6.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.2.3" />
+    <PackageReference Include="PixiEditor.ColorPicker.Models" Version="1.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="aeon.png" />
+    <Resource Include="cybran.png" />
+    <Resource Include="seraphim.png" />
+    <Resource Include="uef.png" />
+  </ItemGroup>
+
+</Project>
