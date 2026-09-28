@@ -1,0 +1,66 @@
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\SupComClient.exe
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\SupComClient.deps.json
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\SupComClient.runtimeconfig.json
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\SupComClient.dll
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\SupComClient.pdb
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\ColorPicker.dll
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\ColorPicker.Models.dll
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.csproj.AssemblyReference.cache
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\MainWindow.g.cs
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\App.g.cs
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient_MarkupCompile.cache
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient_MarkupCompile.lref
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\MainWindow.baml
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.g.resources
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.GeneratedMSBuildEditorConfig.editorconfig
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.AssemblyInfoInputs.cache
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.AssemblyInfo.cs
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.csproj.CoreCompileInputs.cache
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComCl.F6B14F4B.Up2Date
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.dll
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\refint\SupComClient.dll
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.pdb
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\SupComClient.genruntimeconfig.cache
+X:\Games\zimg\SupComClient\obj\Debug\net8.0-windows\ref\SupComClient.dll
+X:\Games\zimg\SupComClient\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.csproj.AssemblyReference.cache
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\MainWindow.g.cs
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\App.g.cs
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient_MarkupCompile.cache
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient_MarkupCompile.lref
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\refint\SupComClient.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.pdb
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\SupComClient.exe
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\SupComClient.deps.json
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\SupComClient.runtimeconfig.json
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\SupComClient.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\SupComClient.pdb
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\EPPlus.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\EPPlus.Interfaces.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.IO.RecyclableMemoryStream.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\ColorPicker.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\ColorPicker.Models.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\MainWindow.baml
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.g.resources
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.GeneratedMSBuildEditorConfig.editorconfig
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.AssemblyInfoInputs.cache
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.AssemblyInfo.cs
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.csproj.CoreCompileInputs.cache
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComCl.F6B14F4B.Up2Date
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\SupComClient.genruntimeconfig.cache
+X:\Games\zimg\The SupCom AP project\SupComClientTest\obj\Debug\net8.0-windows\ref\SupComClient.dll
