@@ -88,7 +88,7 @@ namespace SupComClient
         private void SupComExit(object sender, System.EventArgs e)
         {
             //Delete map
-            string source = mapmodFolder + "maps\\" + mapname + "\\";
+            string source = MapFol.Text + "\\maps\\" + mapname + "\\";
             DirectoryInfo dir = new DirectoryInfo(source);
             dir.Delete(true);
         }
@@ -181,6 +181,8 @@ namespace SupComClient
             #endregion
 
             #region read
+
+            #region read items and locations
             //Read cybran items
             List<string> CybranItems = new List<string>();
             for (int i = 1; i < 100; i++)
@@ -263,22 +265,58 @@ namespace SupComClient
                     CybranLocations.Add(CybLoc.Cells[i, 1].GetCellValue<string>());
                 }
             }
+            #endregion
 
+
+            #region make a list of all level names
+            List<string> levelNAMES = new List<string>();
+            for (int i = 0; i < CybranLocations.Count; i++)
+            {
+                if (CybranLocations[i] != "-")
+                {
+                    string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":"));
+                    if (!levelNAMES.Contains(levelName))
+                    {
+                        levelNAMES.Add(levelName);
+                    }
+                }
+            }
+            #endregion
+
+            List<SCItem> AllRequeredItems = new List<SCItem>();
+            List<SCRule> AllRequeredRules = new List<SCRule>();
+            List<SCItem> tempItems = new List<SCItem>();
+            List<SCRule> tempRules = new List<SCRule>();
             //Read rules for cybran locations
             #region cybran rules
             //Rules if it is UEF
             #region UEF on Cybran rules
             List<string> UEFrulesFORcybranLOCATIONS = new List<string>();
+            List<string> UEFtoCYBRANlevelNAMES = new List<string>();
+            int missionPos = 1;
             for (int i = 0; i < CybranLocations.Count; i++)
             {
                 if (CybranLocations[i] != "-")
                 {
+                    string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":")) + " (UEF)";
+                    if (!UEFtoCYBRANlevelNAMES.Contains(levelName))
+                    {
+                        UEFtoCYBRANlevelNAMES.Add(levelName);
+                    }
                     if (CybLoc.Cells[i + 2, 3].GetCellValue<string>() != null)
                     {
                         string rule = CybLoc.Cells[i + 2, 3].GetCellValue<string>();
+                        List<List<string>> rule2 = new List<List<string>>();
                         //First easy case: only 1 item needed
                         if (!rule.Contains(",") && !rule.Contains("/"))
                         {
+                            SCItem thisThing = new SCItem(rule, levelName, missionPos);
+                            if (!tempItems.Contains(thisThing))
+                            {
+                                tempItems.Add(thisThing);
+                            }
+                            rule2.Add(new List<string>());
+                            rule2[0].Add("\"" + rule + "\"");
                             rule = "Has(\"" + rule + "\")";
                         }
                         //Second case: only , or /
@@ -292,22 +330,25 @@ namespace SupComClient
                                 while (temp.Contains(","))
                                 {
                                     string a = temp.Substring(0, temp.IndexOf(","));
-                                    temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                    temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                     WhatItHas.Add(a);
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " & ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2.Add(new List<string>());
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                             //Second case B: only /
@@ -323,17 +364,20 @@ namespace SupComClient
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
+                                rule2.Add(new List<string>());
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " | ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[0].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                         }
@@ -345,7 +389,7 @@ namespace SupComClient
                             while (temp.Contains(","))
                             {
                                 string a = temp.Substring(0, temp.IndexOf(","));
-                                temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                 WhatItHas.Add(a);
                             }
                             WhatItHas.Add(temp);
@@ -353,6 +397,8 @@ namespace SupComClient
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
                                 List<string> WhatItAlsoHas = new List<string>();
+                                rule2.Add(new List<string>());
+                                int currentIndexOfRule2 = rule2.Count - 1;
                                 if (WhatItHas[j].Contains("/"))
                                 {
                                     isItSingle.Add(false);
@@ -365,17 +411,21 @@ namespace SupComClient
                                     }
                                     WhatItAlsoHas.Add(temp);
                                     WhatItHas[j] = "";
+                                    List<string> WhatItHas2 = new List<string>();
                                     for (int ij = 0; ij < WhatItAlsoHas.Count; ij++)
                                     {
-                                        while (WhatItAlsoHas[ij].Contains(" "))
+                                        WhatItHas2.Add(WhatItAlsoHas[ij]);
+                                        SCItem thisThing = new SCItem(WhatItAlsoHas[ij], levelName, missionPos);
+                                        if (!tempItems.Contains(thisThing))
                                         {
-                                            WhatItAlsoHas[ij] = WhatItAlsoHas[ij].Remove(WhatItAlsoHas[ij].IndexOf(" "), 1);
+                                            tempItems.Add(thisThing);
                                         }
                                         if (ij != 0)
                                         {
                                             WhatItHas[j] += " | ";
                                         }
                                         WhatItHas[j] += "Has(\"" + WhatItAlsoHas[ij] + "\")";
+                                        rule2[currentIndexOfRule2].Add("\"" + WhatItAlsoHas[ij] + "\"");
                                     }
                                 }
                                 else
@@ -386,9 +436,10 @@ namespace SupComClient
                             rule = "";
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
-                                while (WhatItHas[j].Contains(" ") && isItSingle[j])
+                                SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                if (!tempItems.Contains(thisThing) && isItSingle[j])
                                 {
-                                    WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                    tempItems.Add(thisThing);
                                 }
                                 if (j != 0)
                                 {
@@ -397,6 +448,7 @@ namespace SupComClient
                                 if (isItSingle[j])
                                 {
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                                 else
                                 {
@@ -405,12 +457,15 @@ namespace SupComClient
                             }
                         }
                         UEFrulesFORcybranLOCATIONS.Add(rule);
+                        for (int j = 0; j < rule2.Count; j++)
+                        {
+                            tempRules.Add(new SCRule(levelName, rule2[j]));
+                        }
                     }
                     else
                     {
                         UEFrulesFORcybranLOCATIONS.Add("");
                     }
-                    
                     if (i != 0 && UEFrulesFORcybranLOCATIONS[i - 1] != "")
                     {
                         if (UEFrulesFORcybranLOCATIONS[i] == "")
@@ -436,23 +491,50 @@ namespace SupComClient
                 }
                 else
                 {
+                    missionPos++;
                     UEFrulesFORcybranLOCATIONS.Add("");
                 }
             }
+            for (int i = 0; i < tempItems.Count; i++)
+            {
+                for (int j = tempItems[i].LevelPos - 1; j < UEFtoCYBRANlevelNAMES.Count; j++)
+                {
+                    SCItem thisThing = new SCItem(tempItems[i].name, UEFtoCYBRANlevelNAMES[j], j);
+                    AllRequeredItems.Add(thisThing);
+                }
+            }
+            AllRequeredRules.AddRange(tempRules);
+            tempItems = new List<SCItem>();
+            tempRules = new List<SCRule>();
             #endregion
             //Rules if it is Cybran
             #region Cybran on Cybran rules
             List<string> CYBRANrulesFORcybranLOCATIONS = new List<string>();
+            List<string> CYBRANtoCYBRANlevelNAMES = new List<string>();
+            missionPos = 1;
             for (int i = 0; i < CybranLocations.Count; i++)
             {
                 if (CybranLocations[i] != "-")
                 {
+                    string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":")) + " (Cybran)";
+                    if (!CYBRANtoCYBRANlevelNAMES.Contains(levelName))
+                    {
+                        CYBRANtoCYBRANlevelNAMES.Add(levelName);
+                    }
                     if (CybLoc.Cells[i + 2, 4].GetCellValue<string>() != null)
                     {
                         string rule = CybLoc.Cells[i + 2, 4].GetCellValue<string>();
+                        List<List<string>> rule2 = new List<List<string>>();
                         //First easy case: only 1 item needed
                         if (!rule.Contains(",") && !rule.Contains("/"))
                         {
+                            SCItem thisThing = new SCItem(rule, levelName, missionPos);
+                            if (!tempItems.Contains(thisThing))
+                            {
+                                tempItems.Add(thisThing);
+                            }
+                            rule2.Add(new List<string>());
+                            rule2[0].Add("\"" + rule + "\"");
                             rule = "Has(\"" + rule + "\")";
                         }
                         //Second case: only , or /
@@ -466,22 +548,25 @@ namespace SupComClient
                                 while (temp.Contains(","))
                                 {
                                     string a = temp.Substring(0, temp.IndexOf(","));
-                                    temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                    temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                     WhatItHas.Add(a);
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " & ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2.Add(new List<string>());
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                             //Second case B: only /
@@ -497,17 +582,20 @@ namespace SupComClient
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
+                                rule2.Add(new List<string>());
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " | ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[0].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                         }
@@ -519,7 +607,7 @@ namespace SupComClient
                             while (temp.Contains(","))
                             {
                                 string a = temp.Substring(0, temp.IndexOf(","));
-                                temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                 WhatItHas.Add(a);
                             }
                             WhatItHas.Add(temp);
@@ -527,6 +615,8 @@ namespace SupComClient
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
                                 List<string> WhatItAlsoHas = new List<string>();
+                                rule2.Add(new List<string>());
+                                int currentIndexOfRule2 = rule2.Count - 1;
                                 if (WhatItHas[j].Contains("/"))
                                 {
                                     isItSingle.Add(false);
@@ -539,17 +629,21 @@ namespace SupComClient
                                     }
                                     WhatItAlsoHas.Add(temp);
                                     WhatItHas[j] = "";
+                                    List<string> WhatItHas2 = new List<string>();
                                     for (int ij = 0; ij < WhatItAlsoHas.Count; ij++)
                                     {
-                                        while (WhatItAlsoHas[ij].Contains(" "))
+                                        WhatItHas2.Add(WhatItAlsoHas[ij]);
+                                        SCItem thisThing = new SCItem(WhatItAlsoHas[ij], levelName, missionPos);
+                                        if (!tempItems.Contains(thisThing))
                                         {
-                                            WhatItAlsoHas[ij] = WhatItAlsoHas[ij].Remove(WhatItAlsoHas[ij].IndexOf(" "), 1);
+                                            tempItems.Add(thisThing);
                                         }
                                         if (ij != 0)
                                         {
                                             WhatItHas[j] += " | ";
                                         }
                                         WhatItHas[j] += "Has(\"" + WhatItAlsoHas[ij] + "\")";
+                                        rule2[currentIndexOfRule2].Add("\"" + WhatItAlsoHas[ij] + "\"");
                                     }
                                 }
                                 else
@@ -560,9 +654,10 @@ namespace SupComClient
                             rule = "";
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
-                                while (WhatItHas[j].Contains(" ") && isItSingle[j])
+                                SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                if (!tempItems.Contains(thisThing) && isItSingle[j])
                                 {
-                                    WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                    tempItems.Add(thisThing);
                                 }
                                 if (j != 0)
                                 {
@@ -571,6 +666,7 @@ namespace SupComClient
                                 if (isItSingle[j])
                                 {
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                                 else
                                 {
@@ -579,12 +675,15 @@ namespace SupComClient
                             }
                         }
                         CYBRANrulesFORcybranLOCATIONS.Add(rule);
+                        for (int j = 0; j < rule2.Count; j++)
+                        {
+                            tempRules.Add(new SCRule(levelName, rule2[j]));
+                        }
                     }
                     else
                     {
                         CYBRANrulesFORcybranLOCATIONS.Add("");
                     }
-
                     if (i != 0 && CYBRANrulesFORcybranLOCATIONS[i - 1] != "")
                     {
                         if (CYBRANrulesFORcybranLOCATIONS[i] == "")
@@ -610,23 +709,50 @@ namespace SupComClient
                 }
                 else
                 {
+                    missionPos++;
                     CYBRANrulesFORcybranLOCATIONS.Add("");
                 }
             }
+            for (int i = 0; i < tempItems.Count; i++)
+            {
+                for (int j = tempItems[i].LevelPos - 1; j < CYBRANtoCYBRANlevelNAMES.Count; j++)
+                {
+                    SCItem thisThing = new SCItem(tempItems[i].name, CYBRANtoCYBRANlevelNAMES[j], j);
+                    AllRequeredItems.Add(thisThing);
+                }
+            }
+            AllRequeredRules.AddRange(tempRules);
+            tempItems = new List<SCItem>();
+            tempRules = new List<SCRule>();
             #endregion
             //Rules if it is Aeon
             #region Aeon on Cybran rules
             List<string> AEONrulesFORcybranLOCATIONS = new List<string>();
+            List<string> AEONtoCYBRANlevelNAMES = new List<string>();
+            missionPos = 1;
             for (int i = 0; i < CybranLocations.Count; i++)
             {
                 if (CybranLocations[i] != "-")
                 {
+                    string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":")) + " (Aeon)";
+                    if (!AEONtoCYBRANlevelNAMES.Contains(levelName))
+                    {
+                        AEONtoCYBRANlevelNAMES.Add(levelName);
+                    }
                     if (CybLoc.Cells[i + 2, 5].GetCellValue<string>() != null)
                     {
                         string rule = CybLoc.Cells[i + 2, 5].GetCellValue<string>();
+                        List<List<string>> rule2 = new List<List<string>>();
                         //First easy case: only 1 item needed
                         if (!rule.Contains(",") && !rule.Contains("/"))
                         {
+                            SCItem thisThing = new SCItem(rule, levelName, missionPos);
+                            if (!tempItems.Contains(thisThing))
+                            {
+                                tempItems.Add(thisThing);
+                            }
+                            rule2.Add(new List<string>());
+                            rule2[0].Add("\"" + rule + "\"");
                             rule = "Has(\"" + rule + "\")";
                         }
                         //Second case: only , or /
@@ -640,22 +766,25 @@ namespace SupComClient
                                 while (temp.Contains(","))
                                 {
                                     string a = temp.Substring(0, temp.IndexOf(","));
-                                    temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                    temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                     WhatItHas.Add(a);
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " & ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2.Add(new List<string>());
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                             //Second case B: only /
@@ -671,17 +800,20 @@ namespace SupComClient
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
+                                rule2.Add(new List<string>());
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " | ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[0].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                         }
@@ -693,7 +825,7 @@ namespace SupComClient
                             while (temp.Contains(","))
                             {
                                 string a = temp.Substring(0, temp.IndexOf(","));
-                                temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                 WhatItHas.Add(a);
                             }
                             WhatItHas.Add(temp);
@@ -701,6 +833,8 @@ namespace SupComClient
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
                                 List<string> WhatItAlsoHas = new List<string>();
+                                rule2.Add(new List<string>());
+                                int currentIndexOfRule2 = rule2.Count - 1;
                                 if (WhatItHas[j].Contains("/"))
                                 {
                                     isItSingle.Add(false);
@@ -713,17 +847,21 @@ namespace SupComClient
                                     }
                                     WhatItAlsoHas.Add(temp);
                                     WhatItHas[j] = "";
+                                    List<string> WhatItHas2 = new List<string>();
                                     for (int ij = 0; ij < WhatItAlsoHas.Count; ij++)
                                     {
-                                        while (WhatItAlsoHas[ij].Contains(" "))
+                                        WhatItHas2.Add(WhatItAlsoHas[ij]);
+                                        SCItem thisThing = new SCItem(WhatItAlsoHas[ij], levelName, missionPos);
+                                        if (!tempItems.Contains(thisThing))
                                         {
-                                            WhatItAlsoHas[ij] = WhatItAlsoHas[ij].Remove(WhatItAlsoHas[ij].IndexOf(" "), 1);
+                                            tempItems.Add(thisThing);
                                         }
                                         if (ij != 0)
                                         {
                                             WhatItHas[j] += " | ";
                                         }
                                         WhatItHas[j] += "Has(\"" + WhatItAlsoHas[ij] + "\")";
+                                        rule2[currentIndexOfRule2].Add("\"" + WhatItAlsoHas[ij] + "\"");
                                     }
                                 }
                                 else
@@ -734,9 +872,10 @@ namespace SupComClient
                             rule = "";
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
-                                while (WhatItHas[j].Contains(" ") && isItSingle[j])
+                                SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                if (!tempItems.Contains(thisThing) && isItSingle[j])
                                 {
-                                    WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                    tempItems.Add(thisThing);
                                 }
                                 if (j != 0)
                                 {
@@ -745,6 +884,7 @@ namespace SupComClient
                                 if (isItSingle[j])
                                 {
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                                 else
                                 {
@@ -753,12 +893,15 @@ namespace SupComClient
                             }
                         }
                         AEONrulesFORcybranLOCATIONS.Add(rule);
+                        for (int j = 0; j < rule2.Count; j++)
+                        {
+                            tempRules.Add(new SCRule(levelName, rule2[j]));
+                        }
                     }
                     else
                     {
                         AEONrulesFORcybranLOCATIONS.Add("");
                     }
-
                     if (i != 0 && AEONrulesFORcybranLOCATIONS[i - 1] != "")
                     {
                         if (AEONrulesFORcybranLOCATIONS[i] == "")
@@ -784,23 +927,50 @@ namespace SupComClient
                 }
                 else
                 {
+                    missionPos++;
                     AEONrulesFORcybranLOCATIONS.Add("");
                 }
             }
+            for (int i = 0; i < tempItems.Count; i++)
+            {
+                for (int j = tempItems[i].LevelPos - 1; j < AEONtoCYBRANlevelNAMES.Count; j++)
+                {
+                    SCItem thisThing = new SCItem(tempItems[i].name, AEONtoCYBRANlevelNAMES[j], j);
+                    AllRequeredItems.Add(thisThing);
+                }
+            }
+            AllRequeredRules.AddRange(tempRules);
+            tempItems = new List<SCItem>();
+            tempRules = new List<SCRule>();
             #endregion
             //Rules if it is Sera
             #region Sera on Cybran rules
             List<string> SERArulesFORcybranLOCATIONS = new List<string>();
+            List<string> SERAtoCYBRANlevelNAMES = new List<string>();
+            missionPos = 1;
             for (int i = 0; i < CybranLocations.Count; i++)
             {
                 if (CybranLocations[i] != "-")
                 {
+                    string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":")) + " (Sera)";
+                    if (!SERAtoCYBRANlevelNAMES.Contains(levelName))
+                    {
+                        SERAtoCYBRANlevelNAMES.Add(levelName);
+                    }
                     if (CybLoc.Cells[i + 2, 6].GetCellValue<string>() != null)
                     {
                         string rule = CybLoc.Cells[i + 2, 6].GetCellValue<string>();
+                        List<List<string>> rule2 = new List<List<string>>();
                         //First easy case: only 1 item needed
                         if (!rule.Contains(",") && !rule.Contains("/"))
                         {
+                            SCItem thisThing = new SCItem(rule, levelName, missionPos);
+                            if (!tempItems.Contains(thisThing))
+                            {
+                                tempItems.Add(thisThing);
+                            }
+                            rule2.Add(new List<string>());
+                            rule2[0].Add("\"" + rule + "\"");
                             rule = "Has(\"" + rule + "\")";
                         }
                         //Second case: only , or /
@@ -814,22 +984,25 @@ namespace SupComClient
                                 while (temp.Contains(","))
                                 {
                                     string a = temp.Substring(0, temp.IndexOf(","));
-                                    temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                    temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                     WhatItHas.Add(a);
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " & ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2.Add(new List<string>());
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                             //Second case B: only /
@@ -845,17 +1018,20 @@ namespace SupComClient
                                 }
                                 WhatItHas.Add(temp);
                                 rule = "";
+                                rule2.Add(new List<string>());
                                 for (int j = 0; j < WhatItHas.Count; j++)
                                 {
-                                    while (WhatItHas[j].Contains(" "))
+                                    SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                    if (!tempItems.Contains(thisThing))
                                     {
-                                        WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                        tempItems.Add(thisThing);
                                     }
                                     if (j != 0)
                                     {
                                         rule += " | ";
                                     }
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[0].Add("\"" + WhatItHas[j] + "\"");
                                 }
                             }
                         }
@@ -867,7 +1043,7 @@ namespace SupComClient
                             while (temp.Contains(","))
                             {
                                 string a = temp.Substring(0, temp.IndexOf(","));
-                                temp = temp.Remove(0, temp.IndexOf(",") + 1);
+                                temp = temp.Remove(0, temp.IndexOf(",") + 2);
                                 WhatItHas.Add(a);
                             }
                             WhatItHas.Add(temp);
@@ -875,6 +1051,8 @@ namespace SupComClient
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
                                 List<string> WhatItAlsoHas = new List<string>();
+                                rule2.Add(new List<string>());
+                                int currentIndexOfRule2 = rule2.Count - 1;
                                 if (WhatItHas[j].Contains("/"))
                                 {
                                     isItSingle.Add(false);
@@ -887,17 +1065,21 @@ namespace SupComClient
                                     }
                                     WhatItAlsoHas.Add(temp);
                                     WhatItHas[j] = "";
+                                    List<string> WhatItHas2 = new List<string>();
                                     for (int ij = 0; ij < WhatItAlsoHas.Count; ij++)
                                     {
-                                        while (WhatItAlsoHas[ij].Contains(" "))
+                                        WhatItHas2.Add(WhatItAlsoHas[ij]);
+                                        SCItem thisThing = new SCItem(WhatItAlsoHas[ij], levelName, missionPos);
+                                        if (!tempItems.Contains(thisThing))
                                         {
-                                            WhatItAlsoHas[ij] = WhatItAlsoHas[ij].Remove(WhatItAlsoHas[ij].IndexOf(" "), 1);
+                                            tempItems.Add(thisThing);
                                         }
                                         if (ij != 0)
                                         {
                                             WhatItHas[j] += " | ";
                                         }
                                         WhatItHas[j] += "Has(\"" + WhatItAlsoHas[ij] + "\")";
+                                        rule2[currentIndexOfRule2].Add("\"" + WhatItAlsoHas[ij] + "\"");
                                     }
                                 }
                                 else
@@ -908,9 +1090,10 @@ namespace SupComClient
                             rule = "";
                             for (int j = 0; j < WhatItHas.Count; j++)
                             {
-                                while (WhatItHas[j].Contains(" ") && isItSingle[j])
+                                SCItem thisThing = new SCItem(WhatItHas[j], levelName, missionPos);
+                                if (!tempItems.Contains(thisThing) && isItSingle[j])
                                 {
-                                    WhatItHas[j] = WhatItHas[j].Remove(WhatItHas[j].IndexOf(" "), 1);
+                                    tempItems.Add(thisThing);
                                 }
                                 if (j != 0)
                                 {
@@ -919,6 +1102,7 @@ namespace SupComClient
                                 if (isItSingle[j])
                                 {
                                     rule += "Has(\"" + WhatItHas[j] + "\")";
+                                    rule2[j].Add("\"" + WhatItHas[j] + "\"");
                                 }
                                 else
                                 {
@@ -927,12 +1111,15 @@ namespace SupComClient
                             }
                         }
                         SERArulesFORcybranLOCATIONS.Add(rule);
+                        for (int j = 0; j < rule2.Count; j++)
+                        {
+                            tempRules.Add(new SCRule(levelName, rule2[j]));
+                        }
                     }
                     else
                     {
                         SERArulesFORcybranLOCATIONS.Add("");
                     }
-
                     if (i != 0 && SERArulesFORcybranLOCATIONS[i - 1] != "")
                     {
                         if (SERArulesFORcybranLOCATIONS[i] == "")
@@ -958,9 +1145,19 @@ namespace SupComClient
                 }
                 else
                 {
+                    missionPos++;
                     SERArulesFORcybranLOCATIONS.Add("");
                 }
             }
+            for (int i = 0; i < tempItems.Count; i++)
+            {
+                for (int j = tempItems[i].LevelPos - 1; j < SERAtoCYBRANlevelNAMES.Count; j++)
+                {
+                    SCItem thisThing = new SCItem(tempItems[i].name, SERAtoCYBRANlevelNAMES[j], j);
+                    AllRequeredItems.Add(thisThing);
+                }
+            }
+            AllRequeredRules.AddRange(tempRules);
             #endregion
 
             #endregion
@@ -1238,81 +1435,6 @@ namespace SupComClient
 
             outputString += "def makeEverything(world: SupComWorld) -> None:" + Environment.NewLine + Environment.NewLine;
 
-            #region create regions
-
-            //Write cybran locations
-            outputString += "    " + "DictionaryOfRegions = {}" + Environment.NewLine;
-            List<string> CybranRegions = new List<string>();
-            mission = 1;
-            localID = 0;
-            for (int j = 0; j < 4; j++)
-            {
-                string faction = "";
-                switch (j)
-                {
-                    case 0:
-                        faction = "UEF";
-                        break;
-                    case 1:
-                        faction = "Cybran";
-                        break;
-                    case 2:
-                        faction = "Aeon";
-                        break;
-                    case 3:
-                        faction = "Sera";
-                        break;
-                    default:
-                        break;
-                }
-                mission = 1;
-                localID = 0;
-                for (int i = 0; i < CybranLocations.Count; i++)
-                {
-                    if (CybranLocations[i] == "-")
-                    {
-                        mission += 1;
-                        localID = 0;
-                    }
-                    else
-                    {
-                        string RegionName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":"));
-                        while (RegionName.Contains(" "))
-                        {
-                            RegionName = RegionName.Remove(RegionName.IndexOf(" "), 1);
-                        }
-                        string current_location = CybranLocations[i] + " (" + faction + ")";
-                        string objID = "2" + (j + 1).ToString();
-                        if (mission < 10)
-                        {
-                            objID += "0";
-                        }
-                        objID += mission.ToString();
-                        if (localID < 10)
-                        {
-                            objID += "0";
-                        }
-                        objID += localID;
-                        string ThisExactRegion = RegionName + faction + localID.ToString();
-                        outputString += "    " + ThisExactRegion + " = Region(\"" + CybranLocations[i] + " (" + faction + ")\", world.player, world.multiworld)" + Environment.NewLine;
-                        outputString += "    " + "DictionaryOfRegions[\"" + CybranLocations[i] + " (" + faction + ")\"] = " + ThisExactRegion + Environment.NewLine;
-                        outputString += "    " + "for i in range(0, world.options.locamount):" + Environment.NewLine;
-                        outputString += "    " + "    index = i + 1" + Environment.NewLine;
-                        outputString += "    " + "    lname = \"" + CybranLocations[i] + " (" + faction + ") \" + str(index)" + Environment.NewLine;
-                        outputString += "    " + "    objID = \"" + objID + "\"" + Environment.NewLine;
-                        outputString += "    " + "    if i < 10:" + Environment.NewLine;
-                        outputString += "    " + "        objID = objID + \"0\"" + Environment.NewLine;
-                        outputString += "    " + "    objID = objID + str(i)" + Environment.NewLine;
-                        outputString += "    " + "    " + RegionName + faction + localID.ToString() + ".add_locations({lname: int(objID)}, SupComLocation)" + Environment.NewLine + Environment.NewLine;
-
-                        localID += 1;
-                    }
-                }
-            }
-            
-            outputString += Environment.NewLine;
-            #endregion
-
             #region level grid
 
             #region create list of levels here
@@ -1362,6 +1484,7 @@ namespace SupComClient
             //During grid creation 1 level must be tier 1, 1 level must be tier 4 and 2 levels must be tier 2
             //Everithing else is thrown from tier 3 list which contains every single level enabled
 
+            outputString += "    " + "levelsTier1FOREVER = []" + Environment.NewLine;
             outputString += "    " + "levelsTier1 = []" + Environment.NewLine;
             outputString += "    " + "levelsTier2 = []" + Environment.NewLine;
             outputString += "    " + "levelsTier3 = []" + Environment.NewLine;
@@ -1377,24 +1500,28 @@ namespace SupComClient
                     if (FullListOfLevels[i].default_faction == 0)
                     {
                         outputString += "    " + "    levelsTier1.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                     }
                     else if (FullListOfLevels[i].default_faction == 1)
                     {
                         outputString += "    " + "    levelsTier1.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                     }
                     else if (FullListOfLevels[i].default_faction == 2)
                     {
                         outputString += "    " + "    levelsTier1.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                     }
                     else
                     {
                         outputString += "    " + "    levelsTier1.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                         outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                     }
@@ -1413,17 +1540,17 @@ namespace SupComClient
                     else if (FullListOfLevels[i].default_faction == 1)
                     {
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
-                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                     }
                     else if (FullListOfLevels[i].default_faction == 2)
                     {
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
-                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                     }
                     else
                     {
                         outputString += "    " + "    levelsTier2.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
-                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                        outputString += "    " + "    levelsTier3.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                     }
                 }
 
@@ -1489,22 +1616,26 @@ namespace SupComClient
                 if (FullListOfLevels[i].tier == 1)
                 {
                     outputString += "    " + "    temp = world.random.randrange(0, len(world.options.faction.value))" + Environment.NewLine;
-                    outputString += "    " + "    if world.options.faction.value[temp] == \"uef\":" + Environment.NewLine + "    " + "        levelsTier1.append(\"" +
-                        FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine + "    " + "        levelsTier2.append(\"" +
-                        FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine + "    " + "        levelsTier3.append(\"" +
-                        FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine + 
-                        "    " + "    elif  world.options.faction.value[temp] == \"cybran\":" + Environment.NewLine + "    " + "        levelsTier1.append(\"" +
-                        FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine + "    " + "        levelsTier2.append(\"" +
-                        FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine + "    " + "        levelsTier3.append(\"" +
-                        FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine +
-                        "    " + "    elif  world.options.faction.value[temp] == \"aeon\":" + Environment.NewLine + "    " + "        levelsTier1.append(\"" +
-                        FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine + "    " + "        levelsTier2.append(\"" +
-                        FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine + "    " + "        levelsTier3.append(\"" +
-                        FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine +
-                        "    " + "    elif  world.options.faction.value[temp] == \"sera\":" + Environment.NewLine + "    " + "        levelsTier1.append(\"" +
-                        FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine + "    " + "        levelsTier2.append(\"" +
-                        FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine + "    " + "        levelsTier3.append(\"" +
-                        FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                    outputString += "    " + "    if world.options.faction.value[temp] == \"uef\":" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                    outputString += "    " + "    elif  world.options.faction.value[temp] == \"cybran\":" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                    outputString += "    " + "    elif  world.options.faction.value[temp] == \"aeon\":" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                    outputString += "    " + "    elif  world.options.faction.value[temp] == \"sera\":" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                 }
             }
             for (int i = 0; i < FullListOfLevels.Count; i++)
@@ -1571,18 +1702,22 @@ namespace SupComClient
                 {
                     outputString += "    " + "    if \"uef\" in world.options.faction:" + Environment.NewLine;
                     outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (UEF)\")" + Environment.NewLine;
                     outputString += "    " + "    if \"cybran\" in world.options.faction:" + Environment.NewLine;
                     outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Cybran)\")" + Environment.NewLine;
                     outputString += "    " + "    if \"aeon\" in world.options.faction:" + Environment.NewLine;
                     outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Aeon)\")" + Environment.NewLine;
                     outputString += "    " + "    if \"sera\" in world.options.faction:" + Environment.NewLine;
                     outputString += "    " + "        levelsTier1.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
+                    outputString += "    " + "        levelsTier1FOREVER.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier2.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                     outputString += "    " + "        levelsTier3.append(\"" + FullListOfLevels[i].name + " (Sera)\")" + Environment.NewLine;
                 }
@@ -1645,6 +1780,7 @@ namespace SupComClient
             //Now to grid generation
             //First thing that must be done is calculation of closest possible height and width
             outputString += Environment.NewLine + "    " + "amountOfLevels = len(levelsTier3)" + Environment.NewLine;
+            outputString += "    " + "AllLevelsListToCheckRegionCreation = []" + Environment.NewLine;
             outputString += "    " + "possibleAnswers = []" + Environment.NewLine;
             outputString += "    " + "for i in range(1, amountOfLevels + 1):" + Environment.NewLine;
             outputString += "    " + "    if amountOfLevels % i == 0:" + Environment.NewLine;
@@ -1658,22 +1794,26 @@ namespace SupComClient
 
             outputString += "    " + "temp = world.random.randrange(0,len(levelsTier1))" + Environment.NewLine;
             outputString += "    " + "THE_GRID[0][0] = levelsTier1[temp]" + Environment.NewLine;
+            outputString += "    " + "AllLevelsListToCheckRegionCreation.append(levelsTier1[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier3.remove(levelsTier1[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier2.remove(levelsTier1[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier1.remove(levelsTier1[temp])" +  Environment.NewLine;
             outputString += "    " + "temp = world.random.randrange(0,len(levelsTier2))" + Environment.NewLine;
 
             outputString += "    " + "THE_GRID[0][1] = levelsTier2[temp]" + Environment.NewLine;
+            outputString += "    " + "AllLevelsListToCheckRegionCreation.append(levelsTier2[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier3.remove(levelsTier2[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier2.remove(levelsTier2[temp])" +  Environment.NewLine;
             outputString += "    " + "temp = world.random.randrange(0,len(levelsTier2))" +  Environment.NewLine;
 
             outputString += "    " + "THE_GRID[1][0] = levelsTier2[temp]" + Environment.NewLine;
+            outputString += "    " + "AllLevelsListToCheckRegionCreation.append(levelsTier2[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier3.remove(levelsTier2[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier2.remove(levelsTier2[temp])" +  Environment.NewLine;
             outputString += "    " + "temp = world.random.randrange(0,len(levelsTier4))" +  Environment.NewLine;
 
             outputString += "    " + "THE_GRID[Width - 1][Height - 1] = levelsTier4[temp]" + Environment.NewLine;
+            outputString += "    " + "AllLevelsListToCheckRegionCreation.append(levelsTier4[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier3.remove(levelsTier4[temp])" + Environment.NewLine;
             outputString += "    " + "levelsTier4.remove(levelsTier4[temp])" +  Environment.NewLine + Environment.NewLine;
 
@@ -1683,10 +1823,90 @@ namespace SupComClient
             outputString += "    " + "        if CheckFilled:" + Environment.NewLine;
             outputString += "    " + "            temp = world.random.randrange(0,len(levelsTier3))" +  Environment.NewLine;
             outputString += "    " + "            THE_GRID[i][j] = levelsTier3[temp]" + Environment.NewLine;
+            outputString += "    " + "            AllLevelsListToCheckRegionCreation.append(levelsTier3[temp])" + Environment.NewLine;
             outputString += "    " + "            levelsTier3.remove(levelsTier3[temp])" +   Environment.NewLine + Environment.NewLine;
+
+            outputString += "    " + "world.THE_GRID = THE_GRID" + Environment.NewLine + Environment.NewLine;
 
             #endregion
 
+            #endregion
+
+            #region create regions
+
+            //Write cybran locations
+            outputString += "    " + "DictionaryOfRegions = {}" + Environment.NewLine;
+            List<string> CybranRegions = new List<string>();
+            mission = 1;
+            localID = 0;
+            for (int j = 0; j < 4; j++)
+            {
+                string faction = "";
+                switch (j)
+                {
+                    case 0:
+                        faction = "UEF";
+                        break;
+                    case 1:
+                        faction = "Cybran";
+                        break;
+                    case 2:
+                        faction = "Aeon";
+                        break;
+                    case 3:
+                        faction = "Sera";
+                        break;
+                    default:
+                        break;
+                }
+                mission = 1;
+                localID = 0;
+                for (int i = 0; i < CybranLocations.Count; i++)
+                {
+                    if (CybranLocations[i] == "-")
+                    {
+                        mission += 1;
+                        localID = 0;
+                    }
+                    else
+                    {
+                        string RegionName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":"));
+                        while (RegionName.Contains(" "))
+                        {
+                            RegionName = RegionName.Remove(RegionName.IndexOf(" "), 1);
+                        }
+                        string current_location = CybranLocations[i] + " (" + faction + ")";
+                        string objID = "2" + (j + 1).ToString();
+                        if (mission < 10)
+                        {
+                            objID += "0";
+                        }
+                        objID += mission.ToString();
+                        if (localID < 10)
+                        {
+                            objID += "0";
+                        }
+                        objID += localID;
+                        string levelName = CybranLocations[i].Substring(0, CybranLocations[i].IndexOf(":")) + " (" + faction + ")";
+                        string ThisExactRegion = RegionName + faction + localID.ToString();
+                        outputString += "    " + "if \"" + levelName + "\" in AllLevelsListToCheckRegionCreation:" + Environment.NewLine;
+                        outputString += "    " + "    " + ThisExactRegion + " = Region(\"" + CybranLocations[i] + " (" + faction + ")\", world.player, world.multiworld)" + Environment.NewLine;
+                        outputString += "    " + "    " + "DictionaryOfRegions[\"" + CybranLocations[i] + " (" + faction + ")\"] = " + ThisExactRegion + Environment.NewLine;
+                        outputString += "    " + "    " + "for i in range(0, world.options.locamount):" + Environment.NewLine;
+                        outputString += "    " + "    " + "    index = i + 1" + Environment.NewLine;
+                        outputString += "    " + "    " + "    lname = \"" + CybranLocations[i] + " (" + faction + ") \" + str(index)" + Environment.NewLine;
+                        outputString += "    " + "    " + "    objID = \"" + objID + "\"" + Environment.NewLine;
+                        outputString += "    " + "    " + "    if i < 10:" + Environment.NewLine;
+                        outputString += "    " + "    " + "        objID = objID + \"0\"" + Environment.NewLine;
+                        outputString += "    " + "    " + "    objID = objID + str(i)" + Environment.NewLine;
+                        outputString += "    " + "    " + "    " + RegionName + faction + localID.ToString() + ".add_locations({lname: int(objID)}, SupComLocation)" + Environment.NewLine + Environment.NewLine;
+
+                        localID += 1;
+                    }
+                }
+            }
+
+            outputString += Environment.NewLine;
             #endregion
 
             #region rules
@@ -1831,7 +2051,9 @@ namespace SupComClient
                             {
                                 RegionName = RegionName.Remove(RegionName.IndexOf(" "), 1);
                             }
-                            outputString += "    " + RegionName + faction + (j - 1).ToString() + ".connect(" +
+                            string CurrentLevelName = FullListOfLevels[i].name + " (" + faction + ")";
+                            outputString += "    " + "if \"" + CurrentLevelName + "\" in AllLevelsListToCheckRegionCreation:" + Environment.NewLine;
+                            outputString += "    " + "    " + RegionName + faction + (j - 1).ToString() + ".connect(" +
                                 RegionName + faction + j.ToString() + ", \"e" + indexOfEntrance.ToString() + "\", TheCompleteListOfRulesForEverySingleRegion[\"" +
                                 FullListOfLevels[i].objectives[j] + " (" + faction + ")" + "\"])" + Environment.NewLine;
                             indexOfEntrance++;
@@ -1843,7 +2065,10 @@ namespace SupComClient
                             {
                                 RegionName = RegionName.Remove(RegionName.IndexOf(" "), 1);
                             }
-                            outputString += "    " + RegionName + faction + (j - 1).ToString() + ".connect(" +
+
+                            string CurrentLevelName = FullListOfLevels[i].name + " (" + faction + ")";
+                            outputString += "    " + "if \"" + CurrentLevelName + "\" in AllLevelsListToCheckRegionCreation:" + Environment.NewLine;
+                            outputString += "    " + "    " + RegionName + faction + (j - 1).ToString() + ".connect(" +
                                 RegionName + faction + j.ToString() + ", \"e" + indexOfEntrance.ToString() + "\")" + Environment.NewLine;
                             indexOfEntrance++;
                         }
@@ -1861,50 +2086,52 @@ namespace SupComClient
             outputString += "    " + "        if CheckFilled:" + Environment.NewLine;
             // i - 1
             outputString += "    " + "            if i > 0:" + Environment.NewLine;
-            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]]) - 1])" + 
-                Environment.NewLine;
-            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" +
-                Environment.NewLine;
+            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]]) - 1])" + Environment.NewLine;
+            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" + Environment.NewLine;
             outputString += "    " + "                tempSTR = \"e\" + str(indexOfEntrance)" + Environment.NewLine;
-            outputString += "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" + 
-                Environment.NewLine;
+            outputString += "    " + "                if not THE_GRID[i][j] in levelsTier1FOREVER:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" + Environment.NewLine;
+            outputString += "    " + "                else:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR)" + Environment.NewLine;
             outputString += "    " + "                indexOfEntrance = 1 + indexOfEntrance" + Environment.NewLine;
             // j - 1
             outputString += "    " + "            if j > 0:" + Environment.NewLine;
-            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]]) - 1])" +
-                Environment.NewLine;
-            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" +
-                Environment.NewLine;
+            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]]) - 1])" + Environment.NewLine;
+            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" +  Environment.NewLine;
             outputString += "    " + "                tempSTR = \"e\" + str(indexOfEntrance)" + Environment.NewLine;
-            outputString += "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" +
-                Environment.NewLine;
+            outputString += "    " + "                if not THE_GRID[i][j] in levelsTier1FOREVER:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" + Environment.NewLine;
+            outputString += "    " + "                else:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR)" + Environment.NewLine;
             outputString += "    " + "                indexOfEntrance = 1 + indexOfEntrance" + Environment.NewLine;
             // i + 1
             outputString += "    " + "            if i < Width - 1:" + Environment.NewLine;
-            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]]) - 1])" +
-                Environment.NewLine;
-            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" +
-                Environment.NewLine;
+            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]]) - 1])" + Environment.NewLine;
+            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" + Environment.NewLine;
             outputString += "    " + "                tempSTR = \"e\" + str(indexOfEntrance)" + Environment.NewLine;
-            outputString += "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" +
-                Environment.NewLine;
+            outputString += "    " + "                if not THE_GRID[i][j] in levelsTier1FOREVER:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" + Environment.NewLine;
+            outputString += "    " + "                else:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR)" + Environment.NewLine;
             outputString += "    " + "                indexOfEntrance = 1 + indexOfEntrance" + Environment.NewLine;
             // j + 1
             outputString += "    " + "            if j < Height - 1:" + Environment.NewLine;
-            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]]) - 1])" +
-                Environment.NewLine;
-            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" +
-                Environment.NewLine;
+            outputString += "    " + "                regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]]) - 1])" + Environment.NewLine;
+            outputString += "    " + "                regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])" + Environment.NewLine;
             outputString += "    " + "                tempSTR = \"e\" + str(indexOfEntrance)" + Environment.NewLine;
-            outputString += "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" +
-                Environment.NewLine;
+            outputString += "    " + "                if not THE_GRID[i][j] in levelsTier1FOREVER:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])" + Environment.NewLine;
+            outputString += "    " + "                else:" + Environment.NewLine;
+            outputString += "    " + "    " + "                regionLast.connect(regionFirst, tempSTR)" + Environment.NewLine;
             outputString += "    " + "                indexOfEntrance = 1 + indexOfEntrance" + Environment.NewLine;
             outputString += Environment.NewLine;
             #endregion
 
             #endregion
 
-            #region FINAL COUNTDOWN FINALLY
+            #region Final region
+
+            #region included factions
             //Check which factions we actually got randomised
             outputString += "    " + "listOfFactionsThatActuallyExist = []" + Environment.NewLine;
             outputString += "    " + "for i in range(Width):" + Environment.NewLine;
@@ -1916,9 +2143,73 @@ namespace SupComClient
             outputString += "    " + "        if \"Aeon\" in THE_GRID[i][j] and not \"aeon\" in listOfFactionsThatActuallyExist:" + Environment.NewLine;
             outputString += "    " + "            listOfFactionsThatActuallyExist.append(\"aeon\")" + Environment.NewLine;
             outputString += "    " + "        if \"Sera\" in THE_GRID[i][j] and not \"sera\" in listOfFactionsThatActuallyExist:" + Environment.NewLine;
-            outputString += "    " + "            listOfFactionsThatActuallyExist.append(\"sera\")" + Environment.NewLine;
+            outputString += "    " + "            listOfFactionsThatActuallyExist.append(\"sera\")" + Environment.NewLine + Environment.NewLine;
+            #endregion
+
+            #region progression items
+
+            #region make a list of units needed on each possible level
+            outputString += "    " + "PossibleItemList = []" + Environment.NewLine;
+            for (int factionIndex = 0; factionIndex < 4; factionIndex++)
+            {
+                string faction = "";
+                switch (factionIndex)
+                {
+                    case 0:
+                        faction = "UEF";
+                        break;
+                    case 1:
+                        faction = "Cybran";
+                        break;
+                    case 2:
+                        faction = "Aeon";
+                        break;
+                    case 3:
+                        faction = "Sera";
+                        break;
+                    default:
+                        break;
+                }
+                for (int i = 0; i < levelNAMES.Count; i++)
+                {
+                    for (int j = 0; j < AllRequeredRules.Count; j++)
+                    {
+                        if (AllRequeredRules[j].Level == levelNAMES[i] + " (" + faction + ")")
+                        {
+                            for (int idk_another_index = i; idk_another_index < levelNAMES.Count; idk_another_index++)
+                            {
+                                string curLevName = levelNAMES[idk_another_index];
+                                while (curLevName.Contains(" "))
+                                {
+                                    curLevName = curLevName.Remove(curLevName.IndexOf(" "), 1);
+                                }
+                                outputString += "    " + "if \"" + levelNAMES[idk_another_index] + " (" + faction + ")\" in AllLevelsListToCheckRegionCreation:" + Environment.NewLine;
+                                outputString += "    " + "    " + curLevName + faction + "PossibleUnitList = [";
+                                for (int ruleIndex = 0; ruleIndex < AllRequeredRules[j].Sets.Count; ruleIndex++)
+                                {
+                                    outputString += AllRequeredRules[j].Sets[ruleIndex];
+                                    if (ruleIndex != AllRequeredRules[j].Sets.Count - 1)
+                                    {
+                                        outputString += ", ";
+                                    }
+                                }
+                                outputString += "]" + Environment.NewLine;
+                                outputString += "    " + "    " + "temp = world.random.randrange(0, len(" + curLevName + faction + "PossibleUnitList))" + Environment.NewLine;
+                                outputString += "    " + "    " + "if not " + curLevName + faction + "PossibleUnitList[temp] in PossibleItemList:" + Environment.NewLine;
+                                outputString += "    " + "    " + "    " + "PossibleItemList.append(" + curLevName + faction + "PossibleUnitList[temp])" + Environment.NewLine + Environment.NewLine;
+                            }
+                        }
+                    }
+                }
+            }
+            outputString += "    " + "print(PossibleItemList)" + Environment.NewLine + Environment.NewLine;
+            #endregion
+
+            #endregion
+
+            #region useful items
             //make a list of ALL items that should be included based on factions we got
-            outputString += "    " + "number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))" + Environment.NewLine;
+            outputString += "    " + "number_of_unfilled_locations = len(ListOfUsedRegions) * world.options.locamount - len(PossibleItemList)" + Environment.NewLine;
             outputString += "    " + "ItemsFromFactions = []" + Environment.NewLine;
             outputString += "    " + "if \"uef\" in listOfFactionsThatActuallyExist:" + Environment.NewLine;
             outputString += "    " + "    ItemsFromFactions.extend(uef_items)" + Environment.NewLine;
@@ -1927,25 +2218,44 @@ namespace SupComClient
             outputString += "    " + "if \"aeon\" in listOfFactionsThatActuallyExist:" + Environment.NewLine;
             outputString += "    " + "    ItemsFromFactions.extend(aeon_items)" + Environment.NewLine;
             outputString += "    " + "if \"sera\" in listOfFactionsThatActuallyExist:" + Environment.NewLine;
-            outputString += "    " + "    ItemsFromFactions.extend(sera_items)" + Environment.NewLine;
-            outputString += "    " + "itempool = []" + Environment.NewLine;
+            outputString += "    " + "    ItemsFromFactions.extend(sera_items)" + Environment.NewLine + Environment.NewLine;
+            outputString += "    " + "for i in range(len(PossibleItemList)):" + Environment.NewLine;
+            outputString += "    " + "    " + "if PossibleItemList[i] in ItemsFromFactions:" + Environment.NewLine;
+            outputString += "    " + "    " + "    " + "ItemsFromFactions.remove(PossibleItemList[i])" + Environment.NewLine + Environment.NewLine;
+
             outputString += "    " + "if len(ItemsFromFactions) >= number_of_unfilled_locations:" + Environment.NewLine;
-            outputString += "    " + "    itempool.extend(world.random.sample(ItemsFromFactions, number_of_unfilled_locations))" + Environment.NewLine;
+            outputString += "    " + "    PossibleItemList.extend(world.random.sample(ItemsFromFactions, number_of_unfilled_locations))" + Environment.NewLine;
             outputString += "    " + "else:" + Environment.NewLine;
-            outputString += "    " + "    itempool.extend(ItemsFromFactions)" + Environment.NewLine;
+            outputString += "    " + "    PossibleItemList.extend(ItemsFromFactions)" + Environment.NewLine;
             outputString += "    " + "    for i in range(number_of_unfilled_locations - len(ItemsFromFactions)):" + Environment.NewLine;
+            #endregion
+
+            #region filler items
             //THIS IS THE PLACE THAT ADDS FILLER IF I AM GOING TO IMPLEMENT IT
-            outputString += "    " + "        itempool.append(\"Nothing\")" + Environment.NewLine + Environment.NewLine;
+            outputString += "    " + "        PossibleItemList.append(\"Nothing\")" + Environment.NewLine + Environment.NewLine;
             outputString += "    " + "itempoolREAL = []" + Environment.NewLine;
-            outputString += "    " + "for i in range(len(itempool)):" + Environment.NewLine ;
-            outputString += "    " + "    " + "itempoolREAL.append(world.create_item(itempool[i]))" + Environment.NewLine + Environment.NewLine;
+            outputString += "    " + "for i in range(len(PossibleItemList)):" + Environment.NewLine ;
+            outputString += "    " + "    " + "itempoolREAL.append(world.create_item(PossibleItemList[i]))" + Environment.NewLine + Environment.NewLine;
             outputString += "    " + "world.multiworld.itempool += itempoolREAL" + Environment.NewLine + Environment.NewLine;
             outputString += "    " + "world.origin_region_name = TotalListOfTtotallyLevels[THE_GRID[0][0]][0]" + Environment.NewLine + Environment.NewLine;
 
+            outputString += "    " + "print(len(ListOfUsedRegions) * world.options.locamount)" + Environment.NewLine;
+            outputString += "    " + "print(len(PossibleItemList))" + Environment.NewLine + Environment.NewLine;
 
+            #endregion
+
+            #region set goal to make balls
+            outputString += "    " + "final_boss_room = world.get_region(TotalListOfTtotallyLevels[THE_GRID[Width - 1][Height - 1]][len(TotalListOfTtotallyLevels[THE_GRID[Width - 1][Height - 1]]) - 1])" + Environment.NewLine;
+            outputString += "    " + "final_boss_room.add_event(\"Final Boss Defeated\", \"Victory\", location_type=SupComLocation, item_type=SupComItem)" + Environment.NewLine;
+            outputString += "    " + "world.set_completion_rule(Has(\"Victory\"))" + Environment.NewLine;
+            #endregion
+
+            #region some shit needed to make all work
             outputString += "def create_item_with_correct_classification(world: SupComWorld, name: str) -> SupComItem:" + Environment.NewLine;
             outputString += "    classification = DEFAULT_ITEM_CLASSIFICATIONS[name]" + Environment.NewLine;
             outputString += "    return SupComItem(name, classification, ITEM_NAME_TO_ID[name], world.player)" + Environment.NewLine;
+            #endregion
+
             #endregion
 
             #endregion
@@ -1973,6 +2283,28 @@ namespace SupComClient
             Cybranrules = CRules;
             Aeonrules = ARules;
             Serarules = SRules;
+        }
+    }
+    public class SCItem
+    {
+        public string name;
+        public string ReqLevel;
+        public int LevelPos;
+        public SCItem(string NAME, string LEV, int POS)
+        {
+            name = NAME;
+            ReqLevel = LEV;
+            LevelPos = POS;
+        }
+    }
+    public class SCRule
+    {
+        public string Level;
+        public List<string> Sets;
+        public SCRule(string NAME, List<string> RUL)
+        {
+            Level = NAME;
+            Sets = RUL;
         }
     }
 }
