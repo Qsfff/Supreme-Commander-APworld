@@ -29,2572 +29,20 @@ THE_GRID = []
 
 def makeEverything(world: SupComWorld) -> None:
 
-    DictionaryOfRegions = {}
-    LiberationUEF0 = Region("Liberation: Build mass (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build mass (UEF)"] = LiberationUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build mass (UEF) " + str(index)
-        objID = "210100"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF1 = Region("Liberation: Build power (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build power (UEF)"] = LiberationUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build power (UEF) " + str(index)
-        objID = "210101"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF2 = Region("Liberation: Build air factory (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build air factory (UEF)"] = LiberationUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build air factory (UEF) " + str(index)
-        objID = "210102"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF3 = Region("Liberation: Build bombers (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build bombers (UEF)"] = LiberationUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build bombers (UEF) " + str(index)
-        objID = "210103"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF4 = Region("Liberation: Destroy radar defenders (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy radar defenders (UEF)"] = LiberationUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy radar defenders (UEF) " + str(index)
-        objID = "210104"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF5 = Region("Liberation: Capture radars (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Capture radars (UEF)"] = LiberationUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Capture radars (UEF) " + str(index)
-        objID = "210105"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF6 = Region("Liberation: Destroy mex (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy mex (UEF)"] = LiberationUEF6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy mex (UEF) " + str(index)
-        objID = "210106"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF6.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF7 = Region("Liberation: Destroy UEF defences (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF defences (UEF)"] = LiberationUEF7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF defences (UEF) " + str(index)
-        objID = "210107"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF7.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF8 = Region("Liberation: Destroy UEF patrols (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF patrols (UEF)"] = LiberationUEF8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF patrols (UEF) " + str(index)
-        objID = "210108"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF8.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF9 = Region("Liberation: Destroy UEF base defenders (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base defenders (UEF)"] = LiberationUEF9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base defenders (UEF) " + str(index)
-        objID = "210109"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF9.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF10 = Region("Liberation: Destroy UEF base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base (UEF)"] = LiberationUEF10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base (UEF) " + str(index)
-        objID = "210110"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF10.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationUEF11 = Region("Liberation: Kill Aeon Commander (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Kill Aeon Commander (UEF)"] = LiberationUEF11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Kill Aeon Commander (UEF) " + str(index)
-        objID = "210111"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationUEF11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF0 = Region("Artifact: Destroy first village defenders (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first village defenders (UEF)"] = ArtifactUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first village defenders (UEF) " + str(index)
-        objID = "210200"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF1 = Region("Artifact: Destroy first temple (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first temple (UEF)"] = ArtifactUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first temple (UEF) " + str(index)
-        objID = "210201"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF2 = Region("Artifact: Protect first artifact (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect first artifact (UEF)"] = ArtifactUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect first artifact (UEF) " + str(index)
-        objID = "210202"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF3 = Region("Artifact: Find second artifact (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Find second artifact (UEF)"] = ArtifactUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Find second artifact (UEF) " + str(index)
-        objID = "210203"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF4 = Region("Artifact: Destroy Aeon reinforcements (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (UEF)"] = ArtifactUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy Aeon reinforcements (UEF) " + str(index)
-        objID = "210204"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF5 = Region("Artifact: Protect second artifact (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect second artifact (UEF)"] = ArtifactUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect second artifact (UEF) " + str(index)
-        objID = "210205"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF6 = Region("Artifact: Defend from Aeon attack (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Defend from Aeon attack (UEF)"] = ArtifactUEF6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Defend from Aeon attack (UEF) " + str(index)
-        objID = "210206"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF6.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF7 = Region("Artifact: Destroy eastern base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy eastern base (UEF)"] = ArtifactUEF7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy eastern base (UEF) " + str(index)
-        objID = "210207"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF7.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF8 = Region("Artifact: Destroy navy base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy navy base (UEF)"] = ArtifactUEF8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy navy base (UEF) " + str(index)
-        objID = "210208"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF8.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF9 = Region("Artifact: Protect third artifact (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect third artifact (UEF)"] = ArtifactUEF9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect third artifact (UEF) " + str(index)
-        objID = "210209"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF9.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF10 = Region("Artifact: Kill Aeon Commander (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (UEF)"] = ArtifactUEF10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Aeon Commander (optional) (UEF) " + str(index)
-        objID = "210210"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF10.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF11 = Region("Artifact: Kill Mach (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Mach (UEF)"] = ArtifactUEF11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Mach (UEF) " + str(index)
-        objID = "210211"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactUEF12 = Region("Artifact: Go to Gate (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Go to Gate (UEF)"] = ArtifactUEF12
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Go to Gate (UEF) " + str(index)
-        objID = "210212"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactUEF12.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF0 = Region("Defrag: Protect York 18 (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Protect York 18 (UEF)"] = DefragUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Protect York 18 (UEF) " + str(index)
-        objID = "210300"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF1 = Region("Defrag: Destroy western UEF base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy western UEF base (UEF)"] = DefragUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy western UEF base (UEF) " + str(index)
-        objID = "210301"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF2 = Region("Defrag: Destroy north-western UEF base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy north-western UEF base (UEF)"] = DefragUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy north-western UEF base (UEF) " + str(index)
-        objID = "210302"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF3 = Region("Defrag: Destroy northern UEF base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy northern UEF base (UEF)"] = DefragUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy northern UEF base (UEF) " + str(index)
-        objID = "210303"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF4 = Region("Defrag: Sink UEF cruiser (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Sink UEF cruiser (UEF)"] = DefragUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Sink UEF cruiser (UEF) " + str(index)
-        objID = "210304"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF5 = Region("Defrag: Destroy static artillery (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy static artillery (UEF)"] = DefragUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy static artillery (UEF) " + str(index)
-        objID = "210305"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF6 = Region("Defrag: Escort trucks (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort trucks (UEF)"] = DefragUEF6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort trucks (UEF) " + str(index)
-        objID = "210306"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF6.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF7 = Region("Defrag: Escort ALL trucks (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (UEF)"] = DefragUEF7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort ALL trucks (optional) (UEF) " + str(index)
-        objID = "210307"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF7.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF8 = Region("Defrag: Optional objective  (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Optional objective  (optional) (UEF)"] = DefragUEF8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Optional objective  (optional) (UEF) " + str(index)
-        objID = "210308"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF8.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragUEF9 = Region("Defrag: Kill UEF Commander (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Kill UEF Commander (UEF)"] = DefragUEF9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Kill UEF Commander (UEF) " + str(index)
-        objID = "210309"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragUEF9.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF0 = Region("Mainframe Tango: Defeat Aeon Commander (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (UEF)"] = MainframeTangoUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Defeat Aeon Commander (UEF) " + str(index)
-        objID = "210400"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF1 = Region("Mainframe Tango: Capture Network Node (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture Network Node (UEF)"] = MainframeTangoUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture Network Node (UEF) " + str(index)
-        objID = "210401"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF2 = Region("Mainframe Tango: Save Network Node (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save Network Node (UEF)"] = MainframeTangoUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save Network Node (UEF) " + str(index)
-        objID = "210402"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (UEF)"] = MainframeTangoUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save 80% civilian buildings (optional) (UEF) " + str(index)
-        objID = "210403"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF4 = Region("Mainframe Tango: Survive attacks (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Survive attacks (UEF)"] = MainframeTangoUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Survive attacks (UEF) " + str(index)
-        objID = "210404"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF5 = Region("Mainframe Tango: Capture northeast node (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northeast node (UEF)"] = MainframeTangoUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northeast node (UEF) " + str(index)
-        objID = "210405"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF6 = Region("Mainframe Tango: Capture northwest node (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northwest node (UEF)"] = MainframeTangoUEF6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northwest node (UEF) " + str(index)
-        objID = "210406"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF6.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF7 = Region("Mainframe Tango: Do not attack main Aeon base (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (UEF)"] = MainframeTangoUEF7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Do not attack main Aeon base (UEF) " + str(index)
-        objID = "210407"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF7.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoUEF8 = Region("Mainframe Tango: Kill Aeon Commander (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (UEF)"] = MainframeTangoUEF8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Kill Aeon Commander (UEF) " + str(index)
-        objID = "210408"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoUEF8.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF0 = Region("Unlock: Destroy UEF generators (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF generators (UEF)"] = UnlockUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF generators (UEF) " + str(index)
-        objID = "210500"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF1 = Region("Unlock: Destroy UEF shipyards (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (UEF)"] = UnlockUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF shipyards (optional) (UEF) " + str(index)
-        objID = "210501"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF2 = Region("Unlock: Destroy UEF radars (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF radars (UEF)"] = UnlockUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF radars (UEF) " + str(index)
-        objID = "210502"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF3 = Region("Unlock: Go to Hex5 (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Go to Hex5 (UEF)"] = UnlockUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Go to Hex5 (UEF) " + str(index)
-        objID = "210503"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF4 = Region("Unlock: Defend from heavy gunships (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Defend from heavy gunships (UEF)"] = UnlockUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Defend from heavy gunships (UEF) " + str(index)
-        objID = "210504"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF5 = Region("Unlock: Infect UEF landing pad (optional) (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (UEF)"] = UnlockUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Infect UEF landing pad (optional) (UEF) " + str(index)
-        objID = "210505"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF6 = Region("Unlock: This will be retconned later (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: This will be retconned later (UEF)"] = UnlockUEF6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: This will be retconned later (UEF) " + str(index)
-        objID = "210506"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF6.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockUEF7 = Region("Unlock: Kill UEF Commander (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Kill UEF Commander (UEF)"] = UnlockUEF7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Kill UEF Commander (UEF) " + str(index)
-        objID = "210507"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockUEF7.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF0 = Region("Freedom: Destroy CZAR (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Destroy CZAR (UEF)"] = FreedomUEF0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Destroy CZAR (UEF) " + str(index)
-        objID = "210600"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF0.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF1 = Region("Freedom: Build Quantum Gate (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Build Quantum Gate (UEF)"] = FreedomUEF1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Build Quantum Gate (UEF) " + str(index)
-        objID = "210601"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF1.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF2 = Region("Freedom: Download Quantum Virus (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Download Quantum Virus (UEF)"] = FreedomUEF2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Download Quantum Virus (UEF) " + str(index)
-        objID = "210602"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF2.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF3 = Region("Freedom: Capture Black Sun control center (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun control center (UEF)"] = FreedomUEF3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun control center (UEF) " + str(index)
-        objID = "210603"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF3.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF4 = Region("Freedom: Capture Black Sun (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun (UEF)"] = FreedomUEF4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun (UEF) " + str(index)
-        objID = "210604"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF4.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomUEF5 = Region("Freedom: Shoot Black Sun (UEF)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Shoot Black Sun (UEF)"] = FreedomUEF5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Shoot Black Sun (UEF) " + str(index)
-        objID = "210605"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomUEF5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran0 = Region("Liberation: Build mass (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build mass (Cybran)"] = LiberationCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build mass (Cybran) " + str(index)
-        objID = "220100"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran1 = Region("Liberation: Build power (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build power (Cybran)"] = LiberationCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build power (Cybran) " + str(index)
-        objID = "220101"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran2 = Region("Liberation: Build air factory (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build air factory (Cybran)"] = LiberationCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build air factory (Cybran) " + str(index)
-        objID = "220102"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran3 = Region("Liberation: Build bombers (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build bombers (Cybran)"] = LiberationCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build bombers (Cybran) " + str(index)
-        objID = "220103"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran4 = Region("Liberation: Destroy radar defenders (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy radar defenders (Cybran)"] = LiberationCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy radar defenders (Cybran) " + str(index)
-        objID = "220104"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran5 = Region("Liberation: Capture radars (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Capture radars (Cybran)"] = LiberationCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Capture radars (Cybran) " + str(index)
-        objID = "220105"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran6 = Region("Liberation: Destroy mex (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy mex (Cybran)"] = LiberationCybran6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy mex (Cybran) " + str(index)
-        objID = "220106"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran6.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran7 = Region("Liberation: Destroy UEF defences (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF defences (Cybran)"] = LiberationCybran7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF defences (Cybran) " + str(index)
-        objID = "220107"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran7.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran8 = Region("Liberation: Destroy UEF patrols (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF patrols (Cybran)"] = LiberationCybran8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF patrols (Cybran) " + str(index)
-        objID = "220108"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran8.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran9 = Region("Liberation: Destroy UEF base defenders (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base defenders (Cybran)"] = LiberationCybran9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base defenders (Cybran) " + str(index)
-        objID = "220109"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran9.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran10 = Region("Liberation: Destroy UEF base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base (Cybran)"] = LiberationCybran10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base (Cybran) " + str(index)
-        objID = "220110"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran10.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationCybran11 = Region("Liberation: Kill Aeon Commander (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Kill Aeon Commander (Cybran)"] = LiberationCybran11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Kill Aeon Commander (Cybran) " + str(index)
-        objID = "220111"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationCybran11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran0 = Region("Artifact: Destroy first village defenders (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first village defenders (Cybran)"] = ArtifactCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first village defenders (Cybran) " + str(index)
-        objID = "220200"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran1 = Region("Artifact: Destroy first temple (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first temple (Cybran)"] = ArtifactCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first temple (Cybran) " + str(index)
-        objID = "220201"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran2 = Region("Artifact: Protect first artifact (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect first artifact (Cybran)"] = ArtifactCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect first artifact (Cybran) " + str(index)
-        objID = "220202"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran3 = Region("Artifact: Find second artifact (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Find second artifact (Cybran)"] = ArtifactCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Find second artifact (Cybran) " + str(index)
-        objID = "220203"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran4 = Region("Artifact: Destroy Aeon reinforcements (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Cybran)"] = ArtifactCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy Aeon reinforcements (Cybran) " + str(index)
-        objID = "220204"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran5 = Region("Artifact: Protect second artifact (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect second artifact (Cybran)"] = ArtifactCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect second artifact (Cybran) " + str(index)
-        objID = "220205"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran6 = Region("Artifact: Defend from Aeon attack (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Defend from Aeon attack (Cybran)"] = ArtifactCybran6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Defend from Aeon attack (Cybran) " + str(index)
-        objID = "220206"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran6.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran7 = Region("Artifact: Destroy eastern base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy eastern base (Cybran)"] = ArtifactCybran7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy eastern base (Cybran) " + str(index)
-        objID = "220207"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran7.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran8 = Region("Artifact: Destroy navy base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy navy base (Cybran)"] = ArtifactCybran8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy navy base (Cybran) " + str(index)
-        objID = "220208"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran8.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran9 = Region("Artifact: Protect third artifact (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect third artifact (Cybran)"] = ArtifactCybran9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect third artifact (Cybran) " + str(index)
-        objID = "220209"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran9.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran10 = Region("Artifact: Kill Aeon Commander (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Cybran)"] = ArtifactCybran10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Aeon Commander (optional) (Cybran) " + str(index)
-        objID = "220210"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran10.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran11 = Region("Artifact: Kill Mach (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Mach (Cybran)"] = ArtifactCybran11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Mach (Cybran) " + str(index)
-        objID = "220211"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactCybran12 = Region("Artifact: Go to Gate (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Go to Gate (Cybran)"] = ArtifactCybran12
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Go to Gate (Cybran) " + str(index)
-        objID = "220212"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactCybran12.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran0 = Region("Defrag: Protect York 18 (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Protect York 18 (Cybran)"] = DefragCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Protect York 18 (Cybran) " + str(index)
-        objID = "220300"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran1 = Region("Defrag: Destroy western UEF base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy western UEF base (Cybran)"] = DefragCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy western UEF base (Cybran) " + str(index)
-        objID = "220301"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran2 = Region("Defrag: Destroy north-western UEF base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy north-western UEF base (Cybran)"] = DefragCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy north-western UEF base (Cybran) " + str(index)
-        objID = "220302"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran3 = Region("Defrag: Destroy northern UEF base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy northern UEF base (Cybran)"] = DefragCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy northern UEF base (Cybran) " + str(index)
-        objID = "220303"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran4 = Region("Defrag: Sink UEF cruiser (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Sink UEF cruiser (Cybran)"] = DefragCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Sink UEF cruiser (Cybran) " + str(index)
-        objID = "220304"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran5 = Region("Defrag: Destroy static artillery (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy static artillery (Cybran)"] = DefragCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy static artillery (Cybran) " + str(index)
-        objID = "220305"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran6 = Region("Defrag: Escort trucks (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort trucks (Cybran)"] = DefragCybran6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort trucks (Cybran) " + str(index)
-        objID = "220306"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran6.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran7 = Region("Defrag: Escort ALL trucks (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Cybran)"] = DefragCybran7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort ALL trucks (optional) (Cybran) " + str(index)
-        objID = "220307"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran7.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran8 = Region("Defrag: Optional objective  (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Optional objective  (optional) (Cybran)"] = DefragCybran8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Optional objective  (optional) (Cybran) " + str(index)
-        objID = "220308"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran8.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragCybran9 = Region("Defrag: Kill UEF Commander (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Kill UEF Commander (Cybran)"] = DefragCybran9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Kill UEF Commander (Cybran) " + str(index)
-        objID = "220309"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragCybran9.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran0 = Region("Mainframe Tango: Defeat Aeon Commander (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Cybran)"] = MainframeTangoCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Defeat Aeon Commander (Cybran) " + str(index)
-        objID = "220400"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran1 = Region("Mainframe Tango: Capture Network Node (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture Network Node (Cybran)"] = MainframeTangoCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture Network Node (Cybran) " + str(index)
-        objID = "220401"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran2 = Region("Mainframe Tango: Save Network Node (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save Network Node (Cybran)"] = MainframeTangoCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save Network Node (Cybran) " + str(index)
-        objID = "220402"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)"] = MainframeTangoCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Cybran) " + str(index)
-        objID = "220403"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran4 = Region("Mainframe Tango: Survive attacks (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Survive attacks (Cybran)"] = MainframeTangoCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Survive attacks (Cybran) " + str(index)
-        objID = "220404"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran5 = Region("Mainframe Tango: Capture northeast node (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northeast node (Cybran)"] = MainframeTangoCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northeast node (Cybran) " + str(index)
-        objID = "220405"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran6 = Region("Mainframe Tango: Capture northwest node (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northwest node (Cybran)"] = MainframeTangoCybran6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northwest node (Cybran) " + str(index)
-        objID = "220406"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran6.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran7 = Region("Mainframe Tango: Do not attack main Aeon base (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Cybran)"] = MainframeTangoCybran7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Do not attack main Aeon base (Cybran) " + str(index)
-        objID = "220407"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran7.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoCybran8 = Region("Mainframe Tango: Kill Aeon Commander (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Cybran)"] = MainframeTangoCybran8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Kill Aeon Commander (Cybran) " + str(index)
-        objID = "220408"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoCybran8.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran0 = Region("Unlock: Destroy UEF generators (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF generators (Cybran)"] = UnlockCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF generators (Cybran) " + str(index)
-        objID = "220500"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran1 = Region("Unlock: Destroy UEF shipyards (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Cybran)"] = UnlockCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF shipyards (optional) (Cybran) " + str(index)
-        objID = "220501"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran2 = Region("Unlock: Destroy UEF radars (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF radars (Cybran)"] = UnlockCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF radars (Cybran) " + str(index)
-        objID = "220502"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran3 = Region("Unlock: Go to Hex5 (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Go to Hex5 (Cybran)"] = UnlockCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Go to Hex5 (Cybran) " + str(index)
-        objID = "220503"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran4 = Region("Unlock: Defend from heavy gunships (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Defend from heavy gunships (Cybran)"] = UnlockCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Defend from heavy gunships (Cybran) " + str(index)
-        objID = "220504"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran5 = Region("Unlock: Infect UEF landing pad (optional) (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Cybran)"] = UnlockCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Infect UEF landing pad (optional) (Cybran) " + str(index)
-        objID = "220505"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran6 = Region("Unlock: This will be retconned later (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: This will be retconned later (Cybran)"] = UnlockCybran6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: This will be retconned later (Cybran) " + str(index)
-        objID = "220506"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran6.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockCybran7 = Region("Unlock: Kill UEF Commander (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Kill UEF Commander (Cybran)"] = UnlockCybran7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Kill UEF Commander (Cybran) " + str(index)
-        objID = "220507"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockCybran7.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran0 = Region("Freedom: Destroy CZAR (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Destroy CZAR (Cybran)"] = FreedomCybran0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Destroy CZAR (Cybran) " + str(index)
-        objID = "220600"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran0.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran1 = Region("Freedom: Build Quantum Gate (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Build Quantum Gate (Cybran)"] = FreedomCybran1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Build Quantum Gate (Cybran) " + str(index)
-        objID = "220601"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran1.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran2 = Region("Freedom: Download Quantum Virus (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Download Quantum Virus (Cybran)"] = FreedomCybran2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Download Quantum Virus (Cybran) " + str(index)
-        objID = "220602"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran2.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran3 = Region("Freedom: Capture Black Sun control center (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun control center (Cybran)"] = FreedomCybran3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun control center (Cybran) " + str(index)
-        objID = "220603"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran3.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran4 = Region("Freedom: Capture Black Sun (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun (Cybran)"] = FreedomCybran4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun (Cybran) " + str(index)
-        objID = "220604"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran4.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomCybran5 = Region("Freedom: Shoot Black Sun (Cybran)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Shoot Black Sun (Cybran)"] = FreedomCybran5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Shoot Black Sun (Cybran) " + str(index)
-        objID = "220605"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomCybran5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon0 = Region("Liberation: Build mass (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build mass (Aeon)"] = LiberationAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build mass (Aeon) " + str(index)
-        objID = "230100"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon1 = Region("Liberation: Build power (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build power (Aeon)"] = LiberationAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build power (Aeon) " + str(index)
-        objID = "230101"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon2 = Region("Liberation: Build air factory (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build air factory (Aeon)"] = LiberationAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build air factory (Aeon) " + str(index)
-        objID = "230102"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon3 = Region("Liberation: Build bombers (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build bombers (Aeon)"] = LiberationAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build bombers (Aeon) " + str(index)
-        objID = "230103"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon4 = Region("Liberation: Destroy radar defenders (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy radar defenders (Aeon)"] = LiberationAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy radar defenders (Aeon) " + str(index)
-        objID = "230104"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon5 = Region("Liberation: Capture radars (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Capture radars (Aeon)"] = LiberationAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Capture radars (Aeon) " + str(index)
-        objID = "230105"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon6 = Region("Liberation: Destroy mex (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy mex (Aeon)"] = LiberationAeon6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy mex (Aeon) " + str(index)
-        objID = "230106"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon6.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon7 = Region("Liberation: Destroy UEF defences (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF defences (Aeon)"] = LiberationAeon7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF defences (Aeon) " + str(index)
-        objID = "230107"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon7.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon8 = Region("Liberation: Destroy UEF patrols (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF patrols (Aeon)"] = LiberationAeon8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF patrols (Aeon) " + str(index)
-        objID = "230108"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon8.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon9 = Region("Liberation: Destroy UEF base defenders (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base defenders (Aeon)"] = LiberationAeon9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base defenders (Aeon) " + str(index)
-        objID = "230109"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon9.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon10 = Region("Liberation: Destroy UEF base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base (Aeon)"] = LiberationAeon10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base (Aeon) " + str(index)
-        objID = "230110"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon10.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationAeon11 = Region("Liberation: Kill Aeon Commander (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Kill Aeon Commander (Aeon)"] = LiberationAeon11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Kill Aeon Commander (Aeon) " + str(index)
-        objID = "230111"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationAeon11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon0 = Region("Artifact: Destroy first village defenders (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first village defenders (Aeon)"] = ArtifactAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first village defenders (Aeon) " + str(index)
-        objID = "230200"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon1 = Region("Artifact: Destroy first temple (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first temple (Aeon)"] = ArtifactAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first temple (Aeon) " + str(index)
-        objID = "230201"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon2 = Region("Artifact: Protect first artifact (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect first artifact (Aeon)"] = ArtifactAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect first artifact (Aeon) " + str(index)
-        objID = "230202"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon3 = Region("Artifact: Find second artifact (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Find second artifact (Aeon)"] = ArtifactAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Find second artifact (Aeon) " + str(index)
-        objID = "230203"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon4 = Region("Artifact: Destroy Aeon reinforcements (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Aeon)"] = ArtifactAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy Aeon reinforcements (Aeon) " + str(index)
-        objID = "230204"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon5 = Region("Artifact: Protect second artifact (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect second artifact (Aeon)"] = ArtifactAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect second artifact (Aeon) " + str(index)
-        objID = "230205"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon6 = Region("Artifact: Defend from Aeon attack (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Defend from Aeon attack (Aeon)"] = ArtifactAeon6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Defend from Aeon attack (Aeon) " + str(index)
-        objID = "230206"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon6.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon7 = Region("Artifact: Destroy eastern base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy eastern base (Aeon)"] = ArtifactAeon7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy eastern base (Aeon) " + str(index)
-        objID = "230207"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon7.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon8 = Region("Artifact: Destroy navy base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy navy base (Aeon)"] = ArtifactAeon8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy navy base (Aeon) " + str(index)
-        objID = "230208"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon8.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon9 = Region("Artifact: Protect third artifact (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect third artifact (Aeon)"] = ArtifactAeon9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect third artifact (Aeon) " + str(index)
-        objID = "230209"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon9.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon10 = Region("Artifact: Kill Aeon Commander (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Aeon)"] = ArtifactAeon10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Aeon Commander (optional) (Aeon) " + str(index)
-        objID = "230210"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon10.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon11 = Region("Artifact: Kill Mach (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Mach (Aeon)"] = ArtifactAeon11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Mach (Aeon) " + str(index)
-        objID = "230211"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactAeon12 = Region("Artifact: Go to Gate (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Go to Gate (Aeon)"] = ArtifactAeon12
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Go to Gate (Aeon) " + str(index)
-        objID = "230212"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactAeon12.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon0 = Region("Defrag: Protect York 18 (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Protect York 18 (Aeon)"] = DefragAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Protect York 18 (Aeon) " + str(index)
-        objID = "230300"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon1 = Region("Defrag: Destroy western UEF base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy western UEF base (Aeon)"] = DefragAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy western UEF base (Aeon) " + str(index)
-        objID = "230301"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon2 = Region("Defrag: Destroy north-western UEF base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy north-western UEF base (Aeon)"] = DefragAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy north-western UEF base (Aeon) " + str(index)
-        objID = "230302"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon3 = Region("Defrag: Destroy northern UEF base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy northern UEF base (Aeon)"] = DefragAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy northern UEF base (Aeon) " + str(index)
-        objID = "230303"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon4 = Region("Defrag: Sink UEF cruiser (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Sink UEF cruiser (Aeon)"] = DefragAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Sink UEF cruiser (Aeon) " + str(index)
-        objID = "230304"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon5 = Region("Defrag: Destroy static artillery (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy static artillery (Aeon)"] = DefragAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy static artillery (Aeon) " + str(index)
-        objID = "230305"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon6 = Region("Defrag: Escort trucks (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort trucks (Aeon)"] = DefragAeon6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort trucks (Aeon) " + str(index)
-        objID = "230306"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon6.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon7 = Region("Defrag: Escort ALL trucks (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Aeon)"] = DefragAeon7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort ALL trucks (optional) (Aeon) " + str(index)
-        objID = "230307"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon7.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon8 = Region("Defrag: Optional objective  (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Optional objective  (optional) (Aeon)"] = DefragAeon8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Optional objective  (optional) (Aeon) " + str(index)
-        objID = "230308"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon8.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragAeon9 = Region("Defrag: Kill UEF Commander (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Kill UEF Commander (Aeon)"] = DefragAeon9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Kill UEF Commander (Aeon) " + str(index)
-        objID = "230309"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragAeon9.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon0 = Region("Mainframe Tango: Defeat Aeon Commander (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Aeon)"] = MainframeTangoAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Defeat Aeon Commander (Aeon) " + str(index)
-        objID = "230400"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon1 = Region("Mainframe Tango: Capture Network Node (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture Network Node (Aeon)"] = MainframeTangoAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture Network Node (Aeon) " + str(index)
-        objID = "230401"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon2 = Region("Mainframe Tango: Save Network Node (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save Network Node (Aeon)"] = MainframeTangoAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save Network Node (Aeon) " + str(index)
-        objID = "230402"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)"] = MainframeTangoAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Aeon) " + str(index)
-        objID = "230403"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon4 = Region("Mainframe Tango: Survive attacks (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Survive attacks (Aeon)"] = MainframeTangoAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Survive attacks (Aeon) " + str(index)
-        objID = "230404"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon5 = Region("Mainframe Tango: Capture northeast node (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northeast node (Aeon)"] = MainframeTangoAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northeast node (Aeon) " + str(index)
-        objID = "230405"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon6 = Region("Mainframe Tango: Capture northwest node (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northwest node (Aeon)"] = MainframeTangoAeon6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northwest node (Aeon) " + str(index)
-        objID = "230406"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon6.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon7 = Region("Mainframe Tango: Do not attack main Aeon base (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Aeon)"] = MainframeTangoAeon7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Do not attack main Aeon base (Aeon) " + str(index)
-        objID = "230407"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon7.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoAeon8 = Region("Mainframe Tango: Kill Aeon Commander (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Aeon)"] = MainframeTangoAeon8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Kill Aeon Commander (Aeon) " + str(index)
-        objID = "230408"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoAeon8.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon0 = Region("Unlock: Destroy UEF generators (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF generators (Aeon)"] = UnlockAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF generators (Aeon) " + str(index)
-        objID = "230500"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon1 = Region("Unlock: Destroy UEF shipyards (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Aeon)"] = UnlockAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF shipyards (optional) (Aeon) " + str(index)
-        objID = "230501"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon2 = Region("Unlock: Destroy UEF radars (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF radars (Aeon)"] = UnlockAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF radars (Aeon) " + str(index)
-        objID = "230502"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon3 = Region("Unlock: Go to Hex5 (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Go to Hex5 (Aeon)"] = UnlockAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Go to Hex5 (Aeon) " + str(index)
-        objID = "230503"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon4 = Region("Unlock: Defend from heavy gunships (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Defend from heavy gunships (Aeon)"] = UnlockAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Defend from heavy gunships (Aeon) " + str(index)
-        objID = "230504"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon5 = Region("Unlock: Infect UEF landing pad (optional) (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Aeon)"] = UnlockAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Infect UEF landing pad (optional) (Aeon) " + str(index)
-        objID = "230505"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon6 = Region("Unlock: This will be retconned later (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: This will be retconned later (Aeon)"] = UnlockAeon6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: This will be retconned later (Aeon) " + str(index)
-        objID = "230506"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon6.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockAeon7 = Region("Unlock: Kill UEF Commander (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Kill UEF Commander (Aeon)"] = UnlockAeon7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Kill UEF Commander (Aeon) " + str(index)
-        objID = "230507"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockAeon7.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon0 = Region("Freedom: Destroy CZAR (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Destroy CZAR (Aeon)"] = FreedomAeon0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Destroy CZAR (Aeon) " + str(index)
-        objID = "230600"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon0.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon1 = Region("Freedom: Build Quantum Gate (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Build Quantum Gate (Aeon)"] = FreedomAeon1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Build Quantum Gate (Aeon) " + str(index)
-        objID = "230601"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon1.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon2 = Region("Freedom: Download Quantum Virus (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Download Quantum Virus (Aeon)"] = FreedomAeon2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Download Quantum Virus (Aeon) " + str(index)
-        objID = "230602"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon2.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon3 = Region("Freedom: Capture Black Sun control center (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun control center (Aeon)"] = FreedomAeon3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun control center (Aeon) " + str(index)
-        objID = "230603"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon3.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon4 = Region("Freedom: Capture Black Sun (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun (Aeon)"] = FreedomAeon4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun (Aeon) " + str(index)
-        objID = "230604"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon4.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomAeon5 = Region("Freedom: Shoot Black Sun (Aeon)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Shoot Black Sun (Aeon)"] = FreedomAeon5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Shoot Black Sun (Aeon) " + str(index)
-        objID = "230605"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomAeon5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera0 = Region("Liberation: Build mass (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build mass (Sera)"] = LiberationSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build mass (Sera) " + str(index)
-        objID = "240100"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera1 = Region("Liberation: Build power (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build power (Sera)"] = LiberationSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build power (Sera) " + str(index)
-        objID = "240101"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera2 = Region("Liberation: Build air factory (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build air factory (Sera)"] = LiberationSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build air factory (Sera) " + str(index)
-        objID = "240102"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera3 = Region("Liberation: Build bombers (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Build bombers (Sera)"] = LiberationSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Build bombers (Sera) " + str(index)
-        objID = "240103"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera4 = Region("Liberation: Destroy radar defenders (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy radar defenders (Sera)"] = LiberationSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy radar defenders (Sera) " + str(index)
-        objID = "240104"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera5 = Region("Liberation: Capture radars (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Capture radars (Sera)"] = LiberationSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Capture radars (Sera) " + str(index)
-        objID = "240105"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera6 = Region("Liberation: Destroy mex (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy mex (Sera)"] = LiberationSera6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy mex (Sera) " + str(index)
-        objID = "240106"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera6.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera7 = Region("Liberation: Destroy UEF defences (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF defences (Sera)"] = LiberationSera7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF defences (Sera) " + str(index)
-        objID = "240107"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera7.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera8 = Region("Liberation: Destroy UEF patrols (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF patrols (Sera)"] = LiberationSera8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF patrols (Sera) " + str(index)
-        objID = "240108"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera8.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera9 = Region("Liberation: Destroy UEF base defenders (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base defenders (Sera)"] = LiberationSera9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base defenders (Sera) " + str(index)
-        objID = "240109"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera9.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera10 = Region("Liberation: Destroy UEF base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Destroy UEF base (Sera)"] = LiberationSera10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Destroy UEF base (Sera) " + str(index)
-        objID = "240110"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera10.add_locations({lname: int(objID)}, SupComLocation)
-
-    LiberationSera11 = Region("Liberation: Kill Aeon Commander (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Liberation: Kill Aeon Commander (Sera)"] = LiberationSera11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Liberation: Kill Aeon Commander (Sera) " + str(index)
-        objID = "240111"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        LiberationSera11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera0 = Region("Artifact: Destroy first village defenders (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first village defenders (Sera)"] = ArtifactSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first village defenders (Sera) " + str(index)
-        objID = "240200"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera1 = Region("Artifact: Destroy first temple (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy first temple (Sera)"] = ArtifactSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy first temple (Sera) " + str(index)
-        objID = "240201"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera2 = Region("Artifact: Protect first artifact (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect first artifact (Sera)"] = ArtifactSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect first artifact (Sera) " + str(index)
-        objID = "240202"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera3 = Region("Artifact: Find second artifact (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Find second artifact (Sera)"] = ArtifactSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Find second artifact (Sera) " + str(index)
-        objID = "240203"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera4 = Region("Artifact: Destroy Aeon reinforcements (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Sera)"] = ArtifactSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy Aeon reinforcements (Sera) " + str(index)
-        objID = "240204"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera5 = Region("Artifact: Protect second artifact (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect second artifact (Sera)"] = ArtifactSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect second artifact (Sera) " + str(index)
-        objID = "240205"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera6 = Region("Artifact: Defend from Aeon attack (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Defend from Aeon attack (Sera)"] = ArtifactSera6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Defend from Aeon attack (Sera) " + str(index)
-        objID = "240206"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera6.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera7 = Region("Artifact: Destroy eastern base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy eastern base (Sera)"] = ArtifactSera7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy eastern base (Sera) " + str(index)
-        objID = "240207"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera7.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera8 = Region("Artifact: Destroy navy base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Destroy navy base (Sera)"] = ArtifactSera8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Destroy navy base (Sera) " + str(index)
-        objID = "240208"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera8.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera9 = Region("Artifact: Protect third artifact (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Protect third artifact (Sera)"] = ArtifactSera9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Protect third artifact (Sera) " + str(index)
-        objID = "240209"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera9.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera10 = Region("Artifact: Kill Aeon Commander (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Sera)"] = ArtifactSera10
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Aeon Commander (optional) (Sera) " + str(index)
-        objID = "240210"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera10.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera11 = Region("Artifact: Kill Mach (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Kill Mach (Sera)"] = ArtifactSera11
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Kill Mach (Sera) " + str(index)
-        objID = "240211"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera11.add_locations({lname: int(objID)}, SupComLocation)
-
-    ArtifactSera12 = Region("Artifact: Go to Gate (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Artifact: Go to Gate (Sera)"] = ArtifactSera12
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Artifact: Go to Gate (Sera) " + str(index)
-        objID = "240212"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        ArtifactSera12.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera0 = Region("Defrag: Protect York 18 (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Protect York 18 (Sera)"] = DefragSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Protect York 18 (Sera) " + str(index)
-        objID = "240300"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera1 = Region("Defrag: Destroy western UEF base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy western UEF base (Sera)"] = DefragSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy western UEF base (Sera) " + str(index)
-        objID = "240301"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera2 = Region("Defrag: Destroy north-western UEF base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy north-western UEF base (Sera)"] = DefragSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy north-western UEF base (Sera) " + str(index)
-        objID = "240302"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera3 = Region("Defrag: Destroy northern UEF base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy northern UEF base (Sera)"] = DefragSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy northern UEF base (Sera) " + str(index)
-        objID = "240303"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera4 = Region("Defrag: Sink UEF cruiser (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Sink UEF cruiser (Sera)"] = DefragSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Sink UEF cruiser (Sera) " + str(index)
-        objID = "240304"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera5 = Region("Defrag: Destroy static artillery (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Destroy static artillery (Sera)"] = DefragSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Destroy static artillery (Sera) " + str(index)
-        objID = "240305"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera6 = Region("Defrag: Escort trucks (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort trucks (Sera)"] = DefragSera6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort trucks (Sera) " + str(index)
-        objID = "240306"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera6.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera7 = Region("Defrag: Escort ALL trucks (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Sera)"] = DefragSera7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Escort ALL trucks (optional) (Sera) " + str(index)
-        objID = "240307"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera7.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera8 = Region("Defrag: Optional objective  (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Optional objective  (optional) (Sera)"] = DefragSera8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Optional objective  (optional) (Sera) " + str(index)
-        objID = "240308"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera8.add_locations({lname: int(objID)}, SupComLocation)
-
-    DefragSera9 = Region("Defrag: Kill UEF Commander (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Defrag: Kill UEF Commander (Sera)"] = DefragSera9
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Defrag: Kill UEF Commander (Sera) " + str(index)
-        objID = "240309"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        DefragSera9.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera0 = Region("Mainframe Tango: Defeat Aeon Commander (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Sera)"] = MainframeTangoSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Defeat Aeon Commander (Sera) " + str(index)
-        objID = "240400"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera1 = Region("Mainframe Tango: Capture Network Node (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture Network Node (Sera)"] = MainframeTangoSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture Network Node (Sera) " + str(index)
-        objID = "240401"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera2 = Region("Mainframe Tango: Save Network Node (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save Network Node (Sera)"] = MainframeTangoSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save Network Node (Sera) " + str(index)
-        objID = "240402"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Sera)"] = MainframeTangoSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Sera) " + str(index)
-        objID = "240403"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera4 = Region("Mainframe Tango: Survive attacks (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Survive attacks (Sera)"] = MainframeTangoSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Survive attacks (Sera) " + str(index)
-        objID = "240404"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera5 = Region("Mainframe Tango: Capture northeast node (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northeast node (Sera)"] = MainframeTangoSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northeast node (Sera) " + str(index)
-        objID = "240405"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera6 = Region("Mainframe Tango: Capture northwest node (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Capture northwest node (Sera)"] = MainframeTangoSera6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Capture northwest node (Sera) " + str(index)
-        objID = "240406"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera6.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera7 = Region("Mainframe Tango: Do not attack main Aeon base (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Sera)"] = MainframeTangoSera7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Do not attack main Aeon base (Sera) " + str(index)
-        objID = "240407"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera7.add_locations({lname: int(objID)}, SupComLocation)
-
-    MainframeTangoSera8 = Region("Mainframe Tango: Kill Aeon Commander (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Sera)"] = MainframeTangoSera8
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Mainframe Tango: Kill Aeon Commander (Sera) " + str(index)
-        objID = "240408"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        MainframeTangoSera8.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera0 = Region("Unlock: Destroy UEF generators (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF generators (Sera)"] = UnlockSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF generators (Sera) " + str(index)
-        objID = "240500"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera1 = Region("Unlock: Destroy UEF shipyards (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Sera)"] = UnlockSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF shipyards (optional) (Sera) " + str(index)
-        objID = "240501"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera2 = Region("Unlock: Destroy UEF radars (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Destroy UEF radars (Sera)"] = UnlockSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Destroy UEF radars (Sera) " + str(index)
-        objID = "240502"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera3 = Region("Unlock: Go to Hex5 (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Go to Hex5 (Sera)"] = UnlockSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Go to Hex5 (Sera) " + str(index)
-        objID = "240503"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera4 = Region("Unlock: Defend from heavy gunships (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Defend from heavy gunships (Sera)"] = UnlockSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Defend from heavy gunships (Sera) " + str(index)
-        objID = "240504"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera5 = Region("Unlock: Infect UEF landing pad (optional) (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Sera)"] = UnlockSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Infect UEF landing pad (optional) (Sera) " + str(index)
-        objID = "240505"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera6 = Region("Unlock: This will be retconned later (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: This will be retconned later (Sera)"] = UnlockSera6
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: This will be retconned later (Sera) " + str(index)
-        objID = "240506"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera6.add_locations({lname: int(objID)}, SupComLocation)
-
-    UnlockSera7 = Region("Unlock: Kill UEF Commander (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Unlock: Kill UEF Commander (Sera)"] = UnlockSera7
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Unlock: Kill UEF Commander (Sera) " + str(index)
-        objID = "240507"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        UnlockSera7.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera0 = Region("Freedom: Destroy CZAR (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Destroy CZAR (Sera)"] = FreedomSera0
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Destroy CZAR (Sera) " + str(index)
-        objID = "240600"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera0.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera1 = Region("Freedom: Build Quantum Gate (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Build Quantum Gate (Sera)"] = FreedomSera1
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Build Quantum Gate (Sera) " + str(index)
-        objID = "240601"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera1.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera2 = Region("Freedom: Download Quantum Virus (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Download Quantum Virus (Sera)"] = FreedomSera2
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Download Quantum Virus (Sera) " + str(index)
-        objID = "240602"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera2.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera3 = Region("Freedom: Capture Black Sun control center (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun control center (Sera)"] = FreedomSera3
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun control center (Sera) " + str(index)
-        objID = "240603"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera3.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera4 = Region("Freedom: Capture Black Sun (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Capture Black Sun (Sera)"] = FreedomSera4
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Capture Black Sun (Sera) " + str(index)
-        objID = "240604"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera4.add_locations({lname: int(objID)}, SupComLocation)
-
-    FreedomSera5 = Region("Freedom: Shoot Black Sun (Sera)", world.player, world.multiworld)
-    DictionaryOfRegions["Freedom: Shoot Black Sun (Sera)"] = FreedomSera5
-    for i in range(0, world.options.locamount):
-        index = i + 1
-        lname = "Freedom: Shoot Black Sun (Sera) " + str(index)
-        objID = "240605"
-        if i < 10:
-            objID = objID + "0"
-        objID = objID + str(i)
-        FreedomSera5.add_locations({lname: int(objID)}, SupComLocation)
-
-
+    levelsTier1FOREVER = []
     levelsTier1 = []
     levelsTier2 = []
     levelsTier3 = []
     levelsTier4 = []
     if not world.options.randfacs:
         levelsTier1.append("Liberation (Cybran)")
+        levelsTier1FOREVER.append("Liberation (Cybran)")
         levelsTier2.append("Liberation (Cybran)")
         levelsTier3.append("Liberation (Cybran)")
         levelsTier2.append("Artifact (Cybran)")
-        levelsTier3.append("Artifact (UEF)")
+        levelsTier3.append("Artifact (Cybran)")
         levelsTier2.append("Defrag (Cybran)")
-        levelsTier3.append("Defrag (UEF)")
+        levelsTier3.append("Defrag (Cybran)")
         levelsTier3.append("Mainframe Tango (Cybran)")
         levelsTier3.append("Unlock (Cybran)")
         levelsTier4.append("Freedom (Cybran)")
@@ -2603,18 +51,22 @@ def makeEverything(world: SupComWorld) -> None:
         temp = world.random.randrange(0, len(world.options.faction.value))
         if world.options.faction.value[temp] == "uef":
             levelsTier1.append("Liberation (UEF)")
+            levelsTier1FOREVER.append("Liberation (UEF)")
             levelsTier2.append("Liberation (UEF)")
             levelsTier3.append("Liberation (UEF)")
         elif  world.options.faction.value[temp] == "cybran":
             levelsTier1.append("Liberation (Cybran)")
+            levelsTier1FOREVER.append("Liberation (Cybran)")
             levelsTier2.append("Liberation (Cybran)")
             levelsTier3.append("Liberation (Cybran)")
         elif  world.options.faction.value[temp] == "aeon":
             levelsTier1.append("Liberation (Aeon)")
+            levelsTier1FOREVER.append("Liberation (Aeon)")
             levelsTier2.append("Liberation (Aeon)")
             levelsTier3.append("Liberation (Aeon)")
         elif  world.options.faction.value[temp] == "sera":
             levelsTier1.append("Liberation (Sera)")
+            levelsTier1FOREVER.append("Liberation (Sera)")
             levelsTier2.append("Liberation (Sera)")
             levelsTier3.append("Liberation (Sera)")
         temp = world.random.randrange(0, len(world.options.faction.value))
@@ -2677,18 +129,22 @@ def makeEverything(world: SupComWorld) -> None:
     else:
         if "uef" in world.options.faction:
             levelsTier1.append("Liberation (UEF)")
+            levelsTier1FOREVER.append("Liberation (UEF)")
             levelsTier2.append("Liberation (UEF)")
             levelsTier3.append("Liberation (UEF)")
         if "cybran" in world.options.faction:
             levelsTier1.append("Liberation (Cybran)")
+            levelsTier1FOREVER.append("Liberation (Cybran)")
             levelsTier2.append("Liberation (Cybran)")
             levelsTier3.append("Liberation (Cybran)")
         if "aeon" in world.options.faction:
             levelsTier1.append("Liberation (Aeon)")
+            levelsTier1FOREVER.append("Liberation (Aeon)")
             levelsTier2.append("Liberation (Aeon)")
             levelsTier3.append("Liberation (Aeon)")
         if "sera" in world.options.faction:
             levelsTier1.append("Liberation (Sera)")
+            levelsTier1FOREVER.append("Liberation (Sera)")
             levelsTier2.append("Liberation (Sera)")
             levelsTier3.append("Liberation (Sera)")
         if "uef" in world.options.faction:
@@ -2745,6 +201,7 @@ def makeEverything(world: SupComWorld) -> None:
             levelsTier3.append("Freedom (Sera)")
 
     amountOfLevels = len(levelsTier3)
+    AllLevelsListToCheckRegionCreation = []
     possibleAnswers = []
     for i in range(1, amountOfLevels + 1):
         if amountOfLevels % i == 0:
@@ -2757,19 +214,23 @@ def makeEverything(world: SupComWorld) -> None:
     THE_GRID = [["" for i in range(Height)] for j in range(Width)]
     temp = world.random.randrange(0,len(levelsTier1))
     THE_GRID[0][0] = levelsTier1[temp]
+    AllLevelsListToCheckRegionCreation.append(levelsTier1[temp])
     levelsTier3.remove(levelsTier1[temp])
     levelsTier2.remove(levelsTier1[temp])
     levelsTier1.remove(levelsTier1[temp])
     temp = world.random.randrange(0,len(levelsTier2))
     THE_GRID[0][1] = levelsTier2[temp]
+    AllLevelsListToCheckRegionCreation.append(levelsTier2[temp])
     levelsTier3.remove(levelsTier2[temp])
     levelsTier2.remove(levelsTier2[temp])
     temp = world.random.randrange(0,len(levelsTier2))
     THE_GRID[1][0] = levelsTier2[temp]
+    AllLevelsListToCheckRegionCreation.append(levelsTier2[temp])
     levelsTier3.remove(levelsTier2[temp])
     levelsTier2.remove(levelsTier2[temp])
     temp = world.random.randrange(0,len(levelsTier4))
     THE_GRID[Width - 1][Height - 1] = levelsTier4[temp]
+    AllLevelsListToCheckRegionCreation.append(levelsTier4[temp])
     levelsTier3.remove(levelsTier4[temp])
     levelsTier4.remove(levelsTier4[temp])
 
@@ -2779,7 +240,2796 @@ def makeEverything(world: SupComWorld) -> None:
             if CheckFilled:
                 temp = world.random.randrange(0,len(levelsTier3))
                 THE_GRID[i][j] = levelsTier3[temp]
+                AllLevelsListToCheckRegionCreation.append(levelsTier3[temp])
                 levelsTier3.remove(levelsTier3[temp])
+
+    world.THE_GRID = THE_GRID
+
+    DictionaryOfRegions = {}
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF0 = Region("Liberation: Build mass (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build mass (UEF)"] = LiberationUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build mass (UEF) " + str(index)
+            objID = "210100"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF1 = Region("Liberation: Build power (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build power (UEF)"] = LiberationUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build power (UEF) " + str(index)
+            objID = "210101"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF2 = Region("Liberation: Build air factory (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build air factory (UEF)"] = LiberationUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build air factory (UEF) " + str(index)
+            objID = "210102"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF3 = Region("Liberation: Build bombers (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build bombers (UEF)"] = LiberationUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build bombers (UEF) " + str(index)
+            objID = "210103"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF4 = Region("Liberation: Destroy radar defenders (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy radar defenders (UEF)"] = LiberationUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy radar defenders (UEF) " + str(index)
+            objID = "210104"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF5 = Region("Liberation: Capture radars (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Capture radars (UEF)"] = LiberationUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Capture radars (UEF) " + str(index)
+            objID = "210105"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF6 = Region("Liberation: Destroy mex (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy mex (UEF)"] = LiberationUEF6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy mex (UEF) " + str(index)
+            objID = "210106"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF7 = Region("Liberation: Destroy UEF defences (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF defences (UEF)"] = LiberationUEF7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF defences (UEF) " + str(index)
+            objID = "210107"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF8 = Region("Liberation: Destroy UEF patrols (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF patrols (UEF)"] = LiberationUEF8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF patrols (UEF) " + str(index)
+            objID = "210108"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF9 = Region("Liberation: Destroy UEF base defenders (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base defenders (UEF)"] = LiberationUEF9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base defenders (UEF) " + str(index)
+            objID = "210109"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF10 = Region("Liberation: Destroy UEF base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base (UEF)"] = LiberationUEF10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base (UEF) " + str(index)
+            objID = "210110"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF11 = Region("Liberation: Kill Aeon Commander (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Kill Aeon Commander (UEF)"] = LiberationUEF11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Kill Aeon Commander (UEF) " + str(index)
+            objID = "210111"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationUEF11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF0 = Region("Artifact: Destroy first village defenders (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first village defenders (UEF)"] = ArtifactUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first village defenders (UEF) " + str(index)
+            objID = "210200"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF1 = Region("Artifact: Destroy first temple (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first temple (UEF)"] = ArtifactUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first temple (UEF) " + str(index)
+            objID = "210201"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF2 = Region("Artifact: Protect first artifact (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect first artifact (UEF)"] = ArtifactUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect first artifact (UEF) " + str(index)
+            objID = "210202"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF3 = Region("Artifact: Find second artifact (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Find second artifact (UEF)"] = ArtifactUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Find second artifact (UEF) " + str(index)
+            objID = "210203"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF4 = Region("Artifact: Destroy Aeon reinforcements (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (UEF)"] = ArtifactUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy Aeon reinforcements (UEF) " + str(index)
+            objID = "210204"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF5 = Region("Artifact: Protect second artifact (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect second artifact (UEF)"] = ArtifactUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect second artifact (UEF) " + str(index)
+            objID = "210205"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF6 = Region("Artifact: Defend from Aeon attack (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Defend from Aeon attack (UEF)"] = ArtifactUEF6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Defend from Aeon attack (UEF) " + str(index)
+            objID = "210206"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF7 = Region("Artifact: Destroy eastern base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy eastern base (UEF)"] = ArtifactUEF7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy eastern base (UEF) " + str(index)
+            objID = "210207"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF8 = Region("Artifact: Destroy navy base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy navy base (UEF)"] = ArtifactUEF8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy navy base (UEF) " + str(index)
+            objID = "210208"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF9 = Region("Artifact: Protect third artifact (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect third artifact (UEF)"] = ArtifactUEF9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect third artifact (UEF) " + str(index)
+            objID = "210209"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF10 = Region("Artifact: Kill Aeon Commander (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (UEF)"] = ArtifactUEF10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Aeon Commander (optional) (UEF) " + str(index)
+            objID = "210210"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF11 = Region("Artifact: Kill Mach (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Mach (UEF)"] = ArtifactUEF11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Mach (UEF) " + str(index)
+            objID = "210211"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF12 = Region("Artifact: Go to Gate (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Go to Gate (UEF)"] = ArtifactUEF12
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Go to Gate (UEF) " + str(index)
+            objID = "210212"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactUEF12.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF0 = Region("Defrag: Protect York 18 (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Protect York 18 (UEF)"] = DefragUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Protect York 18 (UEF) " + str(index)
+            objID = "210300"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF1 = Region("Defrag: Destroy western UEF base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy western UEF base (UEF)"] = DefragUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy western UEF base (UEF) " + str(index)
+            objID = "210301"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF2 = Region("Defrag: Destroy north-western UEF base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy north-western UEF base (UEF)"] = DefragUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy north-western UEF base (UEF) " + str(index)
+            objID = "210302"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF3 = Region("Defrag: Destroy northern UEF base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy northern UEF base (UEF)"] = DefragUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy northern UEF base (UEF) " + str(index)
+            objID = "210303"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF4 = Region("Defrag: Sink UEF cruiser (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Sink UEF cruiser (UEF)"] = DefragUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Sink UEF cruiser (UEF) " + str(index)
+            objID = "210304"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF5 = Region("Defrag: Destroy static artillery (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy static artillery (UEF)"] = DefragUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy static artillery (UEF) " + str(index)
+            objID = "210305"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF6 = Region("Defrag: Escort trucks (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort trucks (UEF)"] = DefragUEF6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort trucks (UEF) " + str(index)
+            objID = "210306"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF7 = Region("Defrag: Escort ALL trucks (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (UEF)"] = DefragUEF7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort ALL trucks (optional) (UEF) " + str(index)
+            objID = "210307"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF8 = Region("Defrag: Optional objective  (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Optional objective  (optional) (UEF)"] = DefragUEF8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Optional objective  (optional) (UEF) " + str(index)
+            objID = "210308"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF9 = Region("Defrag: Kill UEF Commander (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Kill UEF Commander (UEF)"] = DefragUEF9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Kill UEF Commander (UEF) " + str(index)
+            objID = "210309"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragUEF9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF0 = Region("Mainframe Tango: Defeat Aeon Commander (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (UEF)"] = MainframeTangoUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Defeat Aeon Commander (UEF) " + str(index)
+            objID = "210400"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF1 = Region("Mainframe Tango: Capture Network Node (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture Network Node (UEF)"] = MainframeTangoUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture Network Node (UEF) " + str(index)
+            objID = "210401"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF2 = Region("Mainframe Tango: Save Network Node (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save Network Node (UEF)"] = MainframeTangoUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save Network Node (UEF) " + str(index)
+            objID = "210402"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (UEF)"] = MainframeTangoUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save 80% civilian buildings (optional) (UEF) " + str(index)
+            objID = "210403"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF4 = Region("Mainframe Tango: Survive attacks (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Survive attacks (UEF)"] = MainframeTangoUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Survive attacks (UEF) " + str(index)
+            objID = "210404"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF5 = Region("Mainframe Tango: Capture northeast node (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northeast node (UEF)"] = MainframeTangoUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northeast node (UEF) " + str(index)
+            objID = "210405"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF6 = Region("Mainframe Tango: Capture northwest node (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northwest node (UEF)"] = MainframeTangoUEF6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northwest node (UEF) " + str(index)
+            objID = "210406"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF7 = Region("Mainframe Tango: Do not attack main Aeon base (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (UEF)"] = MainframeTangoUEF7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Do not attack main Aeon base (UEF) " + str(index)
+            objID = "210407"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF8 = Region("Mainframe Tango: Kill Aeon Commander (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (UEF)"] = MainframeTangoUEF8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Kill Aeon Commander (UEF) " + str(index)
+            objID = "210408"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoUEF8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF0 = Region("Unlock: Destroy UEF generators (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF generators (UEF)"] = UnlockUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF generators (UEF) " + str(index)
+            objID = "210500"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF1 = Region("Unlock: Destroy UEF shipyards (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (UEF)"] = UnlockUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF shipyards (optional) (UEF) " + str(index)
+            objID = "210501"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF2 = Region("Unlock: Destroy UEF radars (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF radars (UEF)"] = UnlockUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF radars (UEF) " + str(index)
+            objID = "210502"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF3 = Region("Unlock: Go to Hex5 (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Go to Hex5 (UEF)"] = UnlockUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Go to Hex5 (UEF) " + str(index)
+            objID = "210503"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF4 = Region("Unlock: Defend from heavy gunships (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Defend from heavy gunships (UEF)"] = UnlockUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Defend from heavy gunships (UEF) " + str(index)
+            objID = "210504"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF5 = Region("Unlock: Infect UEF landing pad (optional) (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (UEF)"] = UnlockUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Infect UEF landing pad (optional) (UEF) " + str(index)
+            objID = "210505"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF6 = Region("Unlock: This will be retconned later (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: This will be retconned later (UEF)"] = UnlockUEF6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: This will be retconned later (UEF) " + str(index)
+            objID = "210506"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF7 = Region("Unlock: Kill UEF Commander (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Kill UEF Commander (UEF)"] = UnlockUEF7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Kill UEF Commander (UEF) " + str(index)
+            objID = "210507"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockUEF7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF0 = Region("Freedom: Destroy CZAR (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Destroy CZAR (UEF)"] = FreedomUEF0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Destroy CZAR (UEF) " + str(index)
+            objID = "210600"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF1 = Region("Freedom: Build Quantum Gate (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Build Quantum Gate (UEF)"] = FreedomUEF1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Build Quantum Gate (UEF) " + str(index)
+            objID = "210601"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF2 = Region("Freedom: Download Quantum Virus (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Download Quantum Virus (UEF)"] = FreedomUEF2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Download Quantum Virus (UEF) " + str(index)
+            objID = "210602"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF3 = Region("Freedom: Capture Black Sun control center (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun control center (UEF)"] = FreedomUEF3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun control center (UEF) " + str(index)
+            objID = "210603"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF4 = Region("Freedom: Capture Black Sun (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun (UEF)"] = FreedomUEF4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun (UEF) " + str(index)
+            objID = "210604"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF5 = Region("Freedom: Shoot Black Sun (UEF)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Shoot Black Sun (UEF)"] = FreedomUEF5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Shoot Black Sun (UEF) " + str(index)
+            objID = "210605"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomUEF5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran0 = Region("Liberation: Build mass (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build mass (Cybran)"] = LiberationCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build mass (Cybran) " + str(index)
+            objID = "220100"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran1 = Region("Liberation: Build power (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build power (Cybran)"] = LiberationCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build power (Cybran) " + str(index)
+            objID = "220101"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran2 = Region("Liberation: Build air factory (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build air factory (Cybran)"] = LiberationCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build air factory (Cybran) " + str(index)
+            objID = "220102"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran3 = Region("Liberation: Build bombers (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build bombers (Cybran)"] = LiberationCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build bombers (Cybran) " + str(index)
+            objID = "220103"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran4 = Region("Liberation: Destroy radar defenders (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy radar defenders (Cybran)"] = LiberationCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy radar defenders (Cybran) " + str(index)
+            objID = "220104"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran5 = Region("Liberation: Capture radars (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Capture radars (Cybran)"] = LiberationCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Capture radars (Cybran) " + str(index)
+            objID = "220105"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran6 = Region("Liberation: Destroy mex (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy mex (Cybran)"] = LiberationCybran6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy mex (Cybran) " + str(index)
+            objID = "220106"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran7 = Region("Liberation: Destroy UEF defences (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF defences (Cybran)"] = LiberationCybran7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF defences (Cybran) " + str(index)
+            objID = "220107"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran8 = Region("Liberation: Destroy UEF patrols (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF patrols (Cybran)"] = LiberationCybran8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF patrols (Cybran) " + str(index)
+            objID = "220108"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran9 = Region("Liberation: Destroy UEF base defenders (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base defenders (Cybran)"] = LiberationCybran9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base defenders (Cybran) " + str(index)
+            objID = "220109"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran10 = Region("Liberation: Destroy UEF base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base (Cybran)"] = LiberationCybran10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base (Cybran) " + str(index)
+            objID = "220110"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran11 = Region("Liberation: Kill Aeon Commander (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Kill Aeon Commander (Cybran)"] = LiberationCybran11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Kill Aeon Commander (Cybran) " + str(index)
+            objID = "220111"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationCybran11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran0 = Region("Artifact: Destroy first village defenders (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first village defenders (Cybran)"] = ArtifactCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first village defenders (Cybran) " + str(index)
+            objID = "220200"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran1 = Region("Artifact: Destroy first temple (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first temple (Cybran)"] = ArtifactCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first temple (Cybran) " + str(index)
+            objID = "220201"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran2 = Region("Artifact: Protect first artifact (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect first artifact (Cybran)"] = ArtifactCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect first artifact (Cybran) " + str(index)
+            objID = "220202"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran3 = Region("Artifact: Find second artifact (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Find second artifact (Cybran)"] = ArtifactCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Find second artifact (Cybran) " + str(index)
+            objID = "220203"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran4 = Region("Artifact: Destroy Aeon reinforcements (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Cybran)"] = ArtifactCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy Aeon reinforcements (Cybran) " + str(index)
+            objID = "220204"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran5 = Region("Artifact: Protect second artifact (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect second artifact (Cybran)"] = ArtifactCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect second artifact (Cybran) " + str(index)
+            objID = "220205"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran6 = Region("Artifact: Defend from Aeon attack (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Defend from Aeon attack (Cybran)"] = ArtifactCybran6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Defend from Aeon attack (Cybran) " + str(index)
+            objID = "220206"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran7 = Region("Artifact: Destroy eastern base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy eastern base (Cybran)"] = ArtifactCybran7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy eastern base (Cybran) " + str(index)
+            objID = "220207"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran8 = Region("Artifact: Destroy navy base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy navy base (Cybran)"] = ArtifactCybran8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy navy base (Cybran) " + str(index)
+            objID = "220208"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran9 = Region("Artifact: Protect third artifact (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect third artifact (Cybran)"] = ArtifactCybran9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect third artifact (Cybran) " + str(index)
+            objID = "220209"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran10 = Region("Artifact: Kill Aeon Commander (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Cybran)"] = ArtifactCybran10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Aeon Commander (optional) (Cybran) " + str(index)
+            objID = "220210"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran11 = Region("Artifact: Kill Mach (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Mach (Cybran)"] = ArtifactCybran11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Mach (Cybran) " + str(index)
+            objID = "220211"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran12 = Region("Artifact: Go to Gate (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Go to Gate (Cybran)"] = ArtifactCybran12
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Go to Gate (Cybran) " + str(index)
+            objID = "220212"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactCybran12.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran0 = Region("Defrag: Protect York 18 (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Protect York 18 (Cybran)"] = DefragCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Protect York 18 (Cybran) " + str(index)
+            objID = "220300"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran1 = Region("Defrag: Destroy western UEF base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy western UEF base (Cybran)"] = DefragCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy western UEF base (Cybran) " + str(index)
+            objID = "220301"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran2 = Region("Defrag: Destroy north-western UEF base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy north-western UEF base (Cybran)"] = DefragCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy north-western UEF base (Cybran) " + str(index)
+            objID = "220302"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran3 = Region("Defrag: Destroy northern UEF base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy northern UEF base (Cybran)"] = DefragCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy northern UEF base (Cybran) " + str(index)
+            objID = "220303"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran4 = Region("Defrag: Sink UEF cruiser (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Sink UEF cruiser (Cybran)"] = DefragCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Sink UEF cruiser (Cybran) " + str(index)
+            objID = "220304"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran5 = Region("Defrag: Destroy static artillery (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy static artillery (Cybran)"] = DefragCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy static artillery (Cybran) " + str(index)
+            objID = "220305"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran6 = Region("Defrag: Escort trucks (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort trucks (Cybran)"] = DefragCybran6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort trucks (Cybran) " + str(index)
+            objID = "220306"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran7 = Region("Defrag: Escort ALL trucks (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Cybran)"] = DefragCybran7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort ALL trucks (optional) (Cybran) " + str(index)
+            objID = "220307"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran8 = Region("Defrag: Optional objective  (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Optional objective  (optional) (Cybran)"] = DefragCybran8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Optional objective  (optional) (Cybran) " + str(index)
+            objID = "220308"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran9 = Region("Defrag: Kill UEF Commander (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Kill UEF Commander (Cybran)"] = DefragCybran9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Kill UEF Commander (Cybran) " + str(index)
+            objID = "220309"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragCybran9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran0 = Region("Mainframe Tango: Defeat Aeon Commander (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Cybran)"] = MainframeTangoCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Defeat Aeon Commander (Cybran) " + str(index)
+            objID = "220400"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran1 = Region("Mainframe Tango: Capture Network Node (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture Network Node (Cybran)"] = MainframeTangoCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture Network Node (Cybran) " + str(index)
+            objID = "220401"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran2 = Region("Mainframe Tango: Save Network Node (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save Network Node (Cybran)"] = MainframeTangoCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save Network Node (Cybran) " + str(index)
+            objID = "220402"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)"] = MainframeTangoCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Cybran) " + str(index)
+            objID = "220403"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran4 = Region("Mainframe Tango: Survive attacks (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Survive attacks (Cybran)"] = MainframeTangoCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Survive attacks (Cybran) " + str(index)
+            objID = "220404"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran5 = Region("Mainframe Tango: Capture northeast node (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northeast node (Cybran)"] = MainframeTangoCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northeast node (Cybran) " + str(index)
+            objID = "220405"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran6 = Region("Mainframe Tango: Capture northwest node (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northwest node (Cybran)"] = MainframeTangoCybran6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northwest node (Cybran) " + str(index)
+            objID = "220406"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran7 = Region("Mainframe Tango: Do not attack main Aeon base (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Cybran)"] = MainframeTangoCybran7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Do not attack main Aeon base (Cybran) " + str(index)
+            objID = "220407"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran8 = Region("Mainframe Tango: Kill Aeon Commander (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Cybran)"] = MainframeTangoCybran8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Kill Aeon Commander (Cybran) " + str(index)
+            objID = "220408"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoCybran8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran0 = Region("Unlock: Destroy UEF generators (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF generators (Cybran)"] = UnlockCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF generators (Cybran) " + str(index)
+            objID = "220500"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran1 = Region("Unlock: Destroy UEF shipyards (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Cybran)"] = UnlockCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF shipyards (optional) (Cybran) " + str(index)
+            objID = "220501"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran2 = Region("Unlock: Destroy UEF radars (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF radars (Cybran)"] = UnlockCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF radars (Cybran) " + str(index)
+            objID = "220502"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran3 = Region("Unlock: Go to Hex5 (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Go to Hex5 (Cybran)"] = UnlockCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Go to Hex5 (Cybran) " + str(index)
+            objID = "220503"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran4 = Region("Unlock: Defend from heavy gunships (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Defend from heavy gunships (Cybran)"] = UnlockCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Defend from heavy gunships (Cybran) " + str(index)
+            objID = "220504"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran5 = Region("Unlock: Infect UEF landing pad (optional) (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Cybran)"] = UnlockCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Infect UEF landing pad (optional) (Cybran) " + str(index)
+            objID = "220505"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran6 = Region("Unlock: This will be retconned later (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: This will be retconned later (Cybran)"] = UnlockCybran6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: This will be retconned later (Cybran) " + str(index)
+            objID = "220506"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran7 = Region("Unlock: Kill UEF Commander (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Kill UEF Commander (Cybran)"] = UnlockCybran7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Kill UEF Commander (Cybran) " + str(index)
+            objID = "220507"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockCybran7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran0 = Region("Freedom: Destroy CZAR (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Destroy CZAR (Cybran)"] = FreedomCybran0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Destroy CZAR (Cybran) " + str(index)
+            objID = "220600"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran1 = Region("Freedom: Build Quantum Gate (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Build Quantum Gate (Cybran)"] = FreedomCybran1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Build Quantum Gate (Cybran) " + str(index)
+            objID = "220601"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran2 = Region("Freedom: Download Quantum Virus (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Download Quantum Virus (Cybran)"] = FreedomCybran2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Download Quantum Virus (Cybran) " + str(index)
+            objID = "220602"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran3 = Region("Freedom: Capture Black Sun control center (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun control center (Cybran)"] = FreedomCybran3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun control center (Cybran) " + str(index)
+            objID = "220603"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran4 = Region("Freedom: Capture Black Sun (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun (Cybran)"] = FreedomCybran4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun (Cybran) " + str(index)
+            objID = "220604"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran5 = Region("Freedom: Shoot Black Sun (Cybran)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Shoot Black Sun (Cybran)"] = FreedomCybran5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Shoot Black Sun (Cybran) " + str(index)
+            objID = "220605"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomCybran5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon0 = Region("Liberation: Build mass (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build mass (Aeon)"] = LiberationAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build mass (Aeon) " + str(index)
+            objID = "230100"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon1 = Region("Liberation: Build power (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build power (Aeon)"] = LiberationAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build power (Aeon) " + str(index)
+            objID = "230101"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon2 = Region("Liberation: Build air factory (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build air factory (Aeon)"] = LiberationAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build air factory (Aeon) " + str(index)
+            objID = "230102"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon3 = Region("Liberation: Build bombers (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build bombers (Aeon)"] = LiberationAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build bombers (Aeon) " + str(index)
+            objID = "230103"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon4 = Region("Liberation: Destroy radar defenders (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy radar defenders (Aeon)"] = LiberationAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy radar defenders (Aeon) " + str(index)
+            objID = "230104"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon5 = Region("Liberation: Capture radars (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Capture radars (Aeon)"] = LiberationAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Capture radars (Aeon) " + str(index)
+            objID = "230105"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon6 = Region("Liberation: Destroy mex (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy mex (Aeon)"] = LiberationAeon6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy mex (Aeon) " + str(index)
+            objID = "230106"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon7 = Region("Liberation: Destroy UEF defences (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF defences (Aeon)"] = LiberationAeon7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF defences (Aeon) " + str(index)
+            objID = "230107"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon8 = Region("Liberation: Destroy UEF patrols (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF patrols (Aeon)"] = LiberationAeon8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF patrols (Aeon) " + str(index)
+            objID = "230108"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon9 = Region("Liberation: Destroy UEF base defenders (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base defenders (Aeon)"] = LiberationAeon9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base defenders (Aeon) " + str(index)
+            objID = "230109"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon10 = Region("Liberation: Destroy UEF base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base (Aeon)"] = LiberationAeon10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base (Aeon) " + str(index)
+            objID = "230110"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon11 = Region("Liberation: Kill Aeon Commander (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Kill Aeon Commander (Aeon)"] = LiberationAeon11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Kill Aeon Commander (Aeon) " + str(index)
+            objID = "230111"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationAeon11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon0 = Region("Artifact: Destroy first village defenders (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first village defenders (Aeon)"] = ArtifactAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first village defenders (Aeon) " + str(index)
+            objID = "230200"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon1 = Region("Artifact: Destroy first temple (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first temple (Aeon)"] = ArtifactAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first temple (Aeon) " + str(index)
+            objID = "230201"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon2 = Region("Artifact: Protect first artifact (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect first artifact (Aeon)"] = ArtifactAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect first artifact (Aeon) " + str(index)
+            objID = "230202"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon3 = Region("Artifact: Find second artifact (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Find second artifact (Aeon)"] = ArtifactAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Find second artifact (Aeon) " + str(index)
+            objID = "230203"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon4 = Region("Artifact: Destroy Aeon reinforcements (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Aeon)"] = ArtifactAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy Aeon reinforcements (Aeon) " + str(index)
+            objID = "230204"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon5 = Region("Artifact: Protect second artifact (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect second artifact (Aeon)"] = ArtifactAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect second artifact (Aeon) " + str(index)
+            objID = "230205"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon6 = Region("Artifact: Defend from Aeon attack (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Defend from Aeon attack (Aeon)"] = ArtifactAeon6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Defend from Aeon attack (Aeon) " + str(index)
+            objID = "230206"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon7 = Region("Artifact: Destroy eastern base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy eastern base (Aeon)"] = ArtifactAeon7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy eastern base (Aeon) " + str(index)
+            objID = "230207"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon8 = Region("Artifact: Destroy navy base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy navy base (Aeon)"] = ArtifactAeon8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy navy base (Aeon) " + str(index)
+            objID = "230208"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon9 = Region("Artifact: Protect third artifact (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect third artifact (Aeon)"] = ArtifactAeon9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect third artifact (Aeon) " + str(index)
+            objID = "230209"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon10 = Region("Artifact: Kill Aeon Commander (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Aeon)"] = ArtifactAeon10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Aeon Commander (optional) (Aeon) " + str(index)
+            objID = "230210"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon11 = Region("Artifact: Kill Mach (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Mach (Aeon)"] = ArtifactAeon11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Mach (Aeon) " + str(index)
+            objID = "230211"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon12 = Region("Artifact: Go to Gate (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Go to Gate (Aeon)"] = ArtifactAeon12
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Go to Gate (Aeon) " + str(index)
+            objID = "230212"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactAeon12.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon0 = Region("Defrag: Protect York 18 (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Protect York 18 (Aeon)"] = DefragAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Protect York 18 (Aeon) " + str(index)
+            objID = "230300"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon1 = Region("Defrag: Destroy western UEF base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy western UEF base (Aeon)"] = DefragAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy western UEF base (Aeon) " + str(index)
+            objID = "230301"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon2 = Region("Defrag: Destroy north-western UEF base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy north-western UEF base (Aeon)"] = DefragAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy north-western UEF base (Aeon) " + str(index)
+            objID = "230302"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon3 = Region("Defrag: Destroy northern UEF base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy northern UEF base (Aeon)"] = DefragAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy northern UEF base (Aeon) " + str(index)
+            objID = "230303"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon4 = Region("Defrag: Sink UEF cruiser (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Sink UEF cruiser (Aeon)"] = DefragAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Sink UEF cruiser (Aeon) " + str(index)
+            objID = "230304"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon5 = Region("Defrag: Destroy static artillery (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy static artillery (Aeon)"] = DefragAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy static artillery (Aeon) " + str(index)
+            objID = "230305"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon6 = Region("Defrag: Escort trucks (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort trucks (Aeon)"] = DefragAeon6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort trucks (Aeon) " + str(index)
+            objID = "230306"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon7 = Region("Defrag: Escort ALL trucks (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Aeon)"] = DefragAeon7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort ALL trucks (optional) (Aeon) " + str(index)
+            objID = "230307"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon8 = Region("Defrag: Optional objective  (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Optional objective  (optional) (Aeon)"] = DefragAeon8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Optional objective  (optional) (Aeon) " + str(index)
+            objID = "230308"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon9 = Region("Defrag: Kill UEF Commander (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Kill UEF Commander (Aeon)"] = DefragAeon9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Kill UEF Commander (Aeon) " + str(index)
+            objID = "230309"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragAeon9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon0 = Region("Mainframe Tango: Defeat Aeon Commander (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Aeon)"] = MainframeTangoAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Defeat Aeon Commander (Aeon) " + str(index)
+            objID = "230400"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon1 = Region("Mainframe Tango: Capture Network Node (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture Network Node (Aeon)"] = MainframeTangoAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture Network Node (Aeon) " + str(index)
+            objID = "230401"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon2 = Region("Mainframe Tango: Save Network Node (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save Network Node (Aeon)"] = MainframeTangoAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save Network Node (Aeon) " + str(index)
+            objID = "230402"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)"] = MainframeTangoAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Aeon) " + str(index)
+            objID = "230403"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon4 = Region("Mainframe Tango: Survive attacks (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Survive attacks (Aeon)"] = MainframeTangoAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Survive attacks (Aeon) " + str(index)
+            objID = "230404"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon5 = Region("Mainframe Tango: Capture northeast node (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northeast node (Aeon)"] = MainframeTangoAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northeast node (Aeon) " + str(index)
+            objID = "230405"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon6 = Region("Mainframe Tango: Capture northwest node (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northwest node (Aeon)"] = MainframeTangoAeon6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northwest node (Aeon) " + str(index)
+            objID = "230406"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon7 = Region("Mainframe Tango: Do not attack main Aeon base (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Aeon)"] = MainframeTangoAeon7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Do not attack main Aeon base (Aeon) " + str(index)
+            objID = "230407"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon8 = Region("Mainframe Tango: Kill Aeon Commander (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Aeon)"] = MainframeTangoAeon8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Kill Aeon Commander (Aeon) " + str(index)
+            objID = "230408"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoAeon8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon0 = Region("Unlock: Destroy UEF generators (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF generators (Aeon)"] = UnlockAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF generators (Aeon) " + str(index)
+            objID = "230500"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon1 = Region("Unlock: Destroy UEF shipyards (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Aeon)"] = UnlockAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF shipyards (optional) (Aeon) " + str(index)
+            objID = "230501"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon2 = Region("Unlock: Destroy UEF radars (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF radars (Aeon)"] = UnlockAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF radars (Aeon) " + str(index)
+            objID = "230502"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon3 = Region("Unlock: Go to Hex5 (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Go to Hex5 (Aeon)"] = UnlockAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Go to Hex5 (Aeon) " + str(index)
+            objID = "230503"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon4 = Region("Unlock: Defend from heavy gunships (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Defend from heavy gunships (Aeon)"] = UnlockAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Defend from heavy gunships (Aeon) " + str(index)
+            objID = "230504"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon5 = Region("Unlock: Infect UEF landing pad (optional) (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Aeon)"] = UnlockAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Infect UEF landing pad (optional) (Aeon) " + str(index)
+            objID = "230505"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon6 = Region("Unlock: This will be retconned later (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: This will be retconned later (Aeon)"] = UnlockAeon6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: This will be retconned later (Aeon) " + str(index)
+            objID = "230506"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon7 = Region("Unlock: Kill UEF Commander (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Kill UEF Commander (Aeon)"] = UnlockAeon7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Kill UEF Commander (Aeon) " + str(index)
+            objID = "230507"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockAeon7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon0 = Region("Freedom: Destroy CZAR (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Destroy CZAR (Aeon)"] = FreedomAeon0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Destroy CZAR (Aeon) " + str(index)
+            objID = "230600"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon1 = Region("Freedom: Build Quantum Gate (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Build Quantum Gate (Aeon)"] = FreedomAeon1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Build Quantum Gate (Aeon) " + str(index)
+            objID = "230601"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon2 = Region("Freedom: Download Quantum Virus (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Download Quantum Virus (Aeon)"] = FreedomAeon2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Download Quantum Virus (Aeon) " + str(index)
+            objID = "230602"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon3 = Region("Freedom: Capture Black Sun control center (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun control center (Aeon)"] = FreedomAeon3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun control center (Aeon) " + str(index)
+            objID = "230603"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon4 = Region("Freedom: Capture Black Sun (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun (Aeon)"] = FreedomAeon4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun (Aeon) " + str(index)
+            objID = "230604"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon5 = Region("Freedom: Shoot Black Sun (Aeon)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Shoot Black Sun (Aeon)"] = FreedomAeon5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Shoot Black Sun (Aeon) " + str(index)
+            objID = "230605"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomAeon5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera0 = Region("Liberation: Build mass (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build mass (Sera)"] = LiberationSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build mass (Sera) " + str(index)
+            objID = "240100"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera1 = Region("Liberation: Build power (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build power (Sera)"] = LiberationSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build power (Sera) " + str(index)
+            objID = "240101"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera2 = Region("Liberation: Build air factory (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build air factory (Sera)"] = LiberationSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build air factory (Sera) " + str(index)
+            objID = "240102"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera3 = Region("Liberation: Build bombers (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Build bombers (Sera)"] = LiberationSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Build bombers (Sera) " + str(index)
+            objID = "240103"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera4 = Region("Liberation: Destroy radar defenders (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy radar defenders (Sera)"] = LiberationSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy radar defenders (Sera) " + str(index)
+            objID = "240104"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera5 = Region("Liberation: Capture radars (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Capture radars (Sera)"] = LiberationSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Capture radars (Sera) " + str(index)
+            objID = "240105"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera6 = Region("Liberation: Destroy mex (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy mex (Sera)"] = LiberationSera6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy mex (Sera) " + str(index)
+            objID = "240106"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera7 = Region("Liberation: Destroy UEF defences (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF defences (Sera)"] = LiberationSera7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF defences (Sera) " + str(index)
+            objID = "240107"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera8 = Region("Liberation: Destroy UEF patrols (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF patrols (Sera)"] = LiberationSera8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF patrols (Sera) " + str(index)
+            objID = "240108"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera9 = Region("Liberation: Destroy UEF base defenders (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base defenders (Sera)"] = LiberationSera9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base defenders (Sera) " + str(index)
+            objID = "240109"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera10 = Region("Liberation: Destroy UEF base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Destroy UEF base (Sera)"] = LiberationSera10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Destroy UEF base (Sera) " + str(index)
+            objID = "240110"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera11 = Region("Liberation: Kill Aeon Commander (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Liberation: Kill Aeon Commander (Sera)"] = LiberationSera11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Liberation: Kill Aeon Commander (Sera) " + str(index)
+            objID = "240111"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            LiberationSera11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera0 = Region("Artifact: Destroy first village defenders (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first village defenders (Sera)"] = ArtifactSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first village defenders (Sera) " + str(index)
+            objID = "240200"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera1 = Region("Artifact: Destroy first temple (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy first temple (Sera)"] = ArtifactSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy first temple (Sera) " + str(index)
+            objID = "240201"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera2 = Region("Artifact: Protect first artifact (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect first artifact (Sera)"] = ArtifactSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect first artifact (Sera) " + str(index)
+            objID = "240202"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera3 = Region("Artifact: Find second artifact (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Find second artifact (Sera)"] = ArtifactSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Find second artifact (Sera) " + str(index)
+            objID = "240203"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera4 = Region("Artifact: Destroy Aeon reinforcements (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy Aeon reinforcements (Sera)"] = ArtifactSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy Aeon reinforcements (Sera) " + str(index)
+            objID = "240204"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera5 = Region("Artifact: Protect second artifact (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect second artifact (Sera)"] = ArtifactSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect second artifact (Sera) " + str(index)
+            objID = "240205"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera6 = Region("Artifact: Defend from Aeon attack (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Defend from Aeon attack (Sera)"] = ArtifactSera6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Defend from Aeon attack (Sera) " + str(index)
+            objID = "240206"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera7 = Region("Artifact: Destroy eastern base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy eastern base (Sera)"] = ArtifactSera7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy eastern base (Sera) " + str(index)
+            objID = "240207"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera8 = Region("Artifact: Destroy navy base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Destroy navy base (Sera)"] = ArtifactSera8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Destroy navy base (Sera) " + str(index)
+            objID = "240208"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera9 = Region("Artifact: Protect third artifact (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Protect third artifact (Sera)"] = ArtifactSera9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Protect third artifact (Sera) " + str(index)
+            objID = "240209"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera10 = Region("Artifact: Kill Aeon Commander (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Aeon Commander (optional) (Sera)"] = ArtifactSera10
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Aeon Commander (optional) (Sera) " + str(index)
+            objID = "240210"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera10.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera11 = Region("Artifact: Kill Mach (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Kill Mach (Sera)"] = ArtifactSera11
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Kill Mach (Sera) " + str(index)
+            objID = "240211"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera11.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera12 = Region("Artifact: Go to Gate (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Artifact: Go to Gate (Sera)"] = ArtifactSera12
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Artifact: Go to Gate (Sera) " + str(index)
+            objID = "240212"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            ArtifactSera12.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera0 = Region("Defrag: Protect York 18 (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Protect York 18 (Sera)"] = DefragSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Protect York 18 (Sera) " + str(index)
+            objID = "240300"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera1 = Region("Defrag: Destroy western UEF base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy western UEF base (Sera)"] = DefragSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy western UEF base (Sera) " + str(index)
+            objID = "240301"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera2 = Region("Defrag: Destroy north-western UEF base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy north-western UEF base (Sera)"] = DefragSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy north-western UEF base (Sera) " + str(index)
+            objID = "240302"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera3 = Region("Defrag: Destroy northern UEF base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy northern UEF base (Sera)"] = DefragSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy northern UEF base (Sera) " + str(index)
+            objID = "240303"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera4 = Region("Defrag: Sink UEF cruiser (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Sink UEF cruiser (Sera)"] = DefragSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Sink UEF cruiser (Sera) " + str(index)
+            objID = "240304"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera5 = Region("Defrag: Destroy static artillery (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Destroy static artillery (Sera)"] = DefragSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Destroy static artillery (Sera) " + str(index)
+            objID = "240305"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera6 = Region("Defrag: Escort trucks (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort trucks (Sera)"] = DefragSera6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort trucks (Sera) " + str(index)
+            objID = "240306"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera7 = Region("Defrag: Escort ALL trucks (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Escort ALL trucks (optional) (Sera)"] = DefragSera7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Escort ALL trucks (optional) (Sera) " + str(index)
+            objID = "240307"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera8 = Region("Defrag: Optional objective  (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Optional objective  (optional) (Sera)"] = DefragSera8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Optional objective  (optional) (Sera) " + str(index)
+            objID = "240308"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera9 = Region("Defrag: Kill UEF Commander (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Defrag: Kill UEF Commander (Sera)"] = DefragSera9
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Defrag: Kill UEF Commander (Sera) " + str(index)
+            objID = "240309"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            DefragSera9.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera0 = Region("Mainframe Tango: Defeat Aeon Commander (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Defeat Aeon Commander (Sera)"] = MainframeTangoSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Defeat Aeon Commander (Sera) " + str(index)
+            objID = "240400"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera1 = Region("Mainframe Tango: Capture Network Node (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture Network Node (Sera)"] = MainframeTangoSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture Network Node (Sera) " + str(index)
+            objID = "240401"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera2 = Region("Mainframe Tango: Save Network Node (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save Network Node (Sera)"] = MainframeTangoSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save Network Node (Sera) " + str(index)
+            objID = "240402"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera3 = Region("Mainframe Tango: Save 80% civilian buildings (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Save 80% civilian buildings (optional) (Sera)"] = MainframeTangoSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Save 80% civilian buildings (optional) (Sera) " + str(index)
+            objID = "240403"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera4 = Region("Mainframe Tango: Survive attacks (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Survive attacks (Sera)"] = MainframeTangoSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Survive attacks (Sera) " + str(index)
+            objID = "240404"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera5 = Region("Mainframe Tango: Capture northeast node (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northeast node (Sera)"] = MainframeTangoSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northeast node (Sera) " + str(index)
+            objID = "240405"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera6 = Region("Mainframe Tango: Capture northwest node (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Capture northwest node (Sera)"] = MainframeTangoSera6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Capture northwest node (Sera) " + str(index)
+            objID = "240406"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera7 = Region("Mainframe Tango: Do not attack main Aeon base (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Do not attack main Aeon base (Sera)"] = MainframeTangoSera7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Do not attack main Aeon base (Sera) " + str(index)
+            objID = "240407"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera8 = Region("Mainframe Tango: Kill Aeon Commander (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Mainframe Tango: Kill Aeon Commander (Sera)"] = MainframeTangoSera8
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Mainframe Tango: Kill Aeon Commander (Sera) " + str(index)
+            objID = "240408"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            MainframeTangoSera8.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera0 = Region("Unlock: Destroy UEF generators (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF generators (Sera)"] = UnlockSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF generators (Sera) " + str(index)
+            objID = "240500"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera1 = Region("Unlock: Destroy UEF shipyards (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF shipyards (optional) (Sera)"] = UnlockSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF shipyards (optional) (Sera) " + str(index)
+            objID = "240501"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera2 = Region("Unlock: Destroy UEF radars (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Destroy UEF radars (Sera)"] = UnlockSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Destroy UEF radars (Sera) " + str(index)
+            objID = "240502"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera3 = Region("Unlock: Go to Hex5 (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Go to Hex5 (Sera)"] = UnlockSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Go to Hex5 (Sera) " + str(index)
+            objID = "240503"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera4 = Region("Unlock: Defend from heavy gunships (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Defend from heavy gunships (Sera)"] = UnlockSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Defend from heavy gunships (Sera) " + str(index)
+            objID = "240504"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera5 = Region("Unlock: Infect UEF landing pad (optional) (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Infect UEF landing pad (optional) (Sera)"] = UnlockSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Infect UEF landing pad (optional) (Sera) " + str(index)
+            objID = "240505"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera5.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera6 = Region("Unlock: This will be retconned later (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: This will be retconned later (Sera)"] = UnlockSera6
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: This will be retconned later (Sera) " + str(index)
+            objID = "240506"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera6.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera7 = Region("Unlock: Kill UEF Commander (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Unlock: Kill UEF Commander (Sera)"] = UnlockSera7
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Unlock: Kill UEF Commander (Sera) " + str(index)
+            objID = "240507"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            UnlockSera7.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera0 = Region("Freedom: Destroy CZAR (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Destroy CZAR (Sera)"] = FreedomSera0
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Destroy CZAR (Sera) " + str(index)
+            objID = "240600"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera0.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera1 = Region("Freedom: Build Quantum Gate (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Build Quantum Gate (Sera)"] = FreedomSera1
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Build Quantum Gate (Sera) " + str(index)
+            objID = "240601"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera1.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera2 = Region("Freedom: Download Quantum Virus (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Download Quantum Virus (Sera)"] = FreedomSera2
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Download Quantum Virus (Sera) " + str(index)
+            objID = "240602"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera2.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera3 = Region("Freedom: Capture Black Sun control center (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun control center (Sera)"] = FreedomSera3
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun control center (Sera) " + str(index)
+            objID = "240603"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera3.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera4 = Region("Freedom: Capture Black Sun (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Capture Black Sun (Sera)"] = FreedomSera4
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Capture Black Sun (Sera) " + str(index)
+            objID = "240604"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera4.add_locations({lname: int(objID)}, SupComLocation)
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera5 = Region("Freedom: Shoot Black Sun (Sera)", world.player, world.multiworld)
+        DictionaryOfRegions["Freedom: Shoot Black Sun (Sera)"] = FreedomSera5
+        for i in range(0, world.options.locamount):
+            index = i + 1
+            lname = "Freedom: Shoot Black Sun (Sera) " + str(index)
+            objID = "240605"
+            if i < 10:
+                objID = objID + "0"
+            objID = objID + str(i)
+            FreedomSera5.add_locations({lname: int(objID)}, SupComLocation)
+
 
     TotalListOfTtotallyLevels = {}
     TempRegionlist = []
@@ -3070,109 +3320,109 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (UEF)"] = rule
     rule = Has("Scorcher")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (UEF)"] = rule
-    rule = Has("Scorcher")
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (UEF)"] = rule
-    rule = Has("Scorcher")
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (UEF)"] = rule
-    rule = Has("Scorcher")
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first village defenders (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (UEF)"] = rule
-    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))
+    rule = (Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (UEF)"] = rule
-    rule = ((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))
+    rule = ((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (UEF)"] = rule
-    rule = (((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))
+    rule = (((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (UEF)"] = rule
-    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))
+    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (UEF)"] = rule
-    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))
+    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (UEF)"] = rule
-    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))
+    rule = ((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (UEF)"] = rule
-    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))
+    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (UEF)"] = rule
-    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))
+    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (UEF)"] = rule
-    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))
+    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (UEF)"] = rule
-    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))
+    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (UEF)"] = rule
-    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))
+    rule = (((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (UEF)"] = rule
-    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))
+    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Protect York 18 (UEF)"] = rule
-    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))
+    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (UEF)"] = rule
-    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))
+    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (UEF)"] = rule
-    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))
+    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (UEF)"] = rule
-    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))
+    rule = ((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (UEF)"] = rule
-    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))
+    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (UEF)"] = rule
-    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))
+    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (UEF)"] = rule
-    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))
+    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (UEF)"] = rule
-    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))
+    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (UEF)"] = rule
-    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))
+    rule = (((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Defeat Aeon Commander (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (UEF)"] = rule
-    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))
+    rule = ((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (UEF)"] = rule
-    rule = (((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))
+    rule = (((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF generators (UEF)"] = rule
-    rule = ((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))
+    rule = ((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (UEF)"] = rule
-    rule = ((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))
+    rule = ((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (UEF)"] = rule
-    rule = (((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))
+    rule = (((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (UEF)"] = rule
-    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
+    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (UEF)"] = rule
-    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
+    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (UEF)"] = rule
-    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
+    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (UEF)"] = rule
-    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
+    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (UEF)"] = rule
-    rule = (((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
+    rule = ((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Destroy CZAR (UEF)"] = rule
-    rule = ((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))
+    rule = (((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (UEF)"] = rule
-    rule = (((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador"))
+    rule = ((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador") | Has("Fatboy"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (UEF)"] = rule
-    rule = (((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador"))
+    rule = ((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador") | Has("Fatboy"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (UEF)"] = rule
-    rule = (((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador"))
+    rule = ((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador") | Has("Fatboy"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (UEF)"] = rule
-    rule = (((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("ThunderheadClass") | Has("Stork") | Has("DN1"))) & (Has("ValiantClass") | Has("GovernorClass") | Has("Stinger") | Has("C-6Courier") | Has("KlinkHammer") | Has("Aloha"))) & (Has("UEFT2MassExtractor") & Has("EG-200FusionReactor"))) & (Has("AirCleaner") | Has("SkyBoxer"))) & (Has("ValiantClass") | Has("GovernorClass"))) & (Has("UEFT3MassExtractor") & Has("EG900FusionReactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("NovaxCenter") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador"))
+    rule = ((((((((((((((Has("Scorcher")) & (Has("Cyclone") | Has("Archer") | Has("DA1 Railgun"))) & (Has("MA12 Striker"))) & (Has("Mongoose") | Has("Pillar") | Has("Riptide") | Has("Sparky") | Has("Triad"))) & (Has("Triad") | Has("Tigershark") | Has("Thunderhead Class") | Has("Stork") | Has("DN1"))) & (Has("Valiant Class") | Has("Governor Class") | Has("Stinger") | Has("C-6 Courier") | Has("Klink Hammer") | Has("Aloha"))) & (Has("UEF T2 Mass Extractor") & Has("EG - 200 Fusion Reactor"))) & (Has("Air Cleaner") | Has("Sky Boxer"))) & (Has("Valiant Class") | Has("Governor Class"))) & (Has("UEF T3 Mass Extractor") & Has("EG 900 Fusion Reactor") & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Mavor") | Has("Novax Center") | Has("Aloha") | Has("Duke") | Has("Stonager") | Has("Broadsword") | Has("Ambassador")))) & (Has("Governor Class"))) & (Has("C14 Star Lifter"))) & (Has("Wasp") | Has("Cougar") | Has("Flayer"))) & (Has("QGW R-32"))) & (Has("Titan") | Has("Persival") | Has("Spearhead") | Has("Continental") | Has("Janus") | Has("Broadsword") | Has("Ambassador") | Has("Fatboy"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (UEF)"] = rule
     rule = Has("Zeus")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Cybran)"] = rule
@@ -3180,109 +3430,109 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Cybran)"] = rule
     rule = Has("Zeus")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Cybran)"] = rule
-    rule = Has("Zeus")
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Cybran)"] = rule
-    rule = Has("Zeus")
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Cybran)"] = rule
-    rule = Has("Zeus")
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first village defenders (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Cybran)"] = rule
-    rule = (Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))
+    rule = (Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Cybran)"] = rule
-    rule = ((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))
+    rule = ((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Cybran)"] = rule
-    rule = (((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))
+    rule = (((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Cybran)"] = rule
-    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))
+    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Cybran)"] = rule
-    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))
+    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Cybran)"] = rule
-    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))
+    rule = ((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Cybran)"] = rule
-    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))
+    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Cybran)"] = rule
-    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))
+    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Cybran)"] = rule
-    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))
+    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Cybran)"] = rule
-    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))
+    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Cybran)"] = rule
-    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))
+    rule = (((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Cybran)"] = rule
-    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))
+    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Protect York 18 (Cybran)"] = rule
-    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))
+    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Cybran)"] = rule
-    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))
+    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Cybran)"] = rule
-    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))
+    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Cybran)"] = rule
-    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))
+    rule = ((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Cybran)"] = rule
-    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))
+    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Cybran)"] = rule
-    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))
+    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Cybran)"] = rule
-    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))
+    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Cybran)"] = rule
-    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))
+    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Cybran)"] = rule
-    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))
+    rule = (((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Defeat Aeon Commander (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Cybran)"] = rule
-    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))
+    rule = ((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Cybran)"] = rule
-    rule = (((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))
+    rule = (((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF generators (Cybran)"] = rule
-    rule = ((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))
+    rule = ((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Cybran)"] = rule
-    rule = ((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))
+    rule = ((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Cybran)"] = rule
-    rule = (((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))
+    rule = (((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Cybran)"] = rule
-    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
+    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Cybran)"] = rule
-    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
+    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Cybran)"] = rule
-    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
+    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Cybran)"] = rule
-    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
+    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Cybran)"] = rule
-    rule = (((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
+    rule = ((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Destroy CZAR (Cybran)"] = rule
-    rule = ((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))
+    rule = (((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Cybran)"] = rule
-    rule = (((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
+    rule = ((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Cybran)"] = rule
-    rule = (((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
+    rule = ((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Cybran)"] = rule
-    rule = (((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
+    rule = ((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Cybran)"] = rule
-    rule = (((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("SkySlammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("TridentClass") | Has("Cormorant") | Has("Scuttle"))) & (Has("SalemClass") | Has("Renegade") | Has("SkyHook") | Has("Gunther") | Has("TML-4"))) & (Has("CybranT2MassExtractor") & Has("CybranT2Generator"))) & (Has("BurstMaster") | Has("Banger"))) & (Has("Salem Class"))) & (Has("CybranT3MassExtractor") & Has("IonReactor") & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("TheBrick") | Has("SoulRipper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
+    rule = ((((((((((((((Has("Zeus")) & (Has("Prowler") | Has("Sky Slammer") | Has("Tracer"))) & (Has("Mantis"))) & (Has("Rhino") | Has("Cerberus") | Has("Wagner") | Has("Hoplite"))) & (Has("Cerberus") | Has("Sliver") | Has("Trident Class") | Has("Cormorant") | Has("Scuttle"))) & (Has("Salem Class") | Has("Renegade") | Has("Sky Hook") | Has("Gunther") | Has("TML-4"))) & (Has("Cybran T2 Mass Extractor") & Has("Cybran T2 Generator"))) & (Has("Burst Master") | Has("Banger"))) & (Has("Salem Class"))) & (Has("Cybran T3 Mass Extractor") & Has("Ion Reactor") & (Has(" Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Scathis") | Has("TML-4") | Has("Disruptor") | Has("Liberator") | Has("Wailer") | Has("Revenant")))) & (Has("Siren Class"))) & (Has("Dragonfly"))) & (Has("Gemini") | Has("Bouncer") | Has("Myrmidon"))) & (Has("Summoner"))) & (Has("Loyalist") | Has("The Brick") | Has("Soul Ripper") | Has("Monkeylord") | Has("Megalith") | Has("Wailer") | Has("Revenant"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Cybran)"] = rule
     rule = Has("Shimmer")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Aeon)"] = rule
@@ -3290,11 +3540,11 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Aeon)"] = rule
     rule = Has("Shimmer")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Aeon)"] = rule
-    rule = Has("Shimmer")
+    rule = (Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Aeon)"] = rule
-    rule = Has("Shimmer")
+    rule = (Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Aeon)"] = rule
-    rule = Has("Shimmer")
+    rule = (Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Aeon)"] = rule
     rule = (Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Aeon)"] = rule
@@ -3312,87 +3562,87 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Aeon)"] = rule
     rule = (((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Aeon)"] = rule
-    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))
+    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Aeon)"] = rule
-    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))
+    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Aeon)"] = rule
-    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))
+    rule = ((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Aeon)"] = rule
-    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
+    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Aeon)"] = rule
-    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
+    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Aeon)"] = rule
-    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
+    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Aeon)"] = rule
-    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
+    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Aeon)"] = rule
-    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
+    rule = (((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Aeon)"] = rule
-    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))
+    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Protect York 18 (Aeon)"] = rule
-    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))
+    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Aeon)"] = rule
-    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))
+    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Aeon)"] = rule
-    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))
+    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Aeon)"] = rule
-    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))
+    rule = ((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Aeon)"] = rule
-    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))
+    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Aeon)"] = rule
-    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))
+    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Aeon)"] = rule
-    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))
+    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Aeon)"] = rule
-    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))
+    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Aeon)"] = rule
-    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))
+    rule = (((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Defeat Aeon Commander (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Aeon)"] = rule
-    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
+    rule = ((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Aeon)"] = rule
-    rule = (((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))
+    rule = (((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF generators (Aeon)"] = rule
-    rule = ((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))
+    rule = ((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Aeon)"] = rule
-    rule = ((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))
+    rule = ((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Aeon)"] = rule
-    rule = (((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))
+    rule = (((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Aeon)"] = rule
-    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
+    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Aeon)"] = rule
-    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
+    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Aeon)"] = rule
-    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
+    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Aeon)"] = rule
-    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
+    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Aeon)"] = rule
-    rule = (((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
+    rule = ((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Destroy CZAR (Aeon)"] = rule
-    rule = ((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))
+    rule = (((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Aeon)"] = rule
-    rule = (((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Restorer") | Has("Shocker"))
+    rule = ((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Restorer") | Has("Shocker"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Aeon)"] = rule
-    rule = (((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Restorer") | Has("Shocker"))
+    rule = ((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Restorer") | Has("Shocker"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Aeon)"] = rule
-    rule = (((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Restorer") | Has("Shocker"))
+    rule = ((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Restorer") | Has("Shocker"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Aeon)"] = rule
-    rule = (((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("BeaconClass") | Has("Skimmer") | Has("Tide"))) & (Has("ExodusClass") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("AeonT2MassExtractor") & Has("AeonT2Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("AeonT3MassExtractor") & Has("QuantumReactor") & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("SpriteStriker") | Has("HarbringerMk4") | Has("Czar") | Has("GalacticColossus") | Has("Restorer") | Has("Shocker"))
+    rule = ((((((((((((((Has("Shimmer")) & (Has("Conservator") | Has("Thisle") | Has("Seeker"))) & (Has("Aurora"))) & (Has("Obsidian") | Has("Oblivion") | Has("Blaze"))) & (Has("Oblivion") | Has("Sylph") | Has("Beacon Class") | Has("Skimmer") | Has("Tide"))) & (Has("Exodus Class") | Has("Specter") | Has("Mercy") | Has("Chariot") | Has("Miasma") | Has("Serpentine"))) & (Has("Aeon T2 Mass Extractor") & Has("Aeon T2 Generator"))) & (Has("Marr") | Has("Ascendant"))) & (Has("Exodus Class"))) & (Has("Aeon T3 Mass Extractor") & Has("Quantum Reactor") & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Salvation") | Has("Serpentine") | Has("Emissary") | Has("Apocalypse") | Has("Restorer") | Has("Shocker")))) & (Has("Infinity Class"))) & (Has("Aluminar"))) & (Has("Corona") | Has("Redeemer") | Has("Transcender"))) & (Has("Portal"))) & (Has("Sprite Striker") | Has("Harbringer Mk4") | Has("Czar") | Has("Galactic Colossus") | Has("Restorer") | Has("Shocker"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Aeon)"] = rule
     rule = Has("Sinnve")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Sera)"] = rule
@@ -3400,11 +3650,11 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Sera)"] = rule
     rule = Has("Sinnve")
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Sera)"] = rule
-    rule = Has("Sinnve")
+    rule = (Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Sera)"] = rule
-    rule = Has("Sinnve")
+    rule = (Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Sera)"] = rule
-    rule = Has("Sinnve")
+    rule = (Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Sera)"] = rule
     rule = (Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))
     TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Sera)"] = rule
@@ -3438,71 +3688,71 @@ def makeEverything(world: SupComWorld) -> None:
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Sera)"] = rule
     rule = (((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))
     TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Sera)"] = rule
-    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))
+    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Protect York 18 (Sera)"] = rule
-    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))
+    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Sera)"] = rule
-    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))
+    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Sera)"] = rule
-    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))
+    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Sera)"] = rule
-    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))
+    rule = ((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Sera)"] = rule
-    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
+    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Sera)"] = rule
-    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
+    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Sera)"] = rule
-    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
+    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Sera)"] = rule
-    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
+    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Sera)"] = rule
-    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
+    rule = (((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))
     TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Defeat Aeon Commander (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Sera)"] = rule
-    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
+    rule = ((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Sera)"] = rule
-    rule = (((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))
+    rule = (((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF generators (Sera)"] = rule
-    rule = ((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))
+    rule = ((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Sera)"] = rule
-    rule = ((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))
+    rule = ((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Sera)"] = rule
-    rule = (((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))
+    rule = (((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Sera)"] = rule
-    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
+    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Sera)"] = rule
-    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
+    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Sera)"] = rule
-    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
+    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Sera)"] = rule
-    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
+    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
     TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Sera)"] = rule
-    rule = (((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
+    rule = ((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Destroy CZAR (Sera)"] = rule
-    rule = ((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))
+    rule = (((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Sera)"] = rule
-    rule = (((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
+    rule = ((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Sera)"] = rule
-    rule = (((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
+    rule = ((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Sera)"] = rule
-    rule = (((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
+    rule = ((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Sera)"] = rule
-    rule = (((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("SeraT2MassExtractor") & Has("SeraT2Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("SeraT3MassExtractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("YolonaOss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
+    rule = ((((((((((((((Has("Sinnve")) & (Has("Ia-atha") | Has("Ia-istle") | Has("Ialla"))) & (Has("Thaam"))) & (Has("Ilshavoh") | Has("Yenzyne") | Has("Uttaushala"))) & (Has("Uttaushala") | Has("Sou-istle") | Has("Hau-esel") | Has("Uosioz") | Has("Sou-atha"))) & (Has("Uashavoh") | Has("Ithalua") | Has("Vulthoo") | Has("Vish") | Has("Zthuthaam") | Has("Ythis"))) & (Has("Sera T2 Mass Extractor") & Has("Sera T2 Generator"))) & (Has("Iashavoh") | Has("Sinnatha"))) & (Has("Uashavoh") | Has("Ithalua"))) & (Has("Sera T3 Mass Extractor") & Has("Uya-iya") & (Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Yolona Oss") | Has("Ythis") | Has("Hovatham") | Has("Hastue") | Has("Sinntha")))) & (Has("Ithalua"))) & (Has("Vishala"))) & (Has("Iazyne") | Has("Uyanah") | Has("Iathu-ioz"))) & (Has("Aezthu-uhthe"))) & (Has("Othuum") | Has("Othuum") | Has("Uyanah") | Has("Ythotha") | Has("Ahwassa") | Has("Sinntha"))
     TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Sera)"] = rule
 
     ListOfUsedRegions = []
@@ -3512,214 +3762,422 @@ def makeEverything(world: SupComWorld) -> None:
                 ListOfUsedRegions.append(DictionaryOfRegions[TotalListOfTtotallyLevels[THE_GRID[i][j]][c]])
     world.multiworld.regions += ListOfUsedRegions
 
-    LiberationUEF0.connect(LiberationUEF1, "e0")
-    LiberationUEF1.connect(LiberationUEF2, "e1")
-    LiberationUEF2.connect(LiberationUEF3, "e2", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (UEF)"])
-    LiberationUEF3.connect(LiberationUEF4, "e3", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (UEF)"])
-    LiberationUEF4.connect(LiberationUEF5, "e4", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (UEF)"])
-    LiberationUEF5.connect(LiberationUEF6, "e5", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (UEF)"])
-    LiberationUEF6.connect(LiberationUEF7, "e6", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (UEF)"])
-    LiberationUEF7.connect(LiberationUEF8, "e7", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (UEF)"])
-    LiberationUEF8.connect(LiberationUEF9, "e8", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (UEF)"])
-    LiberationUEF9.connect(LiberationUEF10, "e9", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (UEF)"])
-    LiberationUEF10.connect(LiberationUEF11, "e10", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (UEF)"])
-    ArtifactUEF0.connect(ArtifactUEF1, "e11", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (UEF)"])
-    ArtifactUEF1.connect(ArtifactUEF2, "e12", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (UEF)"])
-    ArtifactUEF2.connect(ArtifactUEF3, "e13", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (UEF)"])
-    ArtifactUEF3.connect(ArtifactUEF4, "e14", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (UEF)"])
-    ArtifactUEF4.connect(ArtifactUEF5, "e15", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (UEF)"])
-    ArtifactUEF5.connect(ArtifactUEF6, "e16", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (UEF)"])
-    ArtifactUEF6.connect(ArtifactUEF7, "e17", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (UEF)"])
-    ArtifactUEF7.connect(ArtifactUEF8, "e18", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (UEF)"])
-    ArtifactUEF8.connect(ArtifactUEF9, "e19", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (UEF)"])
-    ArtifactUEF9.connect(ArtifactUEF10, "e20", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (UEF)"])
-    ArtifactUEF10.connect(ArtifactUEF11, "e21", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (UEF)"])
-    ArtifactUEF11.connect(ArtifactUEF12, "e22", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (UEF)"])
-    DefragUEF0.connect(DefragUEF1, "e23", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (UEF)"])
-    DefragUEF1.connect(DefragUEF2, "e24", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (UEF)"])
-    DefragUEF2.connect(DefragUEF3, "e25", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (UEF)"])
-    DefragUEF3.connect(DefragUEF4, "e26", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (UEF)"])
-    DefragUEF4.connect(DefragUEF5, "e27", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (UEF)"])
-    DefragUEF5.connect(DefragUEF6, "e28", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (UEF)"])
-    DefragUEF6.connect(DefragUEF7, "e29", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (UEF)"])
-    DefragUEF7.connect(DefragUEF8, "e30", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (UEF)"])
-    DefragUEF8.connect(DefragUEF9, "e31", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (UEF)"])
-    MainframeTangoUEF0.connect(MainframeTangoUEF1, "e32", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (UEF)"])
-    MainframeTangoUEF1.connect(MainframeTangoUEF2, "e33", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (UEF)"])
-    MainframeTangoUEF2.connect(MainframeTangoUEF3, "e34", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (UEF)"])
-    MainframeTangoUEF3.connect(MainframeTangoUEF4, "e35", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (UEF)"])
-    MainframeTangoUEF4.connect(MainframeTangoUEF5, "e36", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (UEF)"])
-    MainframeTangoUEF5.connect(MainframeTangoUEF6, "e37", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (UEF)"])
-    MainframeTangoUEF6.connect(MainframeTangoUEF7, "e38", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (UEF)"])
-    MainframeTangoUEF7.connect(MainframeTangoUEF8, "e39", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (UEF)"])
-    UnlockUEF0.connect(UnlockUEF1, "e40", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (UEF)"])
-    UnlockUEF1.connect(UnlockUEF2, "e41", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (UEF)"])
-    UnlockUEF2.connect(UnlockUEF3, "e42", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (UEF)"])
-    UnlockUEF3.connect(UnlockUEF4, "e43", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (UEF)"])
-    UnlockUEF4.connect(UnlockUEF5, "e44", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (UEF)"])
-    UnlockUEF5.connect(UnlockUEF6, "e45", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (UEF)"])
-    UnlockUEF6.connect(UnlockUEF7, "e46", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (UEF)"])
-    FreedomUEF0.connect(FreedomUEF1, "e47", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (UEF)"])
-    FreedomUEF1.connect(FreedomUEF2, "e48", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (UEF)"])
-    FreedomUEF2.connect(FreedomUEF3, "e49", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (UEF)"])
-    FreedomUEF3.connect(FreedomUEF4, "e50", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (UEF)"])
-    FreedomUEF4.connect(FreedomUEF5, "e51", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (UEF)"])
-    LiberationCybran0.connect(LiberationCybran1, "e52")
-    LiberationCybran1.connect(LiberationCybran2, "e53")
-    LiberationCybran2.connect(LiberationCybran3, "e54", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Cybran)"])
-    LiberationCybran3.connect(LiberationCybran4, "e55", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Cybran)"])
-    LiberationCybran4.connect(LiberationCybran5, "e56", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Cybran)"])
-    LiberationCybran5.connect(LiberationCybran6, "e57", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Cybran)"])
-    LiberationCybran6.connect(LiberationCybran7, "e58", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Cybran)"])
-    LiberationCybran7.connect(LiberationCybran8, "e59", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Cybran)"])
-    LiberationCybran8.connect(LiberationCybran9, "e60", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Cybran)"])
-    LiberationCybran9.connect(LiberationCybran10, "e61", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Cybran)"])
-    LiberationCybran10.connect(LiberationCybran11, "e62", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Cybran)"])
-    ArtifactCybran0.connect(ArtifactCybran1, "e63", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Cybran)"])
-    ArtifactCybran1.connect(ArtifactCybran2, "e64", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Cybran)"])
-    ArtifactCybran2.connect(ArtifactCybran3, "e65", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Cybran)"])
-    ArtifactCybran3.connect(ArtifactCybran4, "e66", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Cybran)"])
-    ArtifactCybran4.connect(ArtifactCybran5, "e67", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Cybran)"])
-    ArtifactCybran5.connect(ArtifactCybran6, "e68", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Cybran)"])
-    ArtifactCybran6.connect(ArtifactCybran7, "e69", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Cybran)"])
-    ArtifactCybran7.connect(ArtifactCybran8, "e70", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Cybran)"])
-    ArtifactCybran8.connect(ArtifactCybran9, "e71", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Cybran)"])
-    ArtifactCybran9.connect(ArtifactCybran10, "e72", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Cybran)"])
-    ArtifactCybran10.connect(ArtifactCybran11, "e73", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Cybran)"])
-    ArtifactCybran11.connect(ArtifactCybran12, "e74", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Cybran)"])
-    DefragCybran0.connect(DefragCybran1, "e75", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Cybran)"])
-    DefragCybran1.connect(DefragCybran2, "e76", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Cybran)"])
-    DefragCybran2.connect(DefragCybran3, "e77", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Cybran)"])
-    DefragCybran3.connect(DefragCybran4, "e78", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Cybran)"])
-    DefragCybran4.connect(DefragCybran5, "e79", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Cybran)"])
-    DefragCybran5.connect(DefragCybran6, "e80", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Cybran)"])
-    DefragCybran6.connect(DefragCybran7, "e81", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Cybran)"])
-    DefragCybran7.connect(DefragCybran8, "e82", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Cybran)"])
-    DefragCybran8.connect(DefragCybran9, "e83", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Cybran)"])
-    MainframeTangoCybran0.connect(MainframeTangoCybran1, "e84", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Cybran)"])
-    MainframeTangoCybran1.connect(MainframeTangoCybran2, "e85", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Cybran)"])
-    MainframeTangoCybran2.connect(MainframeTangoCybran3, "e86", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)"])
-    MainframeTangoCybran3.connect(MainframeTangoCybran4, "e87", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Cybran)"])
-    MainframeTangoCybran4.connect(MainframeTangoCybran5, "e88", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Cybran)"])
-    MainframeTangoCybran5.connect(MainframeTangoCybran6, "e89", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Cybran)"])
-    MainframeTangoCybran6.connect(MainframeTangoCybran7, "e90", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Cybran)"])
-    MainframeTangoCybran7.connect(MainframeTangoCybran8, "e91", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Cybran)"])
-    UnlockCybran0.connect(UnlockCybran1, "e92", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Cybran)"])
-    UnlockCybran1.connect(UnlockCybran2, "e93", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Cybran)"])
-    UnlockCybran2.connect(UnlockCybran3, "e94", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Cybran)"])
-    UnlockCybran3.connect(UnlockCybran4, "e95", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Cybran)"])
-    UnlockCybran4.connect(UnlockCybran5, "e96", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Cybran)"])
-    UnlockCybran5.connect(UnlockCybran6, "e97", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Cybran)"])
-    UnlockCybran6.connect(UnlockCybran7, "e98", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Cybran)"])
-    FreedomCybran0.connect(FreedomCybran1, "e99", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Cybran)"])
-    FreedomCybran1.connect(FreedomCybran2, "e100", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Cybran)"])
-    FreedomCybran2.connect(FreedomCybran3, "e101", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Cybran)"])
-    FreedomCybran3.connect(FreedomCybran4, "e102", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Cybran)"])
-    FreedomCybran4.connect(FreedomCybran5, "e103", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Cybran)"])
-    LiberationAeon0.connect(LiberationAeon1, "e104")
-    LiberationAeon1.connect(LiberationAeon2, "e105")
-    LiberationAeon2.connect(LiberationAeon3, "e106", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Aeon)"])
-    LiberationAeon3.connect(LiberationAeon4, "e107", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Aeon)"])
-    LiberationAeon4.connect(LiberationAeon5, "e108", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Aeon)"])
-    LiberationAeon5.connect(LiberationAeon6, "e109", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Aeon)"])
-    LiberationAeon6.connect(LiberationAeon7, "e110", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Aeon)"])
-    LiberationAeon7.connect(LiberationAeon8, "e111", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Aeon)"])
-    LiberationAeon8.connect(LiberationAeon9, "e112", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Aeon)"])
-    LiberationAeon9.connect(LiberationAeon10, "e113", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Aeon)"])
-    LiberationAeon10.connect(LiberationAeon11, "e114", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Aeon)"])
-    ArtifactAeon0.connect(ArtifactAeon1, "e115", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Aeon)"])
-    ArtifactAeon1.connect(ArtifactAeon2, "e116", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Aeon)"])
-    ArtifactAeon2.connect(ArtifactAeon3, "e117", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Aeon)"])
-    ArtifactAeon3.connect(ArtifactAeon4, "e118", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Aeon)"])
-    ArtifactAeon4.connect(ArtifactAeon5, "e119", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Aeon)"])
-    ArtifactAeon5.connect(ArtifactAeon6, "e120", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Aeon)"])
-    ArtifactAeon6.connect(ArtifactAeon7, "e121", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Aeon)"])
-    ArtifactAeon7.connect(ArtifactAeon8, "e122", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Aeon)"])
-    ArtifactAeon8.connect(ArtifactAeon9, "e123", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Aeon)"])
-    ArtifactAeon9.connect(ArtifactAeon10, "e124", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Aeon)"])
-    ArtifactAeon10.connect(ArtifactAeon11, "e125", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Aeon)"])
-    ArtifactAeon11.connect(ArtifactAeon12, "e126", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Aeon)"])
-    DefragAeon0.connect(DefragAeon1, "e127", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Aeon)"])
-    DefragAeon1.connect(DefragAeon2, "e128", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Aeon)"])
-    DefragAeon2.connect(DefragAeon3, "e129", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Aeon)"])
-    DefragAeon3.connect(DefragAeon4, "e130", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Aeon)"])
-    DefragAeon4.connect(DefragAeon5, "e131", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Aeon)"])
-    DefragAeon5.connect(DefragAeon6, "e132", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Aeon)"])
-    DefragAeon6.connect(DefragAeon7, "e133", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Aeon)"])
-    DefragAeon7.connect(DefragAeon8, "e134", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Aeon)"])
-    DefragAeon8.connect(DefragAeon9, "e135", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Aeon)"])
-    MainframeTangoAeon0.connect(MainframeTangoAeon1, "e136", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Aeon)"])
-    MainframeTangoAeon1.connect(MainframeTangoAeon2, "e137", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Aeon)"])
-    MainframeTangoAeon2.connect(MainframeTangoAeon3, "e138", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)"])
-    MainframeTangoAeon3.connect(MainframeTangoAeon4, "e139", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Aeon)"])
-    MainframeTangoAeon4.connect(MainframeTangoAeon5, "e140", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Aeon)"])
-    MainframeTangoAeon5.connect(MainframeTangoAeon6, "e141", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Aeon)"])
-    MainframeTangoAeon6.connect(MainframeTangoAeon7, "e142", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Aeon)"])
-    MainframeTangoAeon7.connect(MainframeTangoAeon8, "e143", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Aeon)"])
-    UnlockAeon0.connect(UnlockAeon1, "e144", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Aeon)"])
-    UnlockAeon1.connect(UnlockAeon2, "e145", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Aeon)"])
-    UnlockAeon2.connect(UnlockAeon3, "e146", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Aeon)"])
-    UnlockAeon3.connect(UnlockAeon4, "e147", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Aeon)"])
-    UnlockAeon4.connect(UnlockAeon5, "e148", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Aeon)"])
-    UnlockAeon5.connect(UnlockAeon6, "e149", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Aeon)"])
-    UnlockAeon6.connect(UnlockAeon7, "e150", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Aeon)"])
-    FreedomAeon0.connect(FreedomAeon1, "e151", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Aeon)"])
-    FreedomAeon1.connect(FreedomAeon2, "e152", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Aeon)"])
-    FreedomAeon2.connect(FreedomAeon3, "e153", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Aeon)"])
-    FreedomAeon3.connect(FreedomAeon4, "e154", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Aeon)"])
-    FreedomAeon4.connect(FreedomAeon5, "e155", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Aeon)"])
-    LiberationSera0.connect(LiberationSera1, "e156")
-    LiberationSera1.connect(LiberationSera2, "e157")
-    LiberationSera2.connect(LiberationSera3, "e158", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Sera)"])
-    LiberationSera3.connect(LiberationSera4, "e159", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Sera)"])
-    LiberationSera4.connect(LiberationSera5, "e160", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Sera)"])
-    LiberationSera5.connect(LiberationSera6, "e161", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Sera)"])
-    LiberationSera6.connect(LiberationSera7, "e162", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Sera)"])
-    LiberationSera7.connect(LiberationSera8, "e163", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Sera)"])
-    LiberationSera8.connect(LiberationSera9, "e164", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Sera)"])
-    LiberationSera9.connect(LiberationSera10, "e165", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Sera)"])
-    LiberationSera10.connect(LiberationSera11, "e166", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Sera)"])
-    ArtifactSera0.connect(ArtifactSera1, "e167", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Sera)"])
-    ArtifactSera1.connect(ArtifactSera2, "e168", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Sera)"])
-    ArtifactSera2.connect(ArtifactSera3, "e169", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Sera)"])
-    ArtifactSera3.connect(ArtifactSera4, "e170", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Sera)"])
-    ArtifactSera4.connect(ArtifactSera5, "e171", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Sera)"])
-    ArtifactSera5.connect(ArtifactSera6, "e172", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Sera)"])
-    ArtifactSera6.connect(ArtifactSera7, "e173", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Sera)"])
-    ArtifactSera7.connect(ArtifactSera8, "e174", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Sera)"])
-    ArtifactSera8.connect(ArtifactSera9, "e175", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Sera)"])
-    ArtifactSera9.connect(ArtifactSera10, "e176", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Sera)"])
-    ArtifactSera10.connect(ArtifactSera11, "e177", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Sera)"])
-    ArtifactSera11.connect(ArtifactSera12, "e178", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Sera)"])
-    DefragSera0.connect(DefragSera1, "e179", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Sera)"])
-    DefragSera1.connect(DefragSera2, "e180", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Sera)"])
-    DefragSera2.connect(DefragSera3, "e181", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Sera)"])
-    DefragSera3.connect(DefragSera4, "e182", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Sera)"])
-    DefragSera4.connect(DefragSera5, "e183", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Sera)"])
-    DefragSera5.connect(DefragSera6, "e184", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Sera)"])
-    DefragSera6.connect(DefragSera7, "e185", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Sera)"])
-    DefragSera7.connect(DefragSera8, "e186", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Sera)"])
-    DefragSera8.connect(DefragSera9, "e187", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Sera)"])
-    MainframeTangoSera0.connect(MainframeTangoSera1, "e188", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Sera)"])
-    MainframeTangoSera1.connect(MainframeTangoSera2, "e189", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Sera)"])
-    MainframeTangoSera2.connect(MainframeTangoSera3, "e190", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Sera)"])
-    MainframeTangoSera3.connect(MainframeTangoSera4, "e191", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Sera)"])
-    MainframeTangoSera4.connect(MainframeTangoSera5, "e192", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Sera)"])
-    MainframeTangoSera5.connect(MainframeTangoSera6, "e193", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Sera)"])
-    MainframeTangoSera6.connect(MainframeTangoSera7, "e194", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Sera)"])
-    MainframeTangoSera7.connect(MainframeTangoSera8, "e195", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Sera)"])
-    UnlockSera0.connect(UnlockSera1, "e196", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Sera)"])
-    UnlockSera1.connect(UnlockSera2, "e197", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Sera)"])
-    UnlockSera2.connect(UnlockSera3, "e198", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Sera)"])
-    UnlockSera3.connect(UnlockSera4, "e199", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Sera)"])
-    UnlockSera4.connect(UnlockSera5, "e200", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Sera)"])
-    UnlockSera5.connect(UnlockSera6, "e201", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Sera)"])
-    UnlockSera6.connect(UnlockSera7, "e202", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Sera)"])
-    FreedomSera0.connect(FreedomSera1, "e203", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Sera)"])
-    FreedomSera1.connect(FreedomSera2, "e204", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Sera)"])
-    FreedomSera2.connect(FreedomSera3, "e205", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Sera)"])
-    FreedomSera3.connect(FreedomSera4, "e206", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Sera)"])
-    FreedomSera4.connect(FreedomSera5, "e207", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Sera)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF0.connect(LiberationUEF1, "e0")
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF1.connect(LiberationUEF2, "e1")
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF2.connect(LiberationUEF3, "e2", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF3.connect(LiberationUEF4, "e3", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF4.connect(LiberationUEF5, "e4", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF5.connect(LiberationUEF6, "e5", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF6.connect(LiberationUEF7, "e6", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF7.connect(LiberationUEF8, "e7", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF8.connect(LiberationUEF9, "e8", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF9.connect(LiberationUEF10, "e9", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (UEF)"])
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEF10.connect(LiberationUEF11, "e10", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF0.connect(ArtifactUEF1, "e11", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF1.connect(ArtifactUEF2, "e12", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF2.connect(ArtifactUEF3, "e13", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF3.connect(ArtifactUEF4, "e14", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF4.connect(ArtifactUEF5, "e15", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF5.connect(ArtifactUEF6, "e16", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF6.connect(ArtifactUEF7, "e17", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF7.connect(ArtifactUEF8, "e18", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF8.connect(ArtifactUEF9, "e19", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF9.connect(ArtifactUEF10, "e20", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF10.connect(ArtifactUEF11, "e21", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (UEF)"])
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEF11.connect(ArtifactUEF12, "e22", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF0.connect(DefragUEF1, "e23", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF1.connect(DefragUEF2, "e24", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF2.connect(DefragUEF3, "e25", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF3.connect(DefragUEF4, "e26", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF4.connect(DefragUEF5, "e27", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF5.connect(DefragUEF6, "e28", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF6.connect(DefragUEF7, "e29", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF7.connect(DefragUEF8, "e30", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (UEF)"])
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEF8.connect(DefragUEF9, "e31", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF0.connect(MainframeTangoUEF1, "e32", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF1.connect(MainframeTangoUEF2, "e33", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF2.connect(MainframeTangoUEF3, "e34", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF3.connect(MainframeTangoUEF4, "e35", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF4.connect(MainframeTangoUEF5, "e36", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF5.connect(MainframeTangoUEF6, "e37", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF6.connect(MainframeTangoUEF7, "e38", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (UEF)"])
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEF7.connect(MainframeTangoUEF8, "e39", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF0.connect(UnlockUEF1, "e40", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF1.connect(UnlockUEF2, "e41", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF2.connect(UnlockUEF3, "e42", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF3.connect(UnlockUEF4, "e43", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF4.connect(UnlockUEF5, "e44", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF5.connect(UnlockUEF6, "e45", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (UEF)"])
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEF6.connect(UnlockUEF7, "e46", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (UEF)"])
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF0.connect(FreedomUEF1, "e47", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (UEF)"])
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF1.connect(FreedomUEF2, "e48", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (UEF)"])
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF2.connect(FreedomUEF3, "e49", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (UEF)"])
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF3.connect(FreedomUEF4, "e50", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (UEF)"])
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEF4.connect(FreedomUEF5, "e51", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (UEF)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran0.connect(LiberationCybran1, "e52")
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran1.connect(LiberationCybran2, "e53")
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran2.connect(LiberationCybran3, "e54", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran3.connect(LiberationCybran4, "e55", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran4.connect(LiberationCybran5, "e56", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran5.connect(LiberationCybran6, "e57", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran6.connect(LiberationCybran7, "e58", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran7.connect(LiberationCybran8, "e59", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran8.connect(LiberationCybran9, "e60", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran9.connect(LiberationCybran10, "e61", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Cybran)"])
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybran10.connect(LiberationCybran11, "e62", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran0.connect(ArtifactCybran1, "e63", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran1.connect(ArtifactCybran2, "e64", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran2.connect(ArtifactCybran3, "e65", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran3.connect(ArtifactCybran4, "e66", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran4.connect(ArtifactCybran5, "e67", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran5.connect(ArtifactCybran6, "e68", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran6.connect(ArtifactCybran7, "e69", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran7.connect(ArtifactCybran8, "e70", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran8.connect(ArtifactCybran9, "e71", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran9.connect(ArtifactCybran10, "e72", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran10.connect(ArtifactCybran11, "e73", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Cybran)"])
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybran11.connect(ArtifactCybran12, "e74", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran0.connect(DefragCybran1, "e75", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran1.connect(DefragCybran2, "e76", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran2.connect(DefragCybran3, "e77", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran3.connect(DefragCybran4, "e78", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran4.connect(DefragCybran5, "e79", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran5.connect(DefragCybran6, "e80", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran6.connect(DefragCybran7, "e81", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran7.connect(DefragCybran8, "e82", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Cybran)"])
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybran8.connect(DefragCybran9, "e83", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran0.connect(MainframeTangoCybran1, "e84", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran1.connect(MainframeTangoCybran2, "e85", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran2.connect(MainframeTangoCybran3, "e86", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran3.connect(MainframeTangoCybran4, "e87", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran4.connect(MainframeTangoCybran5, "e88", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran5.connect(MainframeTangoCybran6, "e89", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran6.connect(MainframeTangoCybran7, "e90", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Cybran)"])
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybran7.connect(MainframeTangoCybran8, "e91", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran0.connect(UnlockCybran1, "e92", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran1.connect(UnlockCybran2, "e93", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran2.connect(UnlockCybran3, "e94", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran3.connect(UnlockCybran4, "e95", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran4.connect(UnlockCybran5, "e96", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran5.connect(UnlockCybran6, "e97", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Cybran)"])
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybran6.connect(UnlockCybran7, "e98", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Cybran)"])
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran0.connect(FreedomCybran1, "e99", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Cybran)"])
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran1.connect(FreedomCybran2, "e100", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Cybran)"])
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran2.connect(FreedomCybran3, "e101", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Cybran)"])
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran3.connect(FreedomCybran4, "e102", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Cybran)"])
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybran4.connect(FreedomCybran5, "e103", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Cybran)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon0.connect(LiberationAeon1, "e104")
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon1.connect(LiberationAeon2, "e105")
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon2.connect(LiberationAeon3, "e106", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon3.connect(LiberationAeon4, "e107", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon4.connect(LiberationAeon5, "e108", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon5.connect(LiberationAeon6, "e109", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon6.connect(LiberationAeon7, "e110", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon7.connect(LiberationAeon8, "e111", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon8.connect(LiberationAeon9, "e112", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon9.connect(LiberationAeon10, "e113", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Aeon)"])
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeon10.connect(LiberationAeon11, "e114", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon0.connect(ArtifactAeon1, "e115", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon1.connect(ArtifactAeon2, "e116", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon2.connect(ArtifactAeon3, "e117", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon3.connect(ArtifactAeon4, "e118", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon4.connect(ArtifactAeon5, "e119", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon5.connect(ArtifactAeon6, "e120", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon6.connect(ArtifactAeon7, "e121", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon7.connect(ArtifactAeon8, "e122", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon8.connect(ArtifactAeon9, "e123", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon9.connect(ArtifactAeon10, "e124", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon10.connect(ArtifactAeon11, "e125", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Aeon)"])
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeon11.connect(ArtifactAeon12, "e126", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon0.connect(DefragAeon1, "e127", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon1.connect(DefragAeon2, "e128", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon2.connect(DefragAeon3, "e129", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon3.connect(DefragAeon4, "e130", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon4.connect(DefragAeon5, "e131", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon5.connect(DefragAeon6, "e132", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon6.connect(DefragAeon7, "e133", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon7.connect(DefragAeon8, "e134", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Aeon)"])
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeon8.connect(DefragAeon9, "e135", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon0.connect(MainframeTangoAeon1, "e136", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon1.connect(MainframeTangoAeon2, "e137", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon2.connect(MainframeTangoAeon3, "e138", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon3.connect(MainframeTangoAeon4, "e139", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon4.connect(MainframeTangoAeon5, "e140", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon5.connect(MainframeTangoAeon6, "e141", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon6.connect(MainframeTangoAeon7, "e142", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Aeon)"])
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeon7.connect(MainframeTangoAeon8, "e143", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon0.connect(UnlockAeon1, "e144", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon1.connect(UnlockAeon2, "e145", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon2.connect(UnlockAeon3, "e146", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon3.connect(UnlockAeon4, "e147", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon4.connect(UnlockAeon5, "e148", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon5.connect(UnlockAeon6, "e149", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Aeon)"])
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeon6.connect(UnlockAeon7, "e150", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Aeon)"])
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon0.connect(FreedomAeon1, "e151", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Aeon)"])
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon1.connect(FreedomAeon2, "e152", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Aeon)"])
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon2.connect(FreedomAeon3, "e153", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Aeon)"])
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon3.connect(FreedomAeon4, "e154", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Aeon)"])
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeon4.connect(FreedomAeon5, "e155", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Aeon)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera0.connect(LiberationSera1, "e156")
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera1.connect(LiberationSera2, "e157")
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera2.connect(LiberationSera3, "e158", TheCompleteListOfRulesForEverySingleRegion["Liberation: Build bombers (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera3.connect(LiberationSera4, "e159", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy radar defenders (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera4.connect(LiberationSera5, "e160", TheCompleteListOfRulesForEverySingleRegion["Liberation: Capture radars (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera5.connect(LiberationSera6, "e161", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy mex (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera6.connect(LiberationSera7, "e162", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF defences (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera7.connect(LiberationSera8, "e163", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF patrols (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera8.connect(LiberationSera9, "e164", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base defenders (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera9.connect(LiberationSera10, "e165", TheCompleteListOfRulesForEverySingleRegion["Liberation: Destroy UEF base (Sera)"])
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSera10.connect(LiberationSera11, "e166", TheCompleteListOfRulesForEverySingleRegion["Liberation: Kill Aeon Commander (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera0.connect(ArtifactSera1, "e167", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy first temple (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera1.connect(ArtifactSera2, "e168", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect first artifact (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera2.connect(ArtifactSera3, "e169", TheCompleteListOfRulesForEverySingleRegion["Artifact: Find second artifact (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera3.connect(ArtifactSera4, "e170", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy Aeon reinforcements (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera4.connect(ArtifactSera5, "e171", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect second artifact (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera5.connect(ArtifactSera6, "e172", TheCompleteListOfRulesForEverySingleRegion["Artifact: Defend from Aeon attack (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera6.connect(ArtifactSera7, "e173", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy eastern base (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera7.connect(ArtifactSera8, "e174", TheCompleteListOfRulesForEverySingleRegion["Artifact: Destroy navy base (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera8.connect(ArtifactSera9, "e175", TheCompleteListOfRulesForEverySingleRegion["Artifact: Protect third artifact (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera9.connect(ArtifactSera10, "e176", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Aeon Commander (optional) (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera10.connect(ArtifactSera11, "e177", TheCompleteListOfRulesForEverySingleRegion["Artifact: Kill Mach (Sera)"])
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSera11.connect(ArtifactSera12, "e178", TheCompleteListOfRulesForEverySingleRegion["Artifact: Go to Gate (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera0.connect(DefragSera1, "e179", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy western UEF base (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera1.connect(DefragSera2, "e180", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy north-western UEF base (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera2.connect(DefragSera3, "e181", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy northern UEF base (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera3.connect(DefragSera4, "e182", TheCompleteListOfRulesForEverySingleRegion["Defrag: Sink UEF cruiser (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera4.connect(DefragSera5, "e183", TheCompleteListOfRulesForEverySingleRegion["Defrag: Destroy static artillery (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera5.connect(DefragSera6, "e184", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort trucks (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera6.connect(DefragSera7, "e185", TheCompleteListOfRulesForEverySingleRegion["Defrag: Escort ALL trucks (optional) (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera7.connect(DefragSera8, "e186", TheCompleteListOfRulesForEverySingleRegion["Defrag: Optional objective  (optional) (Sera)"])
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSera8.connect(DefragSera9, "e187", TheCompleteListOfRulesForEverySingleRegion["Defrag: Kill UEF Commander (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera0.connect(MainframeTangoSera1, "e188", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture Network Node (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera1.connect(MainframeTangoSera2, "e189", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save Network Node (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera2.connect(MainframeTangoSera3, "e190", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Save 80% civilian buildings (optional) (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera3.connect(MainframeTangoSera4, "e191", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Survive attacks (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera4.connect(MainframeTangoSera5, "e192", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northeast node (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera5.connect(MainframeTangoSera6, "e193", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Capture northwest node (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera6.connect(MainframeTangoSera7, "e194", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Do not attack main Aeon base (Sera)"])
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSera7.connect(MainframeTangoSera8, "e195", TheCompleteListOfRulesForEverySingleRegion["Mainframe Tango: Kill Aeon Commander (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera0.connect(UnlockSera1, "e196", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF shipyards (optional) (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera1.connect(UnlockSera2, "e197", TheCompleteListOfRulesForEverySingleRegion["Unlock: Destroy UEF radars (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera2.connect(UnlockSera3, "e198", TheCompleteListOfRulesForEverySingleRegion["Unlock: Go to Hex5 (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera3.connect(UnlockSera4, "e199", TheCompleteListOfRulesForEverySingleRegion["Unlock: Defend from heavy gunships (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera4.connect(UnlockSera5, "e200", TheCompleteListOfRulesForEverySingleRegion["Unlock: Infect UEF landing pad (optional) (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera5.connect(UnlockSera6, "e201", TheCompleteListOfRulesForEverySingleRegion["Unlock: This will be retconned later (Sera)"])
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSera6.connect(UnlockSera7, "e202", TheCompleteListOfRulesForEverySingleRegion["Unlock: Kill UEF Commander (Sera)"])
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera0.connect(FreedomSera1, "e203", TheCompleteListOfRulesForEverySingleRegion["Freedom: Build Quantum Gate (Sera)"])
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera1.connect(FreedomSera2, "e204", TheCompleteListOfRulesForEverySingleRegion["Freedom: Download Quantum Virus (Sera)"])
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera2.connect(FreedomSera3, "e205", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun control center (Sera)"])
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera3.connect(FreedomSera4, "e206", TheCompleteListOfRulesForEverySingleRegion["Freedom: Capture Black Sun (Sera)"])
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSera4.connect(FreedomSera5, "e207", TheCompleteListOfRulesForEverySingleRegion["Freedom: Shoot Black Sun (Sera)"])
 
     indexOfEntrance = 208
     for i in range(Width):
@@ -3730,13 +4188,37 @@ def makeEverything(world: SupComWorld) -> None:
                     regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i - 1][j]]) - 1])
                     regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])
                     tempSTR = "e" + str(indexOfEntrance)
-                    regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    if not THE_GRID[i][j] in levelsTier1FOREVER:
+                        regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    else:
+                        regionLast.connect(regionFirst, tempSTR)
                     indexOfEntrance = 1 + indexOfEntrance
                 if j > 0:
                     regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j - 1]]) - 1])
                     regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])
                     tempSTR = "e" + str(indexOfEntrance)
-                    regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    if not THE_GRID[i][j] in levelsTier1FOREVER:
+                        regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    else:
+                        regionLast.connect(regionFirst, tempSTR)
+                    indexOfEntrance = 1 + indexOfEntrance
+                if i < Width - 1:
+                    regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]][len(TotalListOfTtotallyLevels[THE_GRID[i + 1][j]]) - 1])
+                    regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])
+                    tempSTR = "e" + str(indexOfEntrance)
+                    if not THE_GRID[i][j] in levelsTier1FOREVER:
+                        regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    else:
+                        regionLast.connect(regionFirst, tempSTR)
+                    indexOfEntrance = 1 + indexOfEntrance
+                if j < Height - 1:
+                    regionLast = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]][len(TotalListOfTtotallyLevels[THE_GRID[i][j + 1]]) - 1])
+                    regionFirst = world.get_region(TotalListOfTtotallyLevels[THE_GRID[i][j]][0])
+                    tempSTR = "e" + str(indexOfEntrance)
+                    if not THE_GRID[i][j] in levelsTier1FOREVER:
+                        regionLast.connect(regionFirst, tempSTR, TheCompleteListOfRulesForEverySingleRegion[TotalListOfTtotallyLevels[THE_GRID[i][j]][0]])
+                    else:
+                        regionLast.connect(regionFirst, tempSTR)
                     indexOfEntrance = 1 + indexOfEntrance
 
     listOfFactionsThatActuallyExist = []
@@ -3750,7 +4232,1475 @@ def makeEverything(world: SupComWorld) -> None:
                 listOfFactionsThatActuallyExist.append("aeon")
             if "Sera" in THE_GRID[i][j] and not "sera" in listOfFactionsThatActuallyExist:
                 listOfFactionsThatActuallyExist.append("sera")
-    number_of_unfilled_locations = len(ListOfUsedRegions) * world.options.locamount
+
+    PossibleItemList = []
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(LiberationUEFPossibleUnitList))
+        if not LiberationUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Scorcher"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Liberation (UEF)" in AllLevelsListToCheckRegionCreation:
+        LiberationUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(LiberationUEFPossibleUnitList))
+        if not LiberationUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Cyclone", "Archer", "DA1 Railgun"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["MA12 Striker"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["MA12 Striker"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["MA12 Striker"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["MA12 Striker"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["MA12 Striker"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["Mongoose", "Pillar", "Riptide", "Sparky", "Triad"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Mongoose", "Pillar", "Riptide", "Sparky", "Triad"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Mongoose", "Pillar", "Riptide", "Sparky", "Triad"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Mongoose", "Pillar", "Riptide", "Sparky", "Triad"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Mongoose", "Pillar", "Riptide", "Sparky", "Triad"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["Triad", "Tigershark", "Thunderhead Class", "Stork", "DN1"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Triad", "Tigershark", "Thunderhead Class", "Stork", "DN1"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Triad", "Tigershark", "Thunderhead Class", "Stork", "DN1"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Triad", "Tigershark", "Thunderhead Class", "Stork", "DN1"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Triad", "Tigershark", "Thunderhead Class", "Stork", "DN1"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Artifact (UEF)" in AllLevelsListToCheckRegionCreation:
+        ArtifactUEFPossibleUnitList = ["Valiant Class", "Governor Class", "Stinger", "C-6 Courier", "Klink Hammer", "Aloha"]
+        temp = world.random.randrange(0, len(ArtifactUEFPossibleUnitList))
+        if not ArtifactUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Valiant Class", "Governor Class", "Stinger", "C-6 Courier", "Klink Hammer", "Aloha"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Valiant Class", "Governor Class", "Stinger", "C-6 Courier", "Klink Hammer", "Aloha"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Valiant Class", "Governor Class", "Stinger", "C-6 Courier", "Klink Hammer", "Aloha"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Valiant Class", "Governor Class", "Stinger", "C-6 Courier", "Klink Hammer", "Aloha"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["UEF T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["UEF T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["UEF T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["UEF T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["EG - 200 Fusion Reactor"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["EG - 200 Fusion Reactor"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["EG - 200 Fusion Reactor"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["EG - 200 Fusion Reactor"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Defrag (UEF)" in AllLevelsListToCheckRegionCreation:
+        DefragUEFPossibleUnitList = ["Air Cleaner", "Sky Boxer"]
+        temp = world.random.randrange(0, len(DefragUEFPossibleUnitList))
+        if not DefragUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Air Cleaner", "Sky Boxer"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Air Cleaner", "Sky Boxer"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Air Cleaner", "Sky Boxer"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Mainframe Tango (UEF)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoUEFPossibleUnitList = ["Valiant Class", "Governor Class"]
+        temp = world.random.randrange(0, len(MainframeTangoUEFPossibleUnitList))
+        if not MainframeTangoUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Valiant Class", "Governor Class"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Valiant Class", "Governor Class"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["UEF T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["UEF T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["EG 900 Fusion Reactor"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["EG 900 Fusion Reactor"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Titan", "Persival", "Spearhead", "Continental", "Janus", "Mavor", "Novax Center", "Aloha", "Duke", "Stonager", "Broadsword", "Ambassador"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Titan", "Persival", "Spearhead", "Continental", "Janus", "Mavor", "Novax Center", "Aloha", "Duke", "Stonager", "Broadsword", "Ambassador"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Governor Class"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Governor Class"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["C14 Star Lifter"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["C14 Star Lifter"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Unlock (UEF)" in AllLevelsListToCheckRegionCreation:
+        UnlockUEFPossibleUnitList = ["Wasp", "Cougar", "Flayer"]
+        temp = world.random.randrange(0, len(UnlockUEFPossibleUnitList))
+        if not UnlockUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Wasp", "Cougar", "Flayer"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["QGW R-32"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Freedom (UEF)" in AllLevelsListToCheckRegionCreation:
+        FreedomUEFPossibleUnitList = ["Titan", "Persival", "Spearhead", "Continental", "Janus", "Broadsword", "Ambassador", "Fatboy"]
+        temp = world.random.randrange(0, len(FreedomUEFPossibleUnitList))
+        if not FreedomUEFPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomUEFPossibleUnitList[temp])
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(LiberationCybranPossibleUnitList))
+        if not LiberationCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Zeus"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Liberation (Cybran)" in AllLevelsListToCheckRegionCreation:
+        LiberationCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(LiberationCybranPossibleUnitList))
+        if not LiberationCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Prowler", "Sky Slammer", "Tracer"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Mantis"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Mantis"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Mantis"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Mantis"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Mantis"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Rhino", "Cerberus", "Wagner", "Hoplite"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Rhino", "Cerberus", "Wagner", "Hoplite"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Rhino", "Cerberus", "Wagner", "Hoplite"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Rhino", "Cerberus", "Wagner", "Hoplite"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Rhino", "Cerberus", "Wagner", "Hoplite"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Cerberus", "Sliver", "Trident Class", "Cormorant", "Scuttle"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Cerberus", "Sliver", "Trident Class", "Cormorant", "Scuttle"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Cerberus", "Sliver", "Trident Class", "Cormorant", "Scuttle"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Cerberus", "Sliver", "Trident Class", "Cormorant", "Scuttle"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Cerberus", "Sliver", "Trident Class", "Cormorant", "Scuttle"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Artifact (Cybran)" in AllLevelsListToCheckRegionCreation:
+        ArtifactCybranPossibleUnitList = ["Salem Class", "Renegade", "Sky Hook", "Gunther", "TML-4"]
+        temp = world.random.randrange(0, len(ArtifactCybranPossibleUnitList))
+        if not ArtifactCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Salem Class", "Renegade", "Sky Hook", "Gunther", "TML-4"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Salem Class", "Renegade", "Sky Hook", "Gunther", "TML-4"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Salem Class", "Renegade", "Sky Hook", "Gunther", "TML-4"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Salem Class", "Renegade", "Sky Hook", "Gunther", "TML-4"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Cybran T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Cybran T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Cybran T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Cybran T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Cybran T2 Generator"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Cybran T2 Generator"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Cybran T2 Generator"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Cybran T2 Generator"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Defrag (Cybran)" in AllLevelsListToCheckRegionCreation:
+        DefragCybranPossibleUnitList = ["Burst Master", "Banger"]
+        temp = world.random.randrange(0, len(DefragCybranPossibleUnitList))
+        if not DefragCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Burst Master", "Banger"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Burst Master", "Banger"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Burst Master", "Banger"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Mainframe Tango (Cybran)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoCybranPossibleUnitList = ["Salem Class"]
+        temp = world.random.randrange(0, len(MainframeTangoCybranPossibleUnitList))
+        if not MainframeTangoCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Salem Class"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Salem Class"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Cybran T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Cybran T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Ion Reactor"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Ion Reactor"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = [" Loyalist", "The Brick", "Soul Ripper", "Monkeylord", "Megalith", "Scathis", "TML-4", "Disruptor", "Liberator", "Wailer", "Revenant"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = [" Loyalist", "The Brick", "Soul Ripper", "Monkeylord", "Megalith", "Scathis", "TML-4", "Disruptor", "Liberator", "Wailer", "Revenant"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Siren Class"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Siren Class"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Dragonfly"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Dragonfly"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Unlock (Cybran)" in AllLevelsListToCheckRegionCreation:
+        UnlockCybranPossibleUnitList = ["Gemini", "Bouncer", "Myrmidon"]
+        temp = world.random.randrange(0, len(UnlockCybranPossibleUnitList))
+        if not UnlockCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Gemini", "Bouncer", "Myrmidon"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Summoner"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Freedom (Cybran)" in AllLevelsListToCheckRegionCreation:
+        FreedomCybranPossibleUnitList = ["Loyalist", "The Brick", "Soul Ripper", "Monkeylord", "Megalith", "Wailer", "Revenant"]
+        temp = world.random.randrange(0, len(FreedomCybranPossibleUnitList))
+        if not FreedomCybranPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomCybranPossibleUnitList[temp])
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(LiberationAeonPossibleUnitList))
+        if not LiberationAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Shimmer"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Liberation (Aeon)" in AllLevelsListToCheckRegionCreation:
+        LiberationAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(LiberationAeonPossibleUnitList))
+        if not LiberationAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Conservator", "Thisle", "Seeker"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Aurora"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Aurora"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Aurora"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Aurora"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Aurora"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Obsidian", "Oblivion", "Blaze"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Obsidian", "Oblivion", "Blaze"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Obsidian", "Oblivion", "Blaze"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Obsidian", "Oblivion", "Blaze"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Obsidian", "Oblivion", "Blaze"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Oblivion", "Sylph", "Beacon Class", "Skimmer", "Tide"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Oblivion", "Sylph", "Beacon Class", "Skimmer", "Tide"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Oblivion", "Sylph", "Beacon Class", "Skimmer", "Tide"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Oblivion", "Sylph", "Beacon Class", "Skimmer", "Tide"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Oblivion", "Sylph", "Beacon Class", "Skimmer", "Tide"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Artifact (Aeon)" in AllLevelsListToCheckRegionCreation:
+        ArtifactAeonPossibleUnitList = ["Exodus Class", "Specter", "Mercy", "Chariot", "Miasma", "Serpentine"]
+        temp = world.random.randrange(0, len(ArtifactAeonPossibleUnitList))
+        if not ArtifactAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Exodus Class", "Specter", "Mercy", "Chariot", "Miasma", "Serpentine"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Exodus Class", "Specter", "Mercy", "Chariot", "Miasma", "Serpentine"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Exodus Class", "Specter", "Mercy", "Chariot", "Miasma", "Serpentine"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Exodus Class", "Specter", "Mercy", "Chariot", "Miasma", "Serpentine"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Aeon T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Aeon T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Aeon T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Aeon T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Aeon T2 Generator"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Aeon T2 Generator"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Aeon T2 Generator"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Aeon T2 Generator"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Defrag (Aeon)" in AllLevelsListToCheckRegionCreation:
+        DefragAeonPossibleUnitList = ["Marr", "Ascendant"]
+        temp = world.random.randrange(0, len(DefragAeonPossibleUnitList))
+        if not DefragAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Marr", "Ascendant"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Marr", "Ascendant"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Marr", "Ascendant"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Mainframe Tango (Aeon)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoAeonPossibleUnitList = ["Exodus Class"]
+        temp = world.random.randrange(0, len(MainframeTangoAeonPossibleUnitList))
+        if not MainframeTangoAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Exodus Class"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Exodus Class"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Aeon T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Aeon T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Quantum Reactor"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Quantum Reactor"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Sprite Striker", "Harbringer Mk4", "Czar", "Galactic Colossus", "Salvation", "Serpentine", "Emissary", "Apocalypse", "Restorer", "Shocker"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Sprite Striker", "Harbringer Mk4", "Czar", "Galactic Colossus", "Salvation", "Serpentine", "Emissary", "Apocalypse", "Restorer", "Shocker"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Infinity Class"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Infinity Class"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Aluminar"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Aluminar"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Unlock (Aeon)" in AllLevelsListToCheckRegionCreation:
+        UnlockAeonPossibleUnitList = ["Corona", "Redeemer", "Transcender"]
+        temp = world.random.randrange(0, len(UnlockAeonPossibleUnitList))
+        if not UnlockAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Corona", "Redeemer", "Transcender"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Portal"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Freedom (Aeon)" in AllLevelsListToCheckRegionCreation:
+        FreedomAeonPossibleUnitList = ["Sprite Striker", "Harbringer Mk4", "Czar", "Galactic Colossus", "Restorer", "Shocker"]
+        temp = world.random.randrange(0, len(FreedomAeonPossibleUnitList))
+        if not FreedomAeonPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomAeonPossibleUnitList[temp])
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(LiberationSeraPossibleUnitList))
+        if not LiberationSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Sinnve"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Liberation (Sera)" in AllLevelsListToCheckRegionCreation:
+        LiberationSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(LiberationSeraPossibleUnitList))
+        if not LiberationSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(LiberationSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Ia-atha", "Ia-istle", "Ialla"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Thaam"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Thaam"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Thaam"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Thaam"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Thaam"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Ilshavoh", "Yenzyne", "Uttaushala"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Ilshavoh", "Yenzyne", "Uttaushala"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Ilshavoh", "Yenzyne", "Uttaushala"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Ilshavoh", "Yenzyne", "Uttaushala"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Ilshavoh", "Yenzyne", "Uttaushala"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Uttaushala", "Sou-istle", "Hau-esel", "Uosioz", "Sou-atha"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Uttaushala", "Sou-istle", "Hau-esel", "Uosioz", "Sou-atha"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Uttaushala", "Sou-istle", "Hau-esel", "Uosioz", "Sou-atha"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Uttaushala", "Sou-istle", "Hau-esel", "Uosioz", "Sou-atha"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Uttaushala", "Sou-istle", "Hau-esel", "Uosioz", "Sou-atha"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Artifact (Sera)" in AllLevelsListToCheckRegionCreation:
+        ArtifactSeraPossibleUnitList = ["Uashavoh", "Ithalua", "Vulthoo", "Vish", "Zthuthaam", "Ythis"]
+        temp = world.random.randrange(0, len(ArtifactSeraPossibleUnitList))
+        if not ArtifactSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(ArtifactSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Uashavoh", "Ithalua", "Vulthoo", "Vish", "Zthuthaam", "Ythis"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Uashavoh", "Ithalua", "Vulthoo", "Vish", "Zthuthaam", "Ythis"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Uashavoh", "Ithalua", "Vulthoo", "Vish", "Zthuthaam", "Ythis"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Uashavoh", "Ithalua", "Vulthoo", "Vish", "Zthuthaam", "Ythis"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Sera T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Sera T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Sera T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Sera T2 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Sera T2 Generator"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Sera T2 Generator"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Sera T2 Generator"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Sera T2 Generator"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Defrag (Sera)" in AllLevelsListToCheckRegionCreation:
+        DefragSeraPossibleUnitList = ["Iashavoh", "Sinnatha"]
+        temp = world.random.randrange(0, len(DefragSeraPossibleUnitList))
+        if not DefragSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(DefragSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Iashavoh", "Sinnatha"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Iashavoh", "Sinnatha"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Iashavoh", "Sinnatha"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Mainframe Tango (Sera)" in AllLevelsListToCheckRegionCreation:
+        MainframeTangoSeraPossibleUnitList = ["Uashavoh", "Ithalua"]
+        temp = world.random.randrange(0, len(MainframeTangoSeraPossibleUnitList))
+        if not MainframeTangoSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(MainframeTangoSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Uashavoh", "Ithalua"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Uashavoh", "Ithalua"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Sera T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Sera T3 Mass Extractor"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Uya-iya"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Uya-iya"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Othuum", "Uyanah", "Ythotha", "Ahwassa", "Yolona Oss", "Ythis", "Hovatham", "Hastue", "Sinntha"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Othuum", "Uyanah", "Ythotha", "Ahwassa", "Yolona Oss", "Ythis", "Hovatham", "Hastue", "Sinntha"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Ithalua"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Ithalua"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Vishala"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Vishala"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Unlock (Sera)" in AllLevelsListToCheckRegionCreation:
+        UnlockSeraPossibleUnitList = ["Iazyne", "Uyanah", "Iathu-ioz"]
+        temp = world.random.randrange(0, len(UnlockSeraPossibleUnitList))
+        if not UnlockSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(UnlockSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Iazyne", "Uyanah", "Iathu-ioz"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Aezthu-uhthe"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    if "Freedom (Sera)" in AllLevelsListToCheckRegionCreation:
+        FreedomSeraPossibleUnitList = ["Othuum", "Othuum", "Uyanah", "Ythotha", "Ahwassa", "Sinntha"]
+        temp = world.random.randrange(0, len(FreedomSeraPossibleUnitList))
+        if not FreedomSeraPossibleUnitList[temp] in PossibleItemList:
+            PossibleItemList.append(FreedomSeraPossibleUnitList[temp])
+
+    print(PossibleItemList)
+
+    number_of_unfilled_locations = len(ListOfUsedRegions) * world.options.locamount - len(PossibleItemList)
     ItemsFromFactions = []
     if "uef" in listOfFactionsThatActuallyExist:
         ItemsFromFactions.extend(uef_items)
@@ -3760,23 +5710,32 @@ def makeEverything(world: SupComWorld) -> None:
         ItemsFromFactions.extend(aeon_items)
     if "sera" in listOfFactionsThatActuallyExist:
         ItemsFromFactions.extend(sera_items)
-    itempool = []
+
+    for i in range(len(PossibleItemList)):
+        if PossibleItemList[i] in ItemsFromFactions:
+            ItemsFromFactions.remove(PossibleItemList[i])
+
     if len(ItemsFromFactions) >= number_of_unfilled_locations:
-        itempool.extend(world.random.sample(ItemsFromFactions, number_of_unfilled_locations))
+        PossibleItemList.extend(world.random.sample(ItemsFromFactions, number_of_unfilled_locations))
     else:
-        itempool.extend(ItemsFromFactions)
+        PossibleItemList.extend(ItemsFromFactions)
         for i in range(number_of_unfilled_locations - len(ItemsFromFactions)):
-            itempool.append("Nothing")
+            PossibleItemList.append("Nothing")
 
     itempoolREAL = []
-    for i in range(len(itempool)):
-        itempoolREAL.append(world.create_item(itempool[i]))
-    print("Amount of locations sent: " + str(number_of_unfilled_locations))
-    print("Amount of items sent: " + str(len(itempoolREAL)))
+    for i in range(len(PossibleItemList)):
+        itempoolREAL.append(world.create_item(PossibleItemList[i]))
+
     world.multiworld.itempool += itempoolREAL
 
     world.origin_region_name = TotalListOfTtotallyLevels[THE_GRID[0][0]][0]
 
+    print(len(ListOfUsedRegions) * world.options.locamount)
+    print(len(PossibleItemList))
+
+    final_boss_room = world.get_region(TotalListOfTtotallyLevels[THE_GRID[Width - 1][Height - 1]][len(TotalListOfTtotallyLevels[THE_GRID[Width - 1][Height - 1]]) - 1])
+    final_boss_room.add_event("Final Boss Defeated", "Victory", location_type=SupComLocation, item_type=SupComItem)
+    world.set_completion_rule(Has("Victory"))
 def create_item_with_correct_classification(world: SupComWorld, name: str) -> SupComItem:
     classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
     return SupComItem(name, classification, ITEM_NAME_TO_ID[name], world.player)

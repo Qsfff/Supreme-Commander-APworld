@@ -27,7 +27,7 @@ class SupComWorld(World):
     APQuest is a minimal 8bit-era inspired adventure game with grid-like movement.
     Good games don't need more than six checks.
     """
-
+    THE_GRID = []
     # The docstring should contain a description of the game, to be displayed on the WebHost.
 
     # You must override the "game" field to say the name of the game.
@@ -81,5 +81,5 @@ class SupComWorld(World):
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
        DictToReturn = self.options.as_dict("difficulty", "locamount", "randfacs","mapset", "faction")
-       DictToReturn["GRID"] = data.THE_GRID
+       DictToReturn["GRID"] = self.THE_GRID
        return DictToReturn
