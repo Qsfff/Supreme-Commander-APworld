@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:SupComClient"
     xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:Models="clr-namespace:ColorPicker.Models;assembly=ColorPicker.Models" x:Class="SupComClient.MainWindow"
         mc:Ignorable="d"
-        Title="SupCom Launcher" Height="1080" Width="1920" Left="0" Top="0" Icon="/cybran.png" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="SupCom Launcher" Height="1080" Width="1920" Left="0" Top="0" Icon="/cybran.png" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="#FF232F92" WindowStyle="None"
     >
     <Window.Resources>
 
@@ -288,8 +288,8 @@
 
     </Window.Resources>
     <Grid Margin="0,0,0,0" Background="#FF172E4C">
-
         <TabControl Background="Black">
+
             <TabControl.Resources>
                 <Style TargetType="TabItem">
                     <Setter Property="Template">
@@ -315,8 +315,10 @@
                     </Setter>
                 </Style>
             </TabControl.Resources>
+
             <TabItem Header="Connection" FontSize="48" Foreground="#FF71EFFF" IsSelected="True">
                 <Grid Background="#FF0F2037">
+
                     <ListBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                               ScrollViewer.VerticalScrollBarVisibility="Visible"
                               
@@ -325,7 +327,7 @@
                               Foreground="#FF71EFFF" 
                               Background="#FF232F92" 
                               Padding="5,0,0,0" 
-                              FontSize="48" d:ItemsSource="{d:SampleData ItemCount=5}">
+                              FontSize="24" d:ItemsSource="{d:SampleData ItemCount=5}">
 
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -346,11 +348,31 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Hints" FontSize="48" Foreground="#FF71EFFF">
-                <Grid Background="#FF0F2037"/>
-            </TabItem>
-            <TabItem Header="Launcher" FontSize="48" Foreground="#FF71EFFF">
                 <Grid Background="#FF0F2037">
-                    <Button Content="Mission 1" HorizontalAlignment="Left" Margin="99,234,0,0" VerticalAlignment="Top" Height="96" Width="188" Click="OpenM1" FontSize="36" Foreground="#FF71EFFF" Background="#FF172E4C"/>
+                    <ListBox  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              
+                        x:Name="HintBox" 
+                        Margin="10,88,17,38"
+                        Foreground="#FF71EFFF" 
+                        Background="#FF232F92" 
+                        Padding="5,0,0,0" 
+                        FontSize="30" d:ItemsSource="{d:SampleData ItemCount=5}">
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Label Content="Points:" Margin="0,2,1750,0" VerticalAlignment="Top" Height="72" FontSize="48" Foreground="#FF71EFFF" HorizontalAlignment="Right" Width="150"/>
+                    <Label x:Name="Points" Content="999999999" Margin="0,2,1400,0" VerticalAlignment="Top" Height="72" FontSize="48" Foreground="#FF71EFFF" HorizontalAlignment="Right" Width="348"/>
+                    <Label Content="Hint cost:" Margin="0,2,1182,0" VerticalAlignment="Top" Height="72" FontSize="48" Foreground="#FF71EFFF" HorizontalAlignment="Right" Width="205"/>
+                    <Label x:Name="Costs" Content="999999999" Margin="0,2,826,0" VerticalAlignment="Top" Height="72" FontSize="48" Foreground="#FF71EFFF" HorizontalAlignment="Right" Width="348"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ButtonHolder" Header="Launcher" FontSize="48" Foreground="#FF71EFFF">
+                <Grid Background="#FF0F2037">
                 </Grid>
             </TabItem>
             <TabItem Header="Settings" FontSize="48" Foreground="#FF71EFFF">
@@ -364,5 +386,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Margin="0,2,4,0" VerticalAlignment="Top" Height="64" Click="ExitAPP" FontSize="48" Foreground="#FF71EFFF" Background="Red" HorizontalAlignment="Right" Width="64" ForceCursor="True"/>
     </Grid>
 </Window>
