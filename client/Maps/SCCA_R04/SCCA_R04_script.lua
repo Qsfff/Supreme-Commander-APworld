@@ -615,11 +615,11 @@ function BeginMission1()
 	--------------------------------------------------------
     --ScenarioInfo.Commander = ScenarioUtils.CreateArmyUnit( 'Player', 'Commander' )
     -- Set up a trigger to go off if the commander dies
-    ScenarioFramework.CreateUnitDeathTrigger( PlayerCommanderDied, ScenarioInfo.Commander )
+    ScenarioFramework.CreateUnitDeathTrigger( PlayerCommanderDied, ScenarioInfo.PlayerCDR )
     -- Delay the explosion so that we can catch it on camera
-    ScenarioFramework.PauseUnitDeath( ScenarioInfo.Commander )
+    ScenarioFramework.PauseUnitDeath( ScenarioInfo.PlayerCDR )
     --ScenarioInfo.Commander:PlayCommanderWarpInEffect()
-    ScenarioFramework.FakeGateInUnit( ScenarioInfo.Commander )
+    ScenarioFramework.FakeGateInUnit( ScenarioInfo.PlayerCDR )
     --ForkThread(NameCDRThread)
 
     IssueMove({ ScenarioInfo.Commander }, ScenarioUtils.MarkerToPosition( 'M1_Commander_Walk_1' ))
