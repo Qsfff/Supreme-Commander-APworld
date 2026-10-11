@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using OfficeOpenXml;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
@@ -37,6 +38,7 @@ namespace SupComClient
         bool GameActive = false;
         Dictionary<string, object> daT;
         DispatcherTimer updTimer = new DispatcherTimer();
+        DispatcherTimer updTimer2 = new DispatcherTimer();
 
         Dictionary<(string, int), (string, int)> finalRegiontoLevelName = new Dictionary<(string, int), (string, int)>();
         Dictionary<string, string> LevelToID = new Dictionary<string, string>();
@@ -64,19 +66,123 @@ namespace SupComClient
             CheckDefaultOptions();
             ReadExcel();
             DeleteOldShit();
-            updTimer.Interval = new TimeSpan(0, 0, 3);
-            updTimer.Tick += UpdTimer_Tick;
+            updTimer.Interval = new TimeSpan(0, 0, 1);
+            updTimer.Tick += UpdTimer_TickShort;
+            updTimer2.Interval = new TimeSpan(0, 0, 30);
+            updTimer2.Tick += UpdTimer_TickLong;
             initialised = true;
         }
+        void ReceiveLocations()
+        {
+            //Get list of checked locations
+            List<long> locationsChecked = new List<long>();
+            for (int i = 0; i < TheSession.Locations.AllLocationsChecked.Count; i++)
+            {
+                long tempLONG = TheSession.Locations.AllLocationsChecked[i];
+                string tempSTRING = tempLONG.ToString();
+                tempSTRING = tempSTRING.Remove(tempSTRING.Length - 2);
+                locationsChecked.Add(long.Parse(tempSTRING));
+            }
+            //Get list of completed levels
+            List<(string, int)> LevelPair = new List<(string, int)>();
+            for (int i = 0; i < locationsChecked.Count; i++)
+            {
+                (string, int) LocationPair = IdToLocation[locationsChecked[i]];
+                if (finalRegiontoLevelName.ContainsKey(LocationPair))
+                {
+                    LevelPair.Add(finalRegiontoLevelName[LocationPair]);
+                }
+            }
+            //Mark levels as completed in BDATA
+            for (int i = 0; i < LevelPair.Count; i++)
+            {
+                BDATA[ADATA[LevelPair[i]]].bSTATE = ButtonState.done;
+            }
+            //Iterate on BDATA to mark levels as unfinished and change font color
+            foreach (LevelData item in BDATA.Values)
+            {
+                if (item.bSTATE == ButtonState.locked)
+                {
+                    (int, int) Pos = (item.PositionHorisontal, item.PositionVertical);
+                    foreach (LevelData item2 in BDATA.Values)
+                    {
+                        if (item2.bSTATE == ButtonState.done)
+                        {
+                            (int, int) Pos2 = (item2.PositionHorisontal, item2.PositionVertical);
+                            if (Pos != Pos2 && Pos != (0, 0))
+                            {
+                                bool sosed1 = (item.PositionHorisontal != 0) && (item.PositionVertical == item2.PositionVertical) && (item.PositionHorisontal - 1 == item2.PositionHorisontal);
+                                bool sosed2 = (item.PositionVertical != 0) && (item.PositionHorisontal == item2.PositionHorisontal) && (item.PositionVertical - 1 == item2.PositionVertical);
+                                bool sosed3 = (item.PositionHorisontal != GridWidth - 1) && (item.PositionVertical == item2.PositionVertical) && (item.PositionHorisontal + 1 == item2.PositionHorisontal);
+                                bool sosed4 = (item.PositionVertical != GridHeight - 1) && (item.PositionHorisontal == item2.PositionHorisontal) && (item.PositionVertical + 1 == item2.PositionVertical);
+                                if (sosed1 || sosed2 || sosed3 || sosed4)
+                                {
+                                    item.bSTATE = ButtonState.unfinished;
+                                }
+                            }
+                        }
 
-        private void UpdTimer_Tick(object? sender, EventArgs e)
+                    }
+                }
+                if (item.bSTATE == ButtonState.done)
+                {
+                    item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(80, 255, 0));
+                    if (item.PositionHorisontal == GridWidth - 1 && item.PositionVertical == GridHeight - 1)
+                    {
+                        TheSession.SetGoalAchieved();
+                    }
+                }
+                else if (item.bSTATE == ButtonState.unfinished)
+                {
+                    item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(113, 239, 255));
+                }
+                else
+                {
+                    item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(56, 119, 127));
+                }
+            }
+        }
+        private void UpdTimer_TickShort(object? sender, EventArgs e)
+        {
+            if (TheSession.Socket.Connected)
+            {
+                MessageBox.Items.Refresh();
+
+                #region receive hints and display them
+                HintBox.Items.Clear();
+                List<Hint> THE_hints = new List<Hint>();
+                System.Threading.Tasks.Task<Hint[]> tskHNT = TheSession.Hints.GetHintsAsync();
+                THE_hints.AddRange(tskHNT.Result);
+                for (int i = 0; i < THE_hints.Count(); i++)
+                {
+                    string Wants = TheSession.Players.GetPlayerName(THE_hints[i].ReceivingPlayer);
+                    string Has = TheSession.Players.GetPlayerName(THE_hints[i].FindingPlayer);
+                    string Item = TheSession.Items.GetItemName(THE_hints[i].ItemId, TheSession.Players.GetPlayerInfo(TheSession.ConnectionInfo.Team, THE_hints[i].ReceivingPlayer).Game);
+                    string Place = TheSession.Locations.GetLocationNameFromId(THE_hints[i].LocationId, TheSession.Players.GetPlayerInfo(TheSession.ConnectionInfo.Team, THE_hints[i].FindingPlayer).Game);
+                    string Hint = "Player \"" + Wants;
+                    if (!THE_hints[i].Found)
+                    {
+                        Hint += "\" desires to get item \"";
+                    }
+                    else
+                    {
+                        Hint += "\" got item \"";
+                    }
+                    Hint += Item + "\" from Player \"" + Has + "\" located at \"" + Place + "\"";
+                    HintBox.Items.Add(Hint);
+                }
+                Points.Content = TheSession.RoomState.HintPoints;
+                Costs.Content = TheSession.RoomState.HintCost;
+                #endregion
+            }
+        }
+        private void UpdTimer_TickLong(object? sender, EventArgs e)
         {
             if (TheSession.Socket.Connected)
             {
                 #region receive
 
                 #region receive items
-                MessageBox.Items.Refresh();
                 List<string> Recived = new List<string>();
                 for (int i = 0; i < TheSession.Items.AllItemsReceived.Count; i++)
                 {
@@ -107,92 +213,7 @@ namespace SupComClient
                 }
                 #endregion
 
-                #region receive checked locations and mark levels
-                //Get list of checked locations
-                List<long> locationsChecked = new List<long>();
-                for (int i = 0; i < TheSession.Locations.AllLocationsChecked.Count; i++)
-                {
-                    long tempLONG = TheSession.Locations.AllLocationsChecked[i];
-                    string tempSTRING = tempLONG.ToString();
-                    tempSTRING = tempSTRING.Remove(tempSTRING.Length - 2);
-                    locationsChecked.Add(long.Parse(tempSTRING));
-                }
-                //Get list of completed levels
-                List<(string, int)> LevelPair = new List<(string, int)>();
-                for (int i = 0; i < locationsChecked.Count; i++)
-                {
-                    (string, int) LocationPair = IdToLocation[locationsChecked[i]];
-                    if (finalRegiontoLevelName.ContainsKey(LocationPair))
-                    {
-                        LevelPair.Add(finalRegiontoLevelName[LocationPair]);
-                    }
-                }
-                //Mark levels as completed in BDATA
-                for (int i = 0; i < LevelPair.Count; i++)
-                {
-                    BDATA[ADATA[LevelPair[i]]].bSTATE = ButtonState.done;
-                }
-                //Iterate on BDATA to mark levels as unfinished and change font color
-                foreach (LevelData item in BDATA.Values)
-                {
-                    if (item.bSTATE == ButtonState.locked)
-                    {
-                        (int, int) Pos = (item.PositionHorisontal, item.PositionVertical);
-                        foreach (LevelData item2 in BDATA.Values)
-                        {
-                            if (item2.bSTATE == ButtonState.done)
-                            {
-                                (int, int) Pos2 = (item2.PositionHorisontal, item2.PositionVertical);
-                                if (Pos != Pos2 && Pos != (0, 0))
-                                {
-                                    bool sosed1 = (item.PositionHorisontal != 0) && (item.PositionVertical == item2.PositionVertical) && (item.PositionHorisontal - 1 == item2.PositionHorisontal);
-                                    bool sosed2 = (item.PositionVertical != 0) && (item.PositionHorisontal == item2.PositionHorisontal) && (item.PositionVertical - 1 == item2.PositionVertical);
-                                    bool sosed3 = (item.PositionHorisontal != GridWidth - 1) && (item.PositionVertical == item2.PositionVertical) && (item.PositionHorisontal + 1 == item2.PositionHorisontal);
-                                    bool sosed4 = (item.PositionVertical != GridHeight - 1) && (item.PositionHorisontal == item2.PositionHorisontal) && (item.PositionVertical + 1 == item2.PositionVertical);
-                                    if (sosed1 || sosed2 || sosed3 || sosed4)
-                                    {
-                                        item.bSTATE = ButtonState.unfinished;
-                                    }
-                                }
-                            }
-                            
-                        }
-                    }
-                    if (item.bSTATE == ButtonState.done)
-                    {
-                        item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(80, 255, 0));
-                        if (item.PositionHorisontal == GridWidth - 1 && item.PositionVertical == GridHeight - 1)
-                        {
-                            TheSession.SetGoalAchieved();
-                        }
-                    }
-                    else if (item.bSTATE == ButtonState.unfinished)
-                    {
-                        item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(113, 239, 255));
-                    }
-                    else
-                    {
-                        item.ButtonText.Foreground = new SolidColorBrush(Color.FromRgb(56, 119, 127));
-                    }
-                }
-                #endregion
-
-                #region receive hints and display them
-                HintBox.Items.Clear();
-                List<Hint> THE_hints = new List<Hint>();
-                THE_hints.AddRange(TheSession.Hints.GetHints());
-                for (int i = 0; i < THE_hints.Count(); i++)
-                {
-                    string Wants = TheSession.Players.GetPlayerName(THE_hints[i].ReceivingPlayer);
-                    string Has = TheSession.Players.GetPlayerName(THE_hints[i].FindingPlayer);
-                    string Item = TheSession.Items.GetItemName(THE_hints[i].ItemId);
-                    string Place = TheSession.Locations.GetLocationNameFromId(THE_hints[i].LocationId);
-                    string Hint = "Player \"" + Wants + "\" desires to get item \"" + Item + "\" from Player \"" + Has + "\" located at \"" + Place + "\"";
-                    HintBox.Items.Add(Hint);
-                }
-                Points.Content = TheSession.RoomState.HintPoints;
-                Costs.Content = TheSession.RoomState.HintCost;
-                #endregion
+                ReceiveLocations();
 
                 #endregion
 
@@ -673,7 +694,9 @@ namespace SupComClient
                 TheSession.MessageLog.OnMessageReceived += ReceiveMessage;
                 daT = TheSession.DataStorage.GetSlotData();
                 makeLevels();
+                ReceiveLocations();
                 updTimer.Start();
+                updTimer2.Start();
             }
             else
             {
