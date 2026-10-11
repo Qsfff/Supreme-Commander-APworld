@@ -29,6 +29,8 @@ namespace SupComClient
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> UnsentMessages = new List<string>();
+
         int GridHeight;
         int GridWidth;
         Dictionary<Button, LevelData> BDATA = new Dictionary<Button, LevelData>();
@@ -146,6 +148,11 @@ namespace SupComClient
         {
             if (TheSession.Socket.Connected)
             {
+                for (int i = 0; i < UnsentMessages.Count; i++)
+                {
+                    MessageBox.Items.Add(UnsentMessages[i]);
+                }
+                UnsentMessages.Clear();
                 MessageBox.Items.Refresh();
 
                 #region receive hints and display them
@@ -832,10 +839,7 @@ namespace SupComClient
         }
         void ReceiveMessage(LogMessage message)
         {
-            string messageLine = message.ToString();
-            
-            MessageBox.Items.Add(messageLine);
-            MessageBox.Items.Refresh();
+            UnsentMessages.Add(message.ToString());
         }
         private void SayHelloWorldToServer(object sender, System.Windows.Input.KeyEventArgs e)
         {
