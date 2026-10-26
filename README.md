@@ -1,4 +1,8 @@
 # Supreme-Commander-APworld
+
+DUE TO SOME STUPID COPYRIGHT STUFF THIS APWORLD IS CURRENTLY UNAWAILIBLE
+I WILL FIX IT EVENTUALLY, BUT IT MAY TAKE A WHILE DUE TO IRL STUFF
+
 Setup instructions:
 1. Install FAF from https://www.faforever.com/ and launch a game with all UI mods you want to be on. Also make sure to set up all settings and hotkeys for your liking
 2. Install apworld
